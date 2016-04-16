@@ -21,6 +21,7 @@ public class FightManager : MonoBehaviour {
 
 
 	public void InitFight(Cell cell){
+		
 
 		m_isInit = true;
 	}
@@ -28,7 +29,6 @@ public class FightManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame
