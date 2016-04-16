@@ -17,9 +17,12 @@ public class FightManager : MonoBehaviour {
 	[Space(10)]
 	public GameObject[] m_listGameObjectDisplayable;
 
+	private bool m_isInit = false;
+
 
 	public void InitFight(Cell cell){
 
+		m_isInit = true;
 	}
 
 
@@ -34,6 +37,7 @@ public class FightManager : MonoBehaviour {
 	}
 
 	public void UpInput(){
+		
 		Debug.Log ("FIGHT UP");
 	}
 
