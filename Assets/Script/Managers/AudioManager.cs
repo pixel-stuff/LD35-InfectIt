@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class AudioManager : MonoBehaviour {
 
@@ -24,6 +25,8 @@ public class AudioManager : MonoBehaviour {
 
 	private static Transform m_transform;
 
+	public Action m_beatEvent;
+
 	// Use this for initialization
 	void Start () {
 		m_transform = this.transform;
@@ -46,7 +49,13 @@ public class AudioManager : MonoBehaviour {
 
 	}
 
-	
+	public void Beat(){
+		if (m_beatEvent != null) {
+			m_beatEvent ();
+		}
+	}
+
+
 	// Update is called once per frame
 	void Update () {
 	
