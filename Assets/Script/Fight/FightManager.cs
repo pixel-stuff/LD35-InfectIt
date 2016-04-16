@@ -12,9 +12,11 @@ public struct StepFight{
 
 
 public class FightManager : MonoBehaviour {
-
+	[Space(10)]
 	public StepFight[] m_listStep;
+	[Space(10)]
 	public GameObject[] m_listGameObjectDisplayable;
+
 
 	public void InitFight(GameObject cellule){
 
