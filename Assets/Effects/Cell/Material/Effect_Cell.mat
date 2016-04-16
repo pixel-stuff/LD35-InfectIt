@@ -19,7 +19,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: b8887f3f34787bf4f8efeb1cb94531c6, type: 3}
+          m_Texture: {fileID: 2800000, guid: 6b871dda9f6506a47990c3711e464f75, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -76,6 +76,13 @@ Material:
           name: _MetallicGlossMap
         second:
           m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DistortTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 17da6d53ec93a0444bd0f751b1d02477, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -139,6 +146,22 @@ Material:
         first:
           name: _BorderSpeed
         second: 10
+      data:
+        first:
+          name: _Refraction
+        second: 1
+      data:
+        first:
+          name: _Speed
+        second: 0.2
+      data:
+        first:
+          name: _Freq
+        second: 1
+      data:
+        first:
+          name: _Amp
+        second: 1
     m_Colors:
       data:
         first:
