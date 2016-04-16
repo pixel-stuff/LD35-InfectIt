@@ -54,19 +54,19 @@ public class InputManager : MonoBehaviour {
 			GameStateManager.setGameState(GameState.Pause);
 		}
 
-		if(Input.GetKeyDown("z") || Input.GetKeyDown("w")){
+		if(Input.GetKeyDown("z") || Input.GetKeyDown("w") || Input.GetKey(KeyCode.UpArrow)){
 			PlayerManager.UP();
 		}
 		
-		if(Input.GetKeyDown("q") || Input.GetKeyDown("a")){
+		if(Input.GetKeyDown("q") || Input.GetKeyDown("a") || Input.GetKey(KeyCode.LeftArrow)){
 			PlayerManager.LEFT();
 		}
 		
-		if(Input.GetKeyDown("s")){
+		if(Input.GetKeyDown("s") || Input.GetKey(KeyCode.DownArrow)){
 			PlayerManager.DOWN ();
 		}
 		
-		if(Input.GetKeyDown("d")){
+		if(Input.GetKeyDown("d") || Input.GetKey(KeyCode.RightArrow)){
 			PlayerManager.RIGHT();
 		}
 	}

@@ -16,7 +16,7 @@ public class GameStateManager : MonoBehaviour {
 	void Awake(){
 		if(m_instance == null){
 			//If I am the first instance, make me the Singleton
-			m_gameState = GameState.Menu;
+			m_gameState = GameState.Playing;
 			m_instance = this;
 			DontDestroyOnLoad(this.gameObject);
 		}else{
@@ -40,7 +40,7 @@ public class GameStateManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log ("GAME STATE : " + m_gameState);
+	//	Debug.Log ("GAME STATE : " + m_gameState);
 	}
 
 	public static GameState getGameState(){

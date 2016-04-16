@@ -19,6 +19,9 @@ public class PlayerManager : MonoBehaviour {
 	#endregion Singleton
 
 	// Use this for initialization
+
+
+
 	void Start () {
 		GameStateManager.onChangeStateEvent += handleChangeGameState;
 	}
@@ -35,18 +38,22 @@ public class PlayerManager : MonoBehaviour {
 	#region Intéraction
 	public static void UP(){
 		Debug.Log("UP ! ");
+		GameObject.FindGameObjectWithTag ("Virus").GetComponent<Virus> ().up ();
 	}
 
 	public static void DOWN(){
 		Debug.Log("DOWN ! ");
+		GameObject.FindGameObjectWithTag ("Virus").GetComponent<Virus> ().down ();
 	}
 
 	public static void LEFT(){
 		Debug.Log("LEFT ! ");
+		GameObject.FindGameObjectWithTag ("Virus").GetComponent<Virus> ().left ();
 	}
 
 	public static void RIGHT(){
 		Debug.Log("RIGHT ! ");
+		GameObject.FindGameObjectWithTag ("Virus").GetComponent<Virus> ().right ();
 	}
 	#endregion Intéraction
 
