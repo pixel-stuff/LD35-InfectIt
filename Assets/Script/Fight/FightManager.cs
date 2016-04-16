@@ -1,12 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
+
+[Serializable]
+public struct StepFight{
+	public string m_name;
+	public Sprite m_sprite;
+	public AudioClip m_sonReussi;
+	public AudioClip m_sonFailed;
+}
+
 
 public class FightManager : MonoBehaviour {
 
-	public Sprite m_triangle;
-	public Sprite m_carre;
-	public Sprite m_rond;
-	public Sprite m_croix;
+	public StepFight[] m_listStep;
+	public GameObject[] m_listGameObjectDisplayable;
+
+	public void InitFight(GameObject cellule){
+
+	}
+
 
 	// Use this for initialization
 	void Start () {
