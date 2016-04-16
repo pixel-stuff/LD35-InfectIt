@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class PlayerManager : MonoBehaviour {
 
@@ -39,21 +40,33 @@ public class PlayerManager : MonoBehaviour {
 	public static void UP(){
 		Debug.Log("UP ! ");
 		GameObject.FindGameObjectWithTag ("Virus").GetComponent<Virus> ().up ();
+		try{
+		FindObjectOfType<FightManager> ().UpInput ();
+		}catch(Exception e){}
 	}
 
 	public static void DOWN(){
 		Debug.Log("DOWN ! ");
 		GameObject.FindGameObjectWithTag ("Virus").GetComponent<Virus> ().down ();
+		try{
+			FindObjectOfType<FightManager> ().DownInput ();
+		}catch(Exception e){}
 	}
 
 	public static void LEFT(){
 		Debug.Log("LEFT ! ");
 		GameObject.FindGameObjectWithTag ("Virus").GetComponent<Virus> ().left ();
+		try{
+			FindObjectOfType<FightManager> ().LeftInput ();
+		}catch(Exception e){}
 	}
 
 	public static void RIGHT(){
 		Debug.Log("RIGHT ! ");
 		GameObject.FindGameObjectWithTag ("Virus").GetComponent<Virus> ().right ();
+		try{
+			FindObjectOfType<FightManager> ().RightInput ();
+		}catch(Exception e){}
 	}
 	#endregion Intéraction
 

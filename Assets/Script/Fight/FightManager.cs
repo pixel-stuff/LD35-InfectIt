@@ -18,7 +18,7 @@ public class FightManager : MonoBehaviour {
 	public GameObject[] m_listGameObjectDisplayable;
 
 
-	public void InitFight(GameObject cellule){
+	public void InitFight(Cell cell){
 
 	}
 
@@ -31,5 +31,21 @@ public class FightManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public void UpInput(){
+		Debug.Log ("FIGHT UP");
+	}
+
+	public void DownInput(){
+		Debug.Log ("FIGHT DOWN");
+	}
+
+	public void RightInput(){
+		Debug.Log ("FIGHT RIGHT");
+	}
+
+	public void LeftInput(){
+		Debug.Log ("FIGHT LEFT");
 	}
 }
