@@ -35,6 +35,9 @@ public class Virus : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		Debug.Log("ENTERED !");
+		if (other.gameObject.layer == LayerMask.NameToLayer("Cell")) {
+			Debug.Log ("Start Collide Cell");
+			this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = true;
+		}
 	}
 }
