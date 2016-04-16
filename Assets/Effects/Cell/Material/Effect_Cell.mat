@@ -19,7 +19,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: b8887f3f34787bf4f8efeb1cb94531c6, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -127,6 +127,18 @@ Material:
         first:
           name: _Metallic
         second: 0
+      data:
+        first:
+          name: _BorderFreq
+        second: 18
+      data:
+        first:
+          name: _BorderAmp
+        second: 0.005
+      data:
+        first:
+          name: _BorderSpeed
+        second: 10
     m_Colors:
       data:
         first:
