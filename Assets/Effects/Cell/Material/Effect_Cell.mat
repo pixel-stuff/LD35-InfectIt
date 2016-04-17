@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Effect_Cell
   m_Shader: {fileID: 4800000, guid: 0ae76ac213c06554582f0b016fb82031, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _ISLIGHTACTIVE_ON
   m_LightmapFlags: 5
   m_CustomRenderQueue: 4000
   stringTagMap: {}
@@ -96,7 +96,7 @@ Material:
         first:
           name: _NormalTex
         second:
-          m_Texture: {fileID: 2800000, guid: e80c3c84ea861404d8a427db8b7abf04, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -179,7 +179,15 @@ Material:
       data:
         first:
           name: _LightDistanceMax
-        second: 500
+        second: 10
+      data:
+        first:
+          name: _IsLightActive
+        second: 1
+      data:
+        first:
+          name: _LightIntensity
+        second: 1
     m_Colors:
       data:
         first:
@@ -188,7 +196,7 @@ Material:
       data:
         first:
           name: _LightColor
-        second: {r: 0.07586217, g: 1, b: 0, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _EmissionColor
