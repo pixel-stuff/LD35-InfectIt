@@ -58,7 +58,13 @@ public class FightManager : MonoBehaviour {
 
 
 	public void InitFight(Cell cell){
-		
+		m_bubbleVirus.SetActive(false);
+		m_bubbleCell.SetActive (false);
+		m_InputCell.SetActive (false);
+		for (int i = 0; i < m_listOfInputVirus.Length; i++) {
+			m_listOfInputVirus [i].SetActive (false);
+		}
+
 		TimeManager.m_instance.ChangeState (TimeState.fight);
 
 		m_listOfIDInputWaited.Clear();
@@ -76,7 +82,7 @@ public class FightManager : MonoBehaviour {
 			Debug.Log ("init : " + m_listOfInput[m_listOfIDInputWaited[i]].m_nameController);
 		}
 
-		FindObjectOfType<AudioManager> ().PlayFightMusic ();
+		AudioManager.m_instance.PlayFightMusic ();
 		m_lastBeatInvoke = Time.time;
 		Invoke("StartCellStatement", 1.5f);
 		m_isInit = true;
@@ -117,14 +123,14 @@ public class FightManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		m_timeBetweenBeat = FindObjectOfType<AudioManager> ().timeBetweenBeat;
+		m_timeBetweenBeat = AudioManager.m_instance.timeBetweenBeat;
 		m_bubbleVirus.SetActive(false);
 		m_bubbleCell.SetActive (false);
 		m_InputCell.SetActive (false);
 		for (int i = 0; i < m_listOfInputVirus.Length; i++) {
 			m_listOfInputVirus [i].SetActive (false);
 		}
-		FindObjectOfType<AudioManager> ().m_beatEvent += BeatInvokeHandle;
+		AudioManager.m_instance.m_beatEvent += BeatInvokeHandle;
 		InitFight (null);
 		GameStateManager.setGameState (GameState.Playing);
 	}
@@ -151,6 +157,12 @@ public class FightManager : MonoBehaviour {
 		} else {
 			Debug.Log ("YOU DIIEIEEEIEIEE");
 		}
+		Debug.Log ("RESTART");
+		InitFight (null);
+		AudioManager.m_instance.StopBeat ();
+		try{
+		PlayerManager.m_instance.FightOver (isWin);
+		}catch(Exception e){}
 	}
 
 	#region CellStatement
@@ -284,7 +296,8 @@ public class FightManager : MonoBehaviour {
 	}
 
 	public void SuccessInput(){
-		if (m_currentStepInputWaited < m_listOfIDInputWaited.Count) {
+		Debug.Log ("SUCCESS = " + m_currentStepInputWaited + "/" + m_listOfIDInputWaited.Count);
+		if (m_currentStepInputWaited < m_listOfIDInputWaited.Count-1) {
 			m_listOfInputVirus [m_currentStepInputWaited].GetComponent<Image> ().sprite = m_listOfInput [m_listOfIDInputWaited [m_currentStepInputWaited]].m_sprite;
 			m_listOfInputVirus [m_currentStepInputWaited].GetComponent<Image> ().color = m_listOfInput [m_listOfIDInputWaited [m_currentStepInputWaited]].m_spriteCoolor;
 			m_listOfInputVirus [m_currentStepInputWaited].SetActive (true);
@@ -293,8 +306,18 @@ public class FightManager : MonoBehaviour {
 			m_listOfInputVirus [m_currentStepInputWaited].GetComponent<Animation> ().Play ("ScaleInputEnterFight");
 			m_currentStepInputWaited++;
 		} else {
-			EndFight (true);
+			m_listOfInputVirus [m_currentStepInputWaited].GetComponent<Image> ().sprite = m_listOfInput [m_listOfIDInputWaited [m_currentStepInputWaited]].m_sprite;
+			m_listOfInputVirus [m_currentStepInputWaited].GetComponent<Image> ().color = m_listOfInput [m_listOfIDInputWaited [m_currentStepInputWaited]].m_spriteCoolor;
+			m_listOfInputVirus [m_currentStepInputWaited].SetActive (true);
+			this.GetComponent<AudioSource> ().clip = m_listOfInput [m_listOfIDInputWaited [m_currentStepInputWaited]].m_soundByVirus;
+			this.GetComponent<AudioSource> ().Play ();
+			m_listOfInputVirus [m_currentStepInputWaited].GetComponent<Animation> ().Play ("ScaleInputEnterFight");
+			Invoke ("InvokeWinAfterDelay",1.0f);
 		}
+	}
+
+	public void InvokeWinAfterDelay(){
+		EndFight (true);
 	}
 	#endregion Input
 

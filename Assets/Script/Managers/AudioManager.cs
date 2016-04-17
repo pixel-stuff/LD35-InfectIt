@@ -58,19 +58,19 @@ public class AudioManager : MonoBehaviour {
 	}
 
 	public void PlayFightMusic(){
-		GameObject go = new GameObject ("Audio_" +  m_fightMusic);
-		go.transform.parent = m_transform;
+		m_fightMusicGB = new GameObject ("Audio_" +  m_fightMusic);
+		m_fightMusicGB.transform.parent = m_transform;
 		//Load clip from ressources folder
 		AudioClip newClip =  Instantiate(Resources.Load (m_fightMusic, typeof(AudioClip))) as AudioClip;
 
 		//Add and bind an audio source
-		AudioSource source = go.AddComponent<AudioSource>();
+		AudioSource source = m_fightMusicGB.AddComponent<AudioSource>();
 		source.clip = newClip;
 		//Play and destroy the component
 		source.Play();
-		Destroy (go, newClip.length);
 		InvokeRepeating("BeatEvent",m_timeBetweenBeat*1f,m_timeBetweenBeat);
 	}
+	private GameObject m_fightMusicGB;
 
 	public void BeatEvent(){
 		if (m_beatEvent != null) {
@@ -80,6 +80,9 @@ public class AudioManager : MonoBehaviour {
 
 	public void StopBeat(){
 		CancelInvoke ("BeatEvent");
+		//if (m_fightMusicGB != null) {
+		Destroy (m_fightMusicGB.gameObject);
+		//}
 	}
 
 
