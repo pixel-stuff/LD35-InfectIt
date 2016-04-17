@@ -2,6 +2,11 @@
 using System.Collections;
 using UnityEngine.UI;
 
+public enum TimeState{
+	recherche,
+	fight
+}
+
 public class TimeManager : MonoBehaviour {
 
 	#region Singleton
@@ -27,9 +32,14 @@ public class TimeManager : MonoBehaviour {
 	private Vector2 m_particulesStartPos = new Vector2(1800f,0f);
 	private Vector2 m_particulesPos;
 
+	private TimeState m_timeState = TimeState.recherche;
+	private float m_coef = 1f;
+
 	// Use this for initialization
 	void Start () {
-		AddSecond (10f);
+		AddSecond(10f);
+		m_particulesStartPos = new Vector2 (this.GetComponent<RectTransform> ().rect.width, 0f);
+
 		m_particules.GetComponent<RectTransform> ().anchoredPosition = m_particulesPos;
 		b = m_particules.GetComponent<ParticleSystem> ().emission;
 		b.rate = new ParticleSystem.MinMaxCurve(20f);
@@ -41,7 +51,7 @@ public class TimeManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (m_currentTime > 0) {
-			m_currentTime -= Time.deltaTime;
+			m_currentTime -= (Time.deltaTime*m_coef);
 			this.GetComponent<Image> ().fillAmount = m_currentTime * 100 / 10 * 1 / 100;
 			m_particulesPos = m_particulesStartPos * m_currentTime * 100 / 10 * 1 / 100;
 			m_particules.GetComponent<RectTransform> ().anchoredPosition = m_particulesPos;
@@ -62,7 +72,6 @@ public class TimeManager : MonoBehaviour {
 		this.GetComponent<Image> ().fillAmount = percent;
 	}
 
-
 	public void AddSecond(float second){
 		m_currentTime += second;
 		this.GetComponent<Image> ().fillAmount = m_currentTime*100/10* 1/100;
@@ -75,7 +84,7 @@ public class TimeManager : MonoBehaviour {
 	}
 
 	public IEnumerator SubTimeAnimation(){
-		b.rate = new ParticleSystem.MinMaxCurve(100f);
+		b.rate = new ParticleSystem.MinMaxCurve(150f);
 		yield return new WaitForSeconds(0.5f);
 
 		b.rate = new ParticleSystem.MinMaxCurve(200f);
@@ -85,5 +94,19 @@ public class TimeManager : MonoBehaviour {
 		yield return new WaitForSeconds(0.5f);
 
 		b.rate = new ParticleSystem.MinMaxCurve(20f);
+	}
+
+	public void ChangeState(TimeState newState){
+		m_timeState = newState;
+		switch(m_timeState){
+		case TimeState.fight:
+			m_coef = 0.3f;
+			b.rate = new ParticleSystem.MinMaxCurve(7f);
+			break;
+		case TimeState.recherche:
+			m_coef = 1f;
+			b.rate = new ParticleSystem.MinMaxCurve(20f);
+			break;
+		}
 	}
 }

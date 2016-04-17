@@ -6,11 +6,11 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Effect_ScreenRedEdge
-  m_Shader: {fileID: 4800000, guid: f9fa5ed9325477644a068d6cc70212d7, type: 3}
+  m_Name: Effect_ColorOnAlphaMask
+  m_Shader: {fileID: 4800000, guid: 03344c7384854c04a822b19209392020, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
@@ -19,7 +19,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 9e41b5d16b43a3546a16b5263b9d749e, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -129,28 +129,20 @@ Material:
         second: 0
       data:
         first:
-          name: _EdgeWidth
-        second: 0.5
+          name: _Refraction
+        second: 1
       data:
         first:
-          name: _EdgeIntensity
-        second: 0.16
+          name: _Speed
+        second: 0.2
       data:
         first:
-          name: _AnimationFrequency
-        second: 6
+          name: _Freq
+        second: 1
       data:
         first:
-          name: _UseInternalTime
-        second: 0
-      data:
-        first:
-          name: _IsAnimationActive
-        second: 0
-      data:
-        first:
-          name: _TimeScript
-        second: 0
+          name: _Amp
+        second: 1
     m_Colors:
       data:
         first:
@@ -159,4 +151,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 0, b: 0, a: 1}
+        second: {r: 0.5441179, g: 0, b: 1, a: 1}

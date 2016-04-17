@@ -22,11 +22,9 @@
 	}
 
 	SubShader{
-		Tags{ "Queue" = "Transparent"/* "RenderType" = "Transparent"*/ }
+		Tags{ "Queue" = "Transparent" "IgnoreProjector" = "True"/* "RenderType" = "Transparent"*/ }
 		LOD 200
 		Cull Off
-		Zwrite Off
-		ZTest Off
 		Blend SrcAlpha OneMinusSrcAlpha
 
 		GrabPass {}
@@ -95,6 +93,7 @@
 			{
 				v2f o = (v2f)0;
 				UNITY_INITIALIZE_OUTPUT(v2f, o);
+				//v.vertex = v.vertex*sin(v.vertex+_Time.y);
 				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
 				o.worldPos = mul(_Object2World, v.vertex).xyz;
 				o.uv = TRANSFORM_TEX(v.uv, _DistortTex);
@@ -281,7 +280,7 @@
 					float3 debug = Lambert;
 					//col.rgb = lerp(col.rgb, _LightColor, (1.0 - length(LtoD) / _LightDistanceMax))*max(0.0, dot(normalize(LtoD), normalize(normal)));
 					// Ambient + Diffuse(LambertTerm * Light Color * attenuation * intensity)
-					col.rgb = col.rgb + Lambert * _LightColor * gradient * _LightIntensity;
+					col.rgb = lerp(col.rgb, Lambert * _LightColor * gradient * _LightIntensity, gradient);
 					//col.rgb = debug;
 				}
 				// apply fog

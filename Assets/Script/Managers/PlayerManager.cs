@@ -38,28 +38,24 @@ public class PlayerManager : MonoBehaviour {
 
 	#region Intéraction
 	public static void UP(){
-		Debug.Log("UP ! ");
 		try{
 			GameObject.FindGameObjectWithTag ("Virus").GetComponent<Virus> ().up ();
 		}catch(Exception e){}
 	}
 
 	public static void DOWN(){
-		Debug.Log("DOWN ! ");
 		try{
 			GameObject.FindGameObjectWithTag ("Virus").GetComponent<Virus> ().down ();
 		}catch(Exception e){}
 	}
 
 	public static void LEFT(){
-		Debug.Log("LEFT ! ");
 		try{
 			GameObject.FindGameObjectWithTag ("Virus").GetComponent<Virus> ().left ();
 		}catch(Exception e){}
 	}
 
 	public static void RIGHT(){
-		Debug.Log("RIGHT ! ");
 		try{
 			GameObject.FindGameObjectWithTag ("Virus").GetComponent<Virus> ().right ();
 		}catch(Exception e){}

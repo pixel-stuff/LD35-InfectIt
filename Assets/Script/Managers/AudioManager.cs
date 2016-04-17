@@ -23,17 +23,19 @@ public class AudioManager : MonoBehaviour {
 	[SerializeField]
 	private string m_backgroundAudioSource;
 
-	[SerializeField]
-	private static string m_fightMusic = "infect_it_theme_100bpm";
-
 	private static Transform m_transform;
 
+	[SerializeField]
+	private string m_fightMusic = "infect_it_theme_100bpm";
+
+
 	public Action m_beatEvent;
+	public float m_timeBetweenBeat = 60f / 100f;
 
 	// Use this for initialization
 	void Start () {
 		m_transform = this.transform;
-		Play (m_backgroundAudioSource);
+		//Play (m_backgroundAudioSource);
 	}
 
 	public static void Play(string clipname){
@@ -52,20 +54,34 @@ public class AudioManager : MonoBehaviour {
 
 	}
 
-	public static void PlayFightMusic(){
-		Play (m_fightMusic);
+	public void PlayFightMusic(){
+		GameObject go = new GameObject ("Audio_" +  m_fightMusic);
+		go.transform.parent = m_transform;
+		//Load clip from ressources folder
+		AudioClip newClip =  Instantiate(Resources.Load (m_fightMusic, typeof(AudioClip))) as AudioClip;
+
+		//Add and bind an audio source
+		AudioSource source = go.AddComponent<AudioSource>();
+		source.clip = newClip;
+		//Play and destroy the component
+		source.Play();
+		Destroy (go, newClip.length);
+		InvokeRepeating("BeatEvent",m_timeBetweenBeat*1f,m_timeBetweenBeat);
 	}
 
-	public void Beat(){
+	public void BeatEvent(){
 		if (m_beatEvent != null) {
 			m_beatEvent ();
 		}
+	}
+
+	public void StopBeat(){
+		CancelInvoke ("BeatEvent");
 	}
 
 
 
 	// Update is called once per frame
 	void Update () {
-	
 	}
 }
