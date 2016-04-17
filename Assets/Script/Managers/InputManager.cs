@@ -57,7 +57,7 @@ public class InputManager : MonoBehaviour {
 		if(Input.GetKey(KeyCode.UpArrow)){
 			PlayerManager.UP();
 		}
-		if (Input.GetKeyDown ("z") || Input.GetKeyDown ("w") || Input.GetKeyDown ("up")) {
+		if (Input.GetKeyDown ("z") || Input.GetKeyDown ("w") || Input.GetKeyDown (KeyCode.UpArrow)) {
 			PlayerManager.UpFight ();
 		}
 		

@@ -35,31 +35,37 @@ public class FightManager : MonoBehaviour {
 	}
 	#endregion Singleton
 	[Space(10)]
-	public StepFight[] m_listStep; 	
+	public StepFight[] m_listOfInput; 	
 	[Space(10)]
 	public GameObject[] m_listGameObjectDisplayable;
 
 	private bool m_isInit = false;
 	private int m_numberOfStep = 4;
-	private List<int> m_listOfInputWaited = new List<int> ();
-	private int temp = 0;
+	private List<int> m_listOfIDInputWaited = new List<int> ();
+	private float m_timeBetweenBeat = 0.60f;
+	private float m_percentErrorAceptable = 40.0f;
+
+	private int m_currentStepInputWaited = 0;
+
+
 
 	public void InitFight(Cell cell){
 		TimeManager.m_instance.ChangeState (TimeState.fight);
-		m_listOfInputWaited.Clear();
+		m_listOfIDInputWaited.Clear();
+		m_currentStepInputWaited = 0;
 		for (int i = 0; i < m_listGameObjectDisplayable.Length; i++) {
 			if( i < m_numberOfStep){
-				temp = UnityEngine.Random.Range (0, 4);
-				m_listOfInputWaited.Add(temp);
-				m_listGameObjectDisplayable [i].GetComponent<Image> ().sprite = m_listStep[temp].m_spriteController;
+				int temp = UnityEngine.Random.Range (0, 4);
+				m_listOfIDInputWaited.Add(temp);
+				m_listGameObjectDisplayable [i].GetComponent<Image> ().sprite = m_listOfInput[temp].m_spriteController;
 			}else{
 				m_listGameObjectDisplayable [i].SetActive (false);
 			}
 		}
-
-		for (int i = 0; i < m_listOfInputWaited.Count; i++) {
-			Debug.Log ("id : " + m_listOfInputWaited[i]);
+		for (int i = 0; i < m_listOfIDInputWaited.Count; i++) {
+			Debug.Log ("init : " + m_listOfInput[m_listOfIDInputWaited[i]].m_nameKeyBoard);
 		}
+
 		FindObjectOfType<AudioManager> ().m_beatEvent += BeatInvokeHandle;
 		FindObjectOfType<AudioManager> ().PlayFightMusic ();
 		m_lastBeatInvoke = Time.time;
@@ -72,34 +78,101 @@ public class FightManager : MonoBehaviour {
 	private float m_lastBeatInvoke = 0;
 	public void BeatInvokeHandle(){
 		m_numberOfBeatDoneInvoke++;
-		Debug.Log ("BEAT FIGHT");
 		m_lastBeatInvoke = Time.time;
+		for (int i = 0; i < m_listGameObjectDisplayable.Length; i++) {
+			if( i < m_numberOfStep){
+				if (!m_listGameObjectDisplayable [i].GetComponent<Animation> ().isPlaying) {
+					m_listGameObjectDisplayable [i].GetComponent<Animation> ().Play ("ScaleInputBeatFight");
+				}
+			}
+		}
 	}
 
 	// Use this for initialization
 	void Start () {
+		m_timeBetweenBeat = FindObjectOfType<AudioManager> ().m_timeBetweenBeat;
 		InitFight (null);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	
+		GameStateManager.setGameState (GameState.Playing);
 	}
 
+	// Update is called once per frame
+	void Update () {
+		//Debug.Log ("Up : " + IsTimingOK());
+		Debug.Log("step : " + m_currentStepInputWaited + ", ID waited " + m_listOfIDInputWaited[m_currentStepInputWaited] + ", name = " + m_listOfInput[m_listOfIDInputWaited[m_currentStepInputWaited]].m_nameKeyBoard);
+	}
+
+	#region Input
 	public void UpInput(){
-		Debug.Log ("FIGHT UP");
+		if (m_listOfIDInputWaited [m_currentStepInputWaited] != 0) {
+			ErrorInput ();
+			return;
+		}
+		if (!IsTimingOK ()) {
+			ErrorInput ();
+			return;
+		}
+		SuccessInput ();
 	}
 
 	public void DownInput(){
-		Debug.Log ("FIGHT DOWN");
+		if (m_listOfIDInputWaited [m_currentStepInputWaited] != 2) {
+			ErrorInput ();
+			return;
+		}
+		if (!IsTimingOK ()) {
+			ErrorInput ();
+			return;
+		}
+		SuccessInput ();
 	}
 
 	public void RightInput(){
-		Debug.Log ("FIGHT RIGHT");
+		if (m_listOfIDInputWaited [m_currentStepInputWaited] != 3) {
+			ErrorInput ();
+			return;
+		}
+		if (!IsTimingOK ()) {
+			ErrorInput ();
+			return;
+		}
+		SuccessInput ();
 	}
 
 	public void LeftInput(){
-		Debug.Log ("FIGHT LEFT");
+		if (m_listOfIDInputWaited [m_currentStepInputWaited] != 1) {
+			ErrorInput ();
+			return;
+		}
+		if (!IsTimingOK ()) {
+			ErrorInput ();
+			return;
+		}
+		SuccessInput ();
 	}
+
+	public bool IsTimingOK(){
+		bool isOK = false;
+		if (Mathf.Abs (Time.time - m_lastBeatInvoke) <= m_timeBetweenBeat * m_percentErrorAceptable / 100f) {
+			isOK = true;
+		}
+		if (Mathf.Abs (Time.time + m_timeBetweenBeat - m_lastBeatInvoke) <= m_timeBetweenBeat * m_percentErrorAceptable / 100f) {
+			isOK = true;
+		}
+		return isOK;
+	}
+
+	public void ErrorInput(){
+		this.GetComponent<AudioSource> ().clip = m_listOfInput [m_listOfIDInputWaited[m_currentStepInputWaited]].m_sonFailed;
+		this.GetComponent<AudioSource> ().Play ();
+		m_currentStepInputWaited = 0;
+	}
+
+	public void SuccessInput(){
+		this.GetComponent<AudioSource> ().clip = m_listOfInput [m_listOfIDInputWaited[m_currentStepInputWaited]].m_sonReussi;
+		this.GetComponent<AudioSource> ().Play ();
+		m_listGameObjectDisplayable [m_currentStepInputWaited].GetComponent<Animation> ().Play ("ScaleInputEnterFight");
+		m_currentStepInputWaited++;
+	}
+	#endregion Input
+
 }

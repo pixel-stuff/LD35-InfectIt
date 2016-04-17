@@ -30,7 +30,7 @@ public class AudioManager : MonoBehaviour {
 
 
 	public Action m_beatEvent;
-	private float m_timeBetweenBeat = 60f / 100f;
+	public float m_timeBetweenBeat = 60f / 100f;
 
 	// Use this for initialization
 	void Start () {

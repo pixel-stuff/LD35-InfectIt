@@ -37,6 +37,7 @@ public class TimeManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		AddSecond(10f);
 		m_particulesStartPos = new Vector2 (this.GetComponent<RectTransform> ().rect.width, 0f);
 
 		m_particules.GetComponent<RectTransform> ().anchoredPosition = m_particulesPos;
