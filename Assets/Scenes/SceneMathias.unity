@@ -2002,6 +2002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_backgroundAudioSource: BackgroundTest
+  m_fightMusic: infect_it_theme_100bpm
 --- !u!4 &811175036
 Transform:
   m_ObjectHideFlags: 0
@@ -2673,20 +2674,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_listStep:
-  - m_name: triangle
-    m_sprite: {fileID: 21300000, guid: 6feaea7c2e2bd4a468262d7048f9b184, type: 3}
+  - m_id: 0
+    m_nameController: triangle
+    m_spriteController: {fileID: 21300000, guid: 6feaea7c2e2bd4a468262d7048f9b184,
+      type: 3}
+    m_nameKeyBoard: up
+    m_spriteKeyBoard: {fileID: 21300000, guid: 6feaea7c2e2bd4a468262d7048f9b184, type: 3}
     m_sonReussi: {fileID: 0}
     m_sonFailed: {fileID: 0}
-  - m_name: carre
-    m_sprite: {fileID: 21300000, guid: 46614141afe634e1f9290a475707f0f4, type: 3}
+  - m_id: 1
+    m_nameController: carre
+    m_spriteController: {fileID: 21300000, guid: 46614141afe634e1f9290a475707f0f4,
+      type: 3}
+    m_nameKeyBoard: left
+    m_spriteKeyBoard: {fileID: 21300000, guid: 46614141afe634e1f9290a475707f0f4, type: 3}
     m_sonReussi: {fileID: 0}
     m_sonFailed: {fileID: 0}
-  - m_name: circle
-    m_sprite: {fileID: 21300000, guid: a5739322153a14b52a30ad86d207a200, type: 3}
+  - m_id: 2
+    m_nameController: croix
+    m_spriteController: {fileID: 21300000, guid: 063437278a1354a71b02449540297093,
+      type: 3}
+    m_nameKeyBoard: down
+    m_spriteKeyBoard: {fileID: 21300000, guid: 063437278a1354a71b02449540297093, type: 3}
     m_sonReussi: {fileID: 0}
     m_sonFailed: {fileID: 0}
-  - m_name: cross
-    m_sprite: {fileID: 21300000, guid: 063437278a1354a71b02449540297093, type: 3}
+  - m_id: 3
+    m_nameController: rond
+    m_spriteController: {fileID: 21300000, guid: a5739322153a14b52a30ad86d207a200,
+      type: 3}
+    m_nameKeyBoard: right
+    m_spriteKeyBoard: {fileID: 21300000, guid: a5739322153a14b52a30ad86d207a200, type: 3}
     m_sonReussi: {fileID: 0}
     m_sonFailed: {fileID: 0}
   m_listGameObjectDisplayable:
@@ -2754,7 +2771,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 0
+  m_Spacing: 20
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
 --- !u!1 &1963888174

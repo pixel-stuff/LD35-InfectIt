@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Effect_Cell
   m_Shader: {fileID: 4800000, guid: 0ae76ac213c06554582f0b016fb82031, type: 3}
-  m_ShaderKeywords: _ISLIGHTACTIVE_ON
+  m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: 4000
   stringTagMap: {}
@@ -19,7 +19,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: b8887f3f34787bf4f8efeb1cb94531c6, type: 3}
+          m_Texture: {fileID: 2800000, guid: 890d1254aabdb864196e2545679d1cd0, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -80,13 +80,6 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _DistortTex
-        second:
-          m_Texture: {fileID: 2800000, guid: e80c3c84ea861404d8a427db8b7abf04, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
           name: _MaskTex
         second:
           m_Texture: {fileID: 2800000, guid: 6968002de18343c419fe1dd823c56448, type: 3}
@@ -94,9 +87,16 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _DistortTex
+        second:
+          m_Texture: {fileID: 2800000, guid: e80c3c84ea861404d8a427db8b7abf04, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _NormalTex
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: e80c3c84ea861404d8a427db8b7abf04, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -151,11 +151,11 @@ Material:
       data:
         first:
           name: _BorderFreq
-        second: 27.03
+        second: 7.1
       data:
         first:
           name: _BorderAmp
-        second: 0.005
+        second: 0.0527
       data:
         first:
           name: _BorderSpeed
@@ -179,24 +179,16 @@ Material:
       data:
         first:
           name: _LightDistanceMax
-        second: 17.35
-      data:
-        first:
-          name: _IsLightActive
-        second: 1
-      data:
-        first:
-          name: _LightIntensity
-        second: 1
+        second: 500
     m_Colors:
       data:
         first:
           name: _LightPos
-        second: {r: -4.05, g: 8.63, b: -16.9, a: 1}
+        second: {r: 0, g: 0, b: 0, a: 1}
       data:
         first:
           name: _LightColor
-        second: {r: 1, g: 0.9152249, b: 0.2794118, a: 1}
+        second: {r: 0.07586217, g: 1, b: 0, a: 1}
       data:
         first:
           name: _EmissionColor
