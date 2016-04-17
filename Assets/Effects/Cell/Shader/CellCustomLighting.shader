@@ -20,7 +20,7 @@
 	}
 
 	SubShader{
-		Tags{ "Queue" = "Transparent" "LightMode" = "ForwardAdd"/* "RenderType" = "Transparent"*/ }
+		Tags{ "Queue" = "Transparent"/* "RenderType" = "Transparent"*/ }
 		LOD 200
 		Cull Off
 		Zwrite Off

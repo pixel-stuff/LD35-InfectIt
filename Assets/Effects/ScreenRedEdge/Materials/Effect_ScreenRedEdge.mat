@@ -6,11 +6,11 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Effect_Cell
-  m_Shader: {fileID: 4800000, guid: 0ae76ac213c06554582f0b016fb82031, type: 3}
+  m_Name: Effect_ScreenRedEdge
+  m_Shader: {fileID: 4800000, guid: f9fa5ed9325477644a068d6cc70212d7, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
-  m_CustomRenderQueue: 4000
+  m_CustomRenderQueue: 2000
   stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
@@ -19,7 +19,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: b8887f3f34787bf4f8efeb1cb94531c6, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -78,27 +78,6 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _DistortTex
-        second:
-          m_Texture: {fileID: 2800000, guid: e80c3c84ea861404d8a427db8b7abf04, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _MaskTex
-        second:
-          m_Texture: {fileID: 2800000, guid: 6968002de18343c419fe1dd823c56448, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _NormalTex
-        second:
-          m_Texture: {fileID: 2800000, guid: e80c3c84ea861404d8a427db8b7abf04, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -148,47 +127,7 @@ Material:
         first:
           name: _Metallic
         second: 0
-      data:
-        first:
-          name: _BorderFreq
-        second: 7.1
-      data:
-        first:
-          name: _BorderAmp
-        second: 0.0527
-      data:
-        first:
-          name: _BorderSpeed
-        second: 5
-      data:
-        first:
-          name: _Refraction
-        second: 1
-      data:
-        first:
-          name: _Speed
-        second: 0.2
-      data:
-        first:
-          name: _Freq
-        second: 1
-      data:
-        first:
-          name: _Amp
-        second: 1
-      data:
-        first:
-          name: _LightDistanceMax
-        second: 500
     m_Colors:
-      data:
-        first:
-          name: _LightPos
-        second: {r: 222.96, g: 139.9, b: 0, a: 1}
-      data:
-        first:
-          name: _LightColor
-        second: {r: 1, g: 0.9152249, b: 0.2794118, a: 1}
       data:
         first:
           name: _EmissionColor
