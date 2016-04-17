@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 9c8cdf6b730c5470b89c7b1c37403062
-timeCreated: 1460909602
+timeCreated: 1460911121
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -13,7 +13,7 @@ TextureImporter:
     21300012: organites-speech_6
     21300014: organites-speech_7
     21300016: organites-speech_8
-    21300018: organites-speech_9
+    21300018: interrogation
     21300020: organites-speech_10
     21300022: organites-speech_11
     21300024: organites-speech_12
@@ -241,7 +241,7 @@ TextureImporter:
         - {x: 114, y: -26}
         - {x: 114, y: 27}
         - {x: 97, y: 39}
-    - name: organites-speech_9
+    - name: interrogation
       rect:
         serializedVersion: 2
         x: 1511
