@@ -24,7 +24,7 @@ public class AudioManager : MonoBehaviour {
 	private string m_backgroundAudioSource;
 
 	[SerializeField]
-	private static string m_fightMusic;
+	private static string m_fightMusic = "infect_it_theme_100bpm";
 
 	private static Transform m_transform;
 
