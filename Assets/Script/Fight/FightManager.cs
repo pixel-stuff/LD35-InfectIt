@@ -160,8 +160,9 @@ public class FightManager : MonoBehaviour {
 		Debug.Log ("RESTART");
 		InitFight (null);
 		AudioManager.m_instance.StopBeat ();
+		AudioManager.m_instance.PlayFightMusic ();
 		try{
-		PlayerManager.m_instance.FightOver (isWin);
+			PlayerManager.m_instance.FightOver (isWin);
 		}catch(Exception e){}
 	}
 
