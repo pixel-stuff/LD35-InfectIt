@@ -282,7 +282,7 @@
 					float3 debug = Lambert;
 					//col.rgb = lerp(col.rgb, _LightColor, (1.0 - length(LtoD) / _LightDistanceMax))*max(0.0, dot(normalize(LtoD), normalize(normal)));
 					// Ambient + Diffuse(LambertTerm * Light Color * attenuation * intensity)
-					col.rgb = col.rgb + Lambert * _LightColor * gradient * _LightIntensity;
+					col.rgb = lerp(col.rgb, Lambert * _LightColor * gradient * _LightIntensity, gradient);
 					//col.rgb = debug;
 				}
 				else col.rgb += 0.5;

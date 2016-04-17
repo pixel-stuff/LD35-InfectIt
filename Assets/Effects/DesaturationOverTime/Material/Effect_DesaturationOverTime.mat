@@ -134,11 +134,11 @@ Material:
       data:
         first:
           name: _TimeCurrent
-        second: 0
+        second: 1.8479139
       data:
         first:
           name: _TimeEnd
-        second: 2
+        second: 10
     m_Colors:
       data:
         first:

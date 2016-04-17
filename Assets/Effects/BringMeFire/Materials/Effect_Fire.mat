@@ -6,11 +6,11 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Effect_ScreenRedEdge
-  m_Shader: {fileID: 4800000, guid: f9fa5ed9325477644a068d6cc70212d7, type: 3}
+  m_Name: Effect_Fire
+  m_Shader: {fileID: 4800000, guid: 49270ce17d6746943a24746f43df4010, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
@@ -78,6 +78,13 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DistortTex
+        second:
+          m_Texture: {fileID: 2800000, guid: e80c3c84ea861404d8a427db8b7abf04, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -129,28 +136,20 @@ Material:
         second: 0
       data:
         first:
-          name: _EdgeWidth
-        second: 0.5
+          name: _Refraction
+        second: 1
       data:
         first:
-          name: _EdgeIntensity
-        second: 0.16
+          name: _Speed
+        second: 4.52
       data:
         first:
-          name: _AnimationFrequency
-        second: 6
+          name: _Freq
+        second: 16.96
       data:
         first:
-          name: _UseInternalTime
-        second: 0
-      data:
-        first:
-          name: _IsAnimationActive
-        second: 0
-      data:
-        first:
-          name: _TimeScript
-        second: 0
+          name: _Amp
+        second: 25.65
     m_Colors:
       data:
         first:
@@ -159,4 +158,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 0, b: 0, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 1}

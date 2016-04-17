@@ -6,6 +6,9 @@
 		_EdgeWidth("Edge Width", Range(0.0, 0.5)) = 0.1
 		_EdgeIntensity("Edge Intensity", Range(0.0, 1.0)) = 0.5
 		_AnimationFrequency("Anim. Freq.", Range(0.0, 100.0)) = 0.5
+		[Toggle]_UseInternalTime("Use Internal Time ?", Float) = 1.0
+		[Toggle]_IsAnimationActive("Is Animation Active ?", Float) = 0.0
+		_TimeScript("Time script", Float) = 0.0
 	}
 	SubShader
 	{
@@ -47,25 +50,35 @@
 			float _EdgeWidth;
 			float _EdgeIntensity;
 			float _AnimationFrequency;
+			float _UseInternalTime;
+			float _IsAnimationActive;
+			float _TimeScript;
 
 			fixed4 frag (v2f i) : SV_Target
 			{
 				fixed4 col = fixed4(0, 0, 0, 0);
-				float2 coord = -1.0 + 2.0*i.uv;
-				float width = _EdgeWidth;
-				float pW = 1.0 - width;
-				float aT = abs(sin(_Time.y*_AnimationFrequency))*_EdgeIntensity;
-				if (abs(coord.x) > pW && abs(coord.y) > pW) {
-					col.rgb = _Color.rgb;
-					col.a = (1.0-(1.0-abs(coord.x))/ width + 1.0 - (1.0 - abs(coord.y)) / width)*aT;
-				}
-				if (abs(coord.x) <= pW && abs(coord.y)>pW) {
-					col.rgb = _Color.rgb;
-					col.a = (1.0 - (1.0 - abs(coord.y)) / width)*aT;
-				}
-				if (abs(coord.x) > pW && abs(coord.y)<= pW) {
-					col.rgb = _Color.rgb;
-					col.a = (1.0 - (1.0 - abs(coord.x)) / width)*aT;
+				if (_IsAnimationActive) {
+					float2 coord = -1.0 + 2.0*i.uv;
+					float width = _EdgeWidth;
+					float pW = 1.0 - width;
+					float aT;
+					if (_UseInternalTime) {
+						aT = abs(sin(_Time.y*_AnimationFrequency))*_EdgeIntensity;
+					} else {
+						aT = abs(sin(_TimeScript*_AnimationFrequency))*_EdgeIntensity;
+					}
+					if (abs(coord.x) > pW && abs(coord.y) > pW) {
+						col.rgb = _Color.rgb;
+						col.a = (1.0 - (1.0 - abs(coord.x)) / width + 1.0 - (1.0 - abs(coord.y)) / width)*aT;
+					}
+					if (abs(coord.x) <= pW && abs(coord.y) > pW) {
+						col.rgb = _Color.rgb;
+						col.a = (1.0 - (1.0 - abs(coord.y)) / width)*aT;
+					}
+					if (abs(coord.x) > pW && abs(coord.y) <= pW) {
+						col.rgb = _Color.rgb;
+						col.a = (1.0 - (1.0 - abs(coord.x)) / width)*aT;
+					}
 				}
 				return col;
 			}
