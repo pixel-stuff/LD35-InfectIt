@@ -135,7 +135,7 @@ Camera:
   m_GameObject: {fileID: 125423201}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -1041,6 +1041,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
+--- !u!1 &1405527074 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 114340, guid: 5909ab43ecfc0374695506b3028f87f0, type: 2}
+  m_PrefabInternal: {fileID: 847230939}
+--- !u!114 &1405527076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1405527074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957fa6c8f5cb2024f883d6e115d1ca95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_shaderTimeStartUniName: _TimeStart
+  m_shaderTimeCurrentUniName: _TimeCurrent
+  m_shaderTimeEndUniName: _TimeEnd
+  m_referenceMaterial: {fileID: 2100000, guid: d3caad23681b98841a9ad1143a5f0ad6, type: 2}
+--- !u!114 &1405527077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1405527074}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a47c608b47f73fe48a1fb0b9c730ad6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1455149591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1293,7 +1323,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1877518413
 SpriteRenderer:
   m_ObjectHideFlags: 0

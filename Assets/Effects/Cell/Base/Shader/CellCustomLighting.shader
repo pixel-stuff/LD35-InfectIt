@@ -21,6 +21,8 @@
 		[Toggle]_IsLightActive("Is Light Active ?", Float) = 1.0
 		_LightIntensity("Light Intensity", Float) = 1.0
 		_NormalTex("Normal Map", 2D) = "bleu" {}
+		// shifting penetration
+		_AnglePenetration("Angle of Penetration", Float) = -1.0
 	}
 	SubShader{
 		Tags{ "Queue" = "Transparent" "IgnoreProjector" = "True"/* "RenderType" = "Transparent"*/ }
@@ -83,6 +85,9 @@
 			float _LightDistanceMax;
 			float _IsLightActive;
 			float _LightIntensity;
+
+			// Penetration
+			float _AnglePenetration;
 
 			v2f vert(appdata v)
 			{
@@ -163,7 +168,6 @@
 				return tex2D(_DistortTex, uv*3.0f + float2(_Time.y / 40.0f, _Time.w / 40.0f)).rgb;
 			}
 
-			#define DEG2RAD 3.14159 / 180.0
 			/**
 			* Rotate UV from angle around center
 			* @author pierre.plans@gmail.com
@@ -183,6 +187,9 @@
 				return uv / scale;
 			}
 #endif
+			#define DEG2RAD (3.14159 / 180.0)
+			#define RAD2DEG (180.0 / 3.14159)
+			#define PI 3.14159
 
 			fixed4 frag(v2f i) : SV_Target
 			{
@@ -200,7 +207,22 @@
 																		// computing mathematical stuff for ovalization
 																		// ovalization
 				if (angle < 0.0) angle = angle + 200.0*DEG2RAD;*/
-				float angle = sin(atan2(0.0*coord.y + 1.0*coord.x, 1.0*coord.y + 0.0*coord.x));
+				//float angle = atan2(0.0*coord.y + 1.0*coord.x, 1.0*coord.y + 0.0*coord.x) + 3.14/2.0;
+				//float angle = fmod(-atan2(0.0*coord.y - 1.0*coord.x, dot(coord, float2(0.0, 1.0))), 2.0*3.14);
+				//float angle = atan2(0.0*coord.y - coord.x*1.0, 0.0*coord.x + 1.0*coord.y);
+				// NICEUH
+				float angle = atan2(coord.y, coord.x);
+				angle = fmod(-180.0 / PI * angle, 360.0)*DEG2RAD;
+				if (angle < 0.0) angle += 2.0 * PI;
+				float sinAngle = sin(angle);
+
+				// penetration
+				float penetrationAngleStart = (_AnglePenetration - 15.0)*DEG2RAD;
+				if (penetrationAngleStart < -15.0*DEG2RAD) penetrationAngleStart += 2.0 * PI;
+				float penetrationAngleEnd = (_AnglePenetration + 15.0)*DEG2RAD;
+				if (penetrationAngleEnd < 15.0*DEG2RAD) penetrationAngleEnd += 2.0 * PI;
+
+				// deformation for velocity
 				float2 speedV = float2(1.0, 1.0);
 				float2 speedVM = float2(1.0, 1.0);
 				float speed = length(speedV);
@@ -218,7 +240,10 @@
 				//center = scaleUV(center, speedV);
 				//center = rotateUV(center, float2(0.0, 0.0), angleS);
 
-				float _borderOffset = sin(angle*_BorderFreq + _Time.y*_BorderSpeed)*_BorderAmp;
+				float _borderOffset = sin(sinAngle*_BorderFreq + _Time.y*_BorderSpeed)*_BorderAmp;
+				if (_AnglePenetration >=0.0 && abs(penetrationAngleStart - angle)<15.0*DEG2RAD) {
+					_borderOffset -= (sin(sinAngle*_BorderFreq*4.0 + _Time.y*_BorderSpeed)+PI*0.5)*_BorderAmp*1.6;
+				}
 
 				bool testOval = length(coord) > abs(_borderOffset);
 				// border animation
@@ -287,6 +312,9 @@
 				}
 				// apply fog
 				//col.rgb = debug;
+				/*col.rgb = (angle+3.14/2.0);
+				col.r = abs(penetrationAngleStart-angle)<15.0*DEG2RAD ? 1.0 : 0.0;
+				col.g = col.b = 0.0;*/
 				UNITY_APPLY_FOG(i.fogCoord, col);
 				return col;
 			}
