@@ -26,11 +26,14 @@ public class AudioManager : MonoBehaviour {
 	private static Transform m_transform;
 
 	[SerializeField]
-	private string m_fightMusic = "infect_it_theme_100bpm";
+	private string m_fightMusic = "infect_it_theme_125bpm";
 
 
 	public Action m_beatEvent;
-	public float m_timeBetweenBeat = 60f / 100f;
+	private float m_timeBetweenBeat = 60f / 125f;
+	public float timeBetweenBeat{
+		get { return m_timeBetweenBeat; }
+	}
 
 	// Use this for initialization
 	void Start () {

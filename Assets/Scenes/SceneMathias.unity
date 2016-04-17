@@ -239,6 +239,7 @@ Animation:
   m_Animation: {fileID: 7400000, guid: d1ebbdf4bec9e4545b196bd27ea00ce1, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: d1ebbdf4bec9e4545b196bd27ea00ce1, type: 2}
+  - {fileID: 7400000, guid: c732dbddbe40741ae8fb08c43bea8e48, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -1935,6 +1936,7 @@ Animation:
   m_Animation: {fileID: 7400000, guid: d1ebbdf4bec9e4545b196bd27ea00ce1, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: d1ebbdf4bec9e4545b196bd27ea00ce1, type: 2}
+  - {fileID: 7400000, guid: c732dbddbe40741ae8fb08c43bea8e48, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -2042,8 +2044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_backgroundAudioSource: BackgroundTest
-  m_fightMusic: infect_it_theme_100bpm
-  m_timeBetweenBeat: 0.6
+  m_fightMusic: infect_it_theme_125bpm
 --- !u!4 &811175036
 Transform:
   m_ObjectHideFlags: 0
@@ -2230,6 +2231,7 @@ Animation:
   m_Animation: {fileID: 7400000, guid: d1ebbdf4bec9e4545b196bd27ea00ce1, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: d1ebbdf4bec9e4545b196bd27ea00ce1, type: 2}
+  - {fileID: 7400000, guid: c732dbddbe40741ae8fb08c43bea8e48, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -3022,6 +3024,7 @@ Animation:
   m_Animation: {fileID: 7400000, guid: d1ebbdf4bec9e4545b196bd27ea00ce1, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: d1ebbdf4bec9e4545b196bd27ea00ce1, type: 2}
+  - {fileID: 7400000, guid: c732dbddbe40741ae8fb08c43bea8e48, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
