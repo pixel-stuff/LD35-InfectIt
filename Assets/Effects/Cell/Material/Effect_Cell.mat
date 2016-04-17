@@ -130,15 +130,15 @@ Material:
       data:
         first:
           name: _BorderFreq
-        second: 18
+        second: 7.1
       data:
         first:
           name: _BorderAmp
-        second: 0.005
+        second: 0.0527
       data:
         first:
           name: _BorderSpeed
-        second: 10
+        second: 5
     m_Colors:
       data:
         first:
