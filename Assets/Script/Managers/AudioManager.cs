@@ -5,7 +5,7 @@ using System;
 public class AudioManager : MonoBehaviour {
 
 	#region Singleton
-	private static AudioManager m_instance;
+	public static AudioManager m_instance;
 	void Awake(){
 		if(m_instance == null){
 			//If I am the first instance, make me the Singleton

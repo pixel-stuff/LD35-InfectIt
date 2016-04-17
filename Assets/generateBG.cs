@@ -85,8 +85,8 @@ public class generateBG : MonoBehaviour {
 					GameObject asset = Instantiate (randomGO [AssetId].randomGO);
 					asset.transform.position = new Vector3 (m_iterator.x,m_iterator.y,this.transform.position.z);
 					asset.transform.parent = this.transform;
-					asset.GetComponent<randomMove> ().maxForce = maxForce;
-					asset.GetComponent<randomMove> ().minForce = maxForce;
+					asset.GetComponentInChildren<randomMove> ().maxForce = maxForce;
+					asset.GetComponentInChildren<randomMove> ().minForce = maxForce;
 					asset.transform.localScale = new Vector3 (scale,scale,1);
 				
 					m_gameObject.Add (asset);
