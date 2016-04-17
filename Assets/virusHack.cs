@@ -14,6 +14,6 @@ public class virusHack : MonoBehaviour {
 	}
 
 	public bool acceptFusion() {
-		return cellScript.m_isAfraid;
+		return !cellScript.m_isAfraid;
 	}
 }
