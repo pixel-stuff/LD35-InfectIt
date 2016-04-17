@@ -2,6 +2,10 @@
 {
 	Properties
 	{
+		_Color("Color", Color) = (1,1,1,1)
+		_EdgeWidth("Edge Width", Range(0.0, 0.5)) = 0.1
+		_EdgeIntensity("Edge Intensity", Range(0.0, 1.0)) = 0.5
+		_AnimationFrequency("Anim. Freq.", Range(0.0, 100.0)) = 0.5
 	}
 	SubShader
 	{
@@ -38,15 +42,30 @@
 				return o;
 			}
 			
-			sampler2D _MainTex;
+			//sampler2D _MainTex;
+			float4 _Color;
+			float _EdgeWidth;
+			float _EdgeIntensity;
+			float _AnimationFrequency;
 
 			fixed4 frag (v2f i) : SV_Target
 			{
 				fixed4 col = fixed4(0, 0, 0, 0);
 				float2 coord = -1.0 + 2.0*i.uv;
-				if (abs(coord.x) > 0.8 && abs(coord.y) > 0.8) {
-					col.r = 1.0;
-					col.a = 1.0-(1.0-abs(coord.x))/0.2 + 1.0 - (1.0 - abs(coord.y)) / 0.2;
+				float width = _EdgeWidth;
+				float pW = 1.0 - width;
+				float aT = abs(sin(_Time.y*_AnimationFrequency))*_EdgeIntensity;
+				if (abs(coord.x) > pW && abs(coord.y) > pW) {
+					col.rgb = _Color.rgb;
+					col.a = (1.0-(1.0-abs(coord.x))/ width + 1.0 - (1.0 - abs(coord.y)) / width)*aT;
+				}
+				if (abs(coord.x) <= pW && abs(coord.y)>pW) {
+					col.rgb = _Color.rgb;
+					col.a = (1.0 - (1.0 - abs(coord.y)) / width)*aT;
+				}
+				if (abs(coord.x) > pW && abs(coord.y)<= pW) {
+					col.rgb = _Color.rgb;
+					col.a = (1.0 - (1.0 - abs(coord.x)) / width)*aT;
 				}
 				return col;
 			}

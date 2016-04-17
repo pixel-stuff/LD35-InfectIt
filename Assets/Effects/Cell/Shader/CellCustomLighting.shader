@@ -16,7 +16,9 @@
 		_LightPos("Light Pos", Vector) = (0, 0, 0)
 		_LightColor("Light Color", Color) = (1,1,1,1)
 		_LightDistanceMax("Light Distance Max.", Float) = 10.0
-		_NormalTex("Normal Map", 2D) = "white" {}
+		[Toggle]_IsLightActive("Is Light Active ?", Float) = 1.0
+		_LightIntensity("Light Intensity", Float) = 1.0
+		_NormalTex("Normal Map", 2D) = "bleu" {}
 	}
 
 	SubShader{
@@ -54,6 +56,7 @@
 				float3 worldRefl : TEXCOORD1;
 				float4 screenPos : TEXCOORD2;
 				float3 lPos : TEXCOORD3;
+				float3 worldPos : TEXCOORD4;
 			};
 
 			sampler2D _MainTex;
@@ -77,6 +80,8 @@
 			float3 _LightPos;
 			float4 _LightColor;
 			float _LightDistanceMax;
+			float _IsLightActive;
+			float _LightIntensity;
 
 			struct Input {
 				float2 uv_MainTex;
@@ -91,6 +96,7 @@
 				v2f o = (v2f)0;
 				UNITY_INITIALIZE_OUTPUT(v2f, o);
 				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.worldPos = mul(_Object2World, v.vertex).xyz;
 				o.uv = TRANSFORM_TEX(v.uv, _DistortTex);
 				UNITY_TRANSFER_FOG(o, o.vertex);
 				o.color = v.color;
@@ -197,7 +203,7 @@
 																		// computing mathematical stuff for ovalization
 																		// ovalization
 				if (angle < 0.0) angle = angle + 200.0*DEG2RAD;*/
-				float angle = atan2(0.0*coord.y + 1.0*coord.x, 1.0*coord.y + 0.0*coord.x);
+				float angle = sin(atan2(0.0*coord.y + 1.0*coord.x, 1.0*coord.y + 0.0*coord.x));
 				float2 speedV = float2(1.0, 1.0);
 				float2 speedVM = float2(1.0, 1.0);
 				float speed = length(speedV);
@@ -264,15 +270,20 @@
 				col.g = col.b = 0.0;*/
 
 				// Lighting
-				float4 worldPos = mul(_Object2World, i.vertex);
-				float3 lPos = _LightPos;
-				float3 LtoD = lPos - worldPos.xyz;
-				float3 EtoD =  _WorldSpaceCameraPos - worldPos.xyz;
-				float3 normal = tex2D(_NormalTex, uv).rgb;
-				float Lambert = min(1.0, max(0.0, dot(-normalize(LtoD), normalize(normal))));
-				float3 debug = lPos;
-				//col.rgb = lerp(col.rgb, _LightColor, (1.0 - length(LtoD) / _LightDistanceMax))*max(0.0, dot(normalize(LtoD), normalize(normal)));
-				col.rgb = col.rgb + Lambert * _LightColor * (1.0 - length(LtoD) / _LightDistanceMax);
+				if (_IsLightActive) {
+					float3 worldPos = i.worldPos;
+					float3 lPos = _LightPos;
+					float3 LtoD = lPos - worldPos.xyz;
+					float3 EtoD = _WorldSpaceCameraPos - worldPos.xyz;
+					float3 normal = tex2D(_NormalTex, uv).rgb;
+					float Lambert = min(1.0, max(0.0, dot(normalize(float3(0.0, 0.0, 1.0)/*LtoD*/), normalize(normal))));
+					float gradient = (1.0 - length(LtoD) / _LightDistanceMax);
+					float3 debug = Lambert;
+					//col.rgb = lerp(col.rgb, _LightColor, (1.0 - length(LtoD) / _LightDistanceMax))*max(0.0, dot(normalize(LtoD), normalize(normal)));
+					// Ambient + Diffuse(LambertTerm * Light Color * attenuation * intensity)
+					col.rgb = col.rgb + Lambert * _LightColor * gradient * _LightIntensity;
+					//col.rgb = debug;
+				}
 				// apply fog
 				//col.rgb = debug;
 				UNITY_APPLY_FOG(i.fogCoord, col);
