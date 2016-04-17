@@ -15,6 +15,8 @@ public class Virus : MonoBehaviour {
 	private Vector3 toto;
 
 	private bool m_isEjected;
+
+	private GameObject m_targetCell;
 	// Use this for initialization
 	void Start () {
 		m_isEjected = false;
@@ -26,7 +28,13 @@ public class Virus : MonoBehaviour {
 			Vector3 dif = -toto + new Vector3(m_centerCell.x,m_centerCell.y,this.transform.position.z);
 			this.transform.position = toto + dif*(goOnCenterAnimation.Evaluate(m_animationTime/nbFrameAnimation));
 			m_animationTime++;
+			if (m_animationTime > nbFrameAnimation) {
+				m_isOnCenterAnimation = false;
+				PlayerManager.m_instance.startFight ();
+			}
 		}
+
+
 		if (EJECT) {
 			ejectVirus ();
 			EJECT = false;
@@ -65,6 +73,7 @@ public class Virus : MonoBehaviour {
 				m_centerCell = other.gameObject.transform.position;
 				m_animationTime = 0;
 				toto = this.transform.position;
+				m_targetCell = other.gameObject;
 			}
 		}
 	}
@@ -83,5 +92,12 @@ public class Virus : MonoBehaviour {
 		this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = false;
 		Vector2 direction = Random.insideUnitCircle;
 		this.GetComponent<Rigidbody2D> ().AddRelativeForce (moveForce * direction*200);
+	}
+
+	public void ConsumeCell() {
+		m_isOnCenterAnimation = false;
+		this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = false;
+		m_targetCell.GetComponent<virusHack> ().consume ();
+
 	}
 }

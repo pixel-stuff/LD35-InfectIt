@@ -16,4 +16,9 @@ public class virusHack : MonoBehaviour {
 	public bool acceptFusion() {
 		return !cellScript.m_isAfraid;
 	}
+
+	public void consume() {
+		cellScript.consume ();
+		this.gameObject.SetActive (false);
+	}
 }

@@ -21,6 +21,14 @@ public class PlayerManager : MonoBehaviour {
 
 	// Use this for initialization
 
+	public int fadeDuration;
+
+	private bool fadeBlanc;
+	private bool fadeClear;
+	private bool isFighting;
+	private bool isWinning;
+	private int m_fadeTime = 0;
+	public SpriteRenderer m_fadeRenderer = null;
 
 
 	void Start () {
@@ -29,7 +37,39 @@ public class PlayerManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (m_fadeRenderer == null) {
+			m_fadeRenderer = GameObject.FindGameObjectWithTag ("Fade").GetComponent<SpriteRenderer> ();
+		} 
+		if (m_fadeRenderer && (fadeBlanc || fadeClear)) {
+			float step = 1f / fadeDuration;
+			float actualStep = m_fadeTime++ * step;
+			Debug.Log (actualStep);
+			actualStep = (actualStep > 1f) ? 1f : actualStep;
+			float alphaValue;
+			if (fadeBlanc) {
+				if (m_fadeTime > fadeDuration) {
+					fadeBlanc = false;
+					fadeBlancOver ();
+					m_fadeTime = 0;
+				}
+				alphaValue = actualStep;
+			} else {
+				if (m_fadeTime > fadeDuration) {
+					fadeClear = false;
+					fadeClearOver ();
+					m_fadeTime = 0;
+				}
+				alphaValue = 1f - actualStep;
+			}
+
+			Color temp = m_fadeRenderer.color;// = actualStep;
+			temp.a = alphaValue;
+			m_fadeRenderer.color = temp;
+		}
+		
 	
+
+
 	}
 
 	void handleChangeGameState(GameState newState){
@@ -40,7 +80,56 @@ public class PlayerManager : MonoBehaviour {
 	}
 
 	public void FightOver(bool win) {
-		//jmorel do the stuff
+		isFighting = false;
+		fadeBlanc = true;
+		isWinning = win;
+		//hide canvas fight
+		//animation transparent 
+		freezeGame(false);
+		//If win - NOMNOM
+		//if !win EJECT
+	}
+	void fadeClearOver() {
+		if (isFighting) {
+		} else {
+			freezeGame (false);
+			if (isWinning) {
+				GameObject.FindGameObjectWithTag ("Virus").GetComponent<Virus> ().ConsumeCell ();
+			} else {
+				GameObject.FindGameObjectWithTag ("Virus").GetComponent<Virus> ().ejectVirus ();
+			}
+		}
+	}
+
+	public void startFight() {
+		Debug.Log("StartFight");
+		isFighting = true; 
+		fadeBlanc = true;
+		//animation -> blanc
+
+	}
+
+	void fadeBlancOver() {
+		if (isFighting) {
+			//Initiliase Fight
+			freezeGame (true);//is kinetic GO
+			//change state fight
+			//appear fight sceen
+			fadeClear = true;
+
+			//DEBUG 
+			FightOver(true);
+		} else {
+			//hide fight sceen
+			fadeClear = true;
+		}
+	}
+
+	void freezeGame(bool freeze) {
+		GameObject[] cells = GameObject.FindGameObjectsWithTag("CellRenderer");
+		for (int i = 0; i < cells.Length; i++) {
+			cells [i].GetComponent<Rigidbody2D> ().isKinematic = freeze;
+		}
 	}
 
 	#region Intéraction

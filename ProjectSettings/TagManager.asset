@@ -17,6 +17,8 @@ TagManager:
   - AudioManager
   - Virus
   - Cell
+  - Fade
+  - CellRenderer
   layers:
   - Default
   - TransparentFX
