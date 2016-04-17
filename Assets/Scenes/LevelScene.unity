@@ -576,6 +576,64 @@ BoxCollider2D:
 Transform:
   m_PrefabParentObject: {fileID: 426644, guid: 697fd4d9e808f514b92df809a078b568, type: 2}
   m_PrefabInternal: {fileID: 559497275}
+--- !u!1001 &240197606
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 11187522, guid: d81cd80e7feee5546a107117183b7726, type: 2}
+      propertyPath: m_Animations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 421200, guid: d81cd80e7feee5546a107117183b7726, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.53582186
+      objectReference: {fileID: 0}
+    - target: {fileID: 421200, guid: d81cd80e7feee5546a107117183b7726, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.0960667
+      objectReference: {fileID: 0}
+    - target: {fileID: 421200, guid: d81cd80e7feee5546a107117183b7726, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 421200, guid: d81cd80e7feee5546a107117183b7726, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 421200, guid: d81cd80e7feee5546a107117183b7726, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 421200, guid: d81cd80e7feee5546a107117183b7726, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 421200, guid: d81cd80e7feee5546a107117183b7726, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 421200, guid: d81cd80e7feee5546a107117183b7726, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 11187522, guid: d81cd80e7feee5546a107117183b7726, type: 2}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 52f5a85f39412439ea31169d435008d3, type: 2}
+    - target: {fileID: 11187522, guid: d81cd80e7feee5546a107117183b7726, type: 2}
+      propertyPath: m_Animations.Array.data[0]
+      value: 
+      objectReference: {fileID: 7400000, guid: 52f5a85f39412439ea31169d435008d3, type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d81cd80e7feee5546a107117183b7726, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &240197607 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 121296, guid: d81cd80e7feee5546a107117183b7726, type: 2}
+  m_PrefabInternal: {fileID: 240197606}
 --- !u!4 &241997507 stripped
 Transform:
   m_PrefabParentObject: {fileID: 434012, guid: 2952df9957c19ee4b9e4e539bf23c5f2, type: 2}
@@ -1462,9 +1520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomGO:
-  - randomGO: {fileID: 136966, guid: d6b1f5ee925d5a648b67667951822f3c, type: 2}
-    popProbability: 1
-  - randomGO: {fileID: 111812, guid: ebf4cfc6c09e0ed479492101b5adf58a, type: 2}
+  - randomGO: {fileID: 240197607}
     popProbability: 1
   fullinessFactor: 10
   scale: 0.45
@@ -1675,11 +1731,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 434632, guid: f69b246333430a346b76701200fbe6d9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -6
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 434632, guid: f69b246333430a346b76701200fbe6d9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -10
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 434632, guid: f69b246333430a346b76701200fbe6d9, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2902,9 +2958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomGO:
-  - randomGO: {fileID: 136966, guid: d6b1f5ee925d5a648b67667951822f3c, type: 2}
-    popProbability: 1
-  - randomGO: {fileID: 111812, guid: ebf4cfc6c09e0ed479492101b5adf58a, type: 2}
+  - randomGO: {fileID: 240197607}
     popProbability: 1
   fullinessFactor: 8
   scale: 0.2
@@ -3031,9 +3085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomGO:
-  - randomGO: {fileID: 148272, guid: 691c522419d3cc849981ef58af37c605, type: 2}
-    popProbability: 1
-  - randomGO: {fileID: 125846, guid: 02125e68d97449e4ea8ae3d5c9e80226, type: 2}
+  - randomGO: {fileID: 240197607}
     popProbability: 1
   fullinessFactor: 4
   scale: 0.8

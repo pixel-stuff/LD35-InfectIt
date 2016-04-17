@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Effect_BGCellRound
+  m_Name: Effect_Square
   m_Shader: {fileID: 4800000, guid: f4e57a7eeffd6a146abbad9eb668ed55, type: 3}
   m_ShaderKeywords: _ISLIGHTACTIVE_ON
   m_LightmapFlags: 5
@@ -19,7 +19,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 872d8b62890f0e54586970f5af001c39, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -85,20 +85,6 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _DistortTex
-        second:
-          m_Texture: {fileID: 2800000, guid: e80c3c84ea861404d8a427db8b7abf04, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _MaskTex
-        second:
-          m_Texture: {fileID: 2800000, guid: 872d8b62890f0e54586970f5af001c39, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -123,7 +109,7 @@ Material:
       data:
         first:
           name: _LightIntensity
-        second: 31.3
+        second: 1
       data:
         first:
           name: _Parallax
@@ -160,46 +146,6 @@ Material:
         first:
           name: _Metallic
         second: 0
-      data:
-        first:
-          name: _BorderFreq
-        second: 10
-      data:
-        first:
-          name: _BorderAmp
-        second: 0.005
-      data:
-        first:
-          name: _BorderSpeed
-        second: 4
-      data:
-        first:
-          name: _Refraction
-        second: 1
-      data:
-        first:
-          name: _Speed
-        second: 0.2
-      data:
-        first:
-          name: _Freq
-        second: 1
-      data:
-        first:
-          name: _Amp
-        second: 1
-      data:
-        first:
-          name: _XUVRatio
-        second: 0.5
-      data:
-        first:
-          name: _YUVRatio
-        second: 0.5
-      data:
-        first:
-          name: _SpriteSize
-        second: 1
     m_Colors:
       data:
         first:
@@ -208,7 +154,7 @@ Material:
       data:
         first:
           name: _LightColor
-        second: {r: 0.9852941, g: 0, b: 0, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _EmissionColor
@@ -217,11 +163,3 @@ Material:
         first:
           name: _Color
         second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _LightRay
-        second: {r: 0, g: -1, b: 0, a: 0}
-      data:
-        first:
-          name: _NormalRay
-        second: {r: 0, g: 1, b: 0, a: 0}
