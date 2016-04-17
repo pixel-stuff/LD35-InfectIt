@@ -39,6 +39,10 @@ public class PlayerManager : MonoBehaviour {
         }
 	}
 
+	public void FightOver(bool win) {
+		//jmorel do the stuff
+	}
+
 	#region Intéraction
 	public static void UP(){
 		try{

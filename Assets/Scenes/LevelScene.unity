@@ -2916,7 +2916,7 @@ MonoBehaviour:
     popProbability: 1
   - randomGO: {fileID: 145288, guid: 0becdfd898919ad4b990aac5055b8bb1, type: 2}
     popProbability: 1
-  - randomGO: {fileID: 145288, guid: 0becdfd898919ad4b990aac5055b8bb1, type: 2}
+  - randomGO: {fileID: 194874, guid: 8cf1a1de9ba76954a8d83f86127f9915, type: 2}
     popProbability: 1
   fullinessFactor: 8
   scale: 0.2
