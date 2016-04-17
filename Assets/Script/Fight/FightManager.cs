@@ -35,11 +35,15 @@ public class FightManager : MonoBehaviour {
 	[Space(10)]
 	public StepFight[] m_listOfInput; 	
 	[Space(10)]
-	public GameObject[] m_listGameObjectDisplayable;
-
-
+	public GameObject m_bubbleVirus;
+	public GameObject[] m_listOfInputVirus;
+	[Space(10)]
+	public GameObject m_bubbleCell;
+	public GameObject m_InputVirus;
+	[Space(10)]
 	public AudioClip m_sonFailed;
 	public Sprite m_spriteInterrogation;
+
 	private bool m_isInit = false;
 	private int m_numberOfStep = 4;
 	private List<int> m_listOfIDInputWaited = new List<int> ();
@@ -54,13 +58,13 @@ public class FightManager : MonoBehaviour {
 		TimeManager.m_instance.ChangeState (TimeState.fight);
 		m_listOfIDInputWaited.Clear();
 		m_currentStepInputWaited = 0;
-		for (int i = 0; i < m_listGameObjectDisplayable.Length; i++) {
+		for (int i = 0; i < m_listOfInputVirus.Length; i++) {
 			if (i < m_numberOfStep) {
 				int temp = UnityEngine.Random.Range (0, 4);
 				m_listOfIDInputWaited.Add (temp);
-				m_listGameObjectDisplayable [i].GetComponent<Image> ().sprite = m_listOfInput [temp].m_spriteController;
+				m_listOfInputVirus [i].GetComponent<Image> ().sprite = m_listOfInput [temp].m_spriteController;
 			} else {
-				m_listGameObjectDisplayable [i].SetActive (false);
+				m_listOfInputVirus [i].SetActive (false);
 			}
 		}
 		/*for (int i = 0; i < m_listOfIDInputWaited.Count; i++) {
@@ -75,19 +79,27 @@ public class FightManager : MonoBehaviour {
 	}
 
 
+
 	private int m_numberOfBeatDoneInvoke = 0;
 	private float m_lastBeatInvoke = 0;
+	private bool m_cellStatementActive = false;
+	private int m_cellStatement = 0;
 	public void BeatInvokeHandle(){
 		m_numberOfBeatDoneInvoke++;
 		m_lastBeatInvoke = Time.time;
-		for (int i = 0; i < m_listGameObjectDisplayable.Length; i++) {
+		for (int i = 0; i < m_listOfInputVirus.Length; i++) {
 			if( i < m_numberOfStep){
-				if (!m_listGameObjectDisplayable [i].GetComponent<Animation> ().isPlaying) {
-					m_listGameObjectDisplayable [i].GetComponent<Animation> ().Play ("ScaleInputBeatFight");
+				if (!m_listOfInputVirus [i].GetComponent<Animation> ().isPlaying) {
+					m_listOfInputVirus [i].GetComponent<Animation> ().Play ("ScaleInputBeatFight");
 				}
 			}
 		}
 
+	}
+
+	private void StartCellStatement(){
+		m_cellStatementActive = true;
+		m_cellStatement = 0;
 	}
 
 	// Use this for initialization
@@ -175,7 +187,7 @@ public class FightManager : MonoBehaviour {
 	public void SuccessInput(){
 		this.GetComponent<AudioSource> ().clip = m_listOfInput [m_listOfIDInputWaited[m_currentStepInputWaited]].m_soundByVirus;
 		this.GetComponent<AudioSource> ().Play ();
-		m_listGameObjectDisplayable [m_currentStepInputWaited].GetComponent<Animation> ().Play ("ScaleInputEnterFight");
+		m_listOfInputVirus [m_currentStepInputWaited].GetComponent<Animation> ().Play ("ScaleInputEnterFight");
 		m_currentStepInputWaited++;
 	}
 	#endregion Input
