@@ -47,7 +47,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &5864834
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -99,8 +99,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  moveForce: 4
+  moveForce: 6
   nbFrameAnimation: 300
+  EJECT: 0
 --- !u!212 &21207620
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -111,7 +112,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 2100000, guid: 620fb6dfa5d31204080d7113b13e12e0, type: 2}
+  - {fileID: 2100000, guid: 294c9cacb42df1c428bbf86026253b99, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
