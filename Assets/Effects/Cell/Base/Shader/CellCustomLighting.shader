@@ -22,7 +22,6 @@
 		_LightIntensity("Light Intensity", Float) = 1.0
 		_NormalTex("Normal Map", 2D) = "bleu" {}
 	}
-
 	SubShader{
 		Tags{ "Queue" = "Transparent" "IgnoreProjector" = "True"/* "RenderType" = "Transparent"*/ }
 		LOD 200

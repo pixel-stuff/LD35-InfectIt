@@ -141,15 +141,15 @@ Material:
       data:
         first:
           name: _Speed
-        second: 0.34
+        second: 0.46
       data:
         first:
           name: _Freq
-        second: 6.17
+        second: 0.7
       data:
         first:
           name: _Amp
-        second: 0.18
+        second: 0.43
     m_Colors:
       data:
         first:

@@ -10,7 +10,10 @@
 		Tags{ "Queue" = "Transparent" "IgnoreProjector" = "True"/* "RenderType" = "Transparent"*/ }
 		LOD 200
 		Cull Off
-		Blend SrcAlpha One
+		/*Zwrite Off
+		ZTest Off*/
+		Blend SrcAlpha OneMinusSrcAlpha
+		//Blend SrcAlpha One
 
 		GrabPass{}
 
@@ -61,7 +64,8 @@
 			fixed4 frag(v2f i) : SV_Target
 			{
 				fixed4 col = fixed4(0, 0, 0, 1);
-				col.rgb = saturate(_Color.rgb*tex2D(_MainTex, i.uv).a*_Amp);
+			col.a = tex2D(_MainTex, i.uv).a;
+				col.rgb = saturate(_Color.rgb*col.a*_Amp);
 				UNITY_APPLY_FOG(i.fogCoord, col);
 				return col;
 			}
