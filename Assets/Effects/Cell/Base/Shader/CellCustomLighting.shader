@@ -22,11 +22,9 @@
 	}
 
 	SubShader{
-		Tags{ "Queue" = "Transparent"/* "RenderType" = "Transparent"*/ }
+		Tags{ "Queue" = "Transparent" "IgnoreProjector" = "True"/* "RenderType" = "Transparent"*/ }
 		LOD 200
 		Cull Off
-		Zwrite Off
-		ZTest Off
 		Blend SrcAlpha OneMinusSrcAlpha
 
 		GrabPass {}
@@ -285,7 +283,6 @@
 					col.rgb = lerp(col.rgb, Lambert * _LightColor * gradient * _LightIntensity, gradient);
 					//col.rgb = debug;
 				}
-				else col.rgb += 0.5;
 				// apply fog
 				//col.rgb = debug;
 				UNITY_APPLY_FOG(i.fogCoord, col);

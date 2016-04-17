@@ -10,11 +10,9 @@
 	}
 
 	SubShader{
-		Tags{ "Queue" = "Transparent"/* "RenderType" = "Transparent"*/ }
+		Tags{ "Queue" = "Transparent" "IgnoreProjector" = "True"/* "RenderType" = "Transparent"*/ }
 		LOD 200
 		Cull Off
-		Zwrite Off
-		ZTest Off
 		Blend SrcAlpha OneMinusSrcAlpha
 
 		//GrabPass{}
@@ -109,7 +107,7 @@
 				float2 offset = distort * _Refraction * _GrabTexture_TexelSize.xy;
 				i.screenPos.xy = offset * i.screenPos.z + i.screenPos.xy;
 				col = tex2D(_GrabTexture, i.screenPos);*/
-				col = tex2D(_MainTex, uv);
+				col.rgb = (tex2D(_MainTex, uv)*_Color).rgb;
 
 				UNITY_APPLY_FOG(i.fogCoord, col);
 				return col;

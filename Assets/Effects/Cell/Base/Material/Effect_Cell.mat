@@ -80,13 +80,6 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _MaskTex
-        second:
-          m_Texture: {fileID: 2800000, guid: 6968002de18343c419fe1dd823c56448, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
           name: _DistortTex
         second:
           m_Texture: {fileID: 2800000, guid: e80c3c84ea861404d8a427db8b7abf04, type: 3}
@@ -94,9 +87,16 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _MaskTex
+        second:
+          m_Texture: {fileID: 2800000, guid: d58f0f6053745d8489f5c578cbe205f1, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _NormalTex
         second:
-          m_Texture: {fileID: 2800000, guid: e80c3c84ea861404d8a427db8b7abf04, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -180,6 +180,14 @@ Material:
         first:
           name: _LightDistanceMax
         second: 500
+      data:
+        first:
+          name: _IsLightActive
+        second: 0
+      data:
+        first:
+          name: _LightIntensity
+        second: 1
     m_Colors:
       data:
         first:
@@ -188,7 +196,7 @@ Material:
       data:
         first:
           name: _LightColor
-        second: {r: 0.07586217, g: 1, b: 0, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _EmissionColor
