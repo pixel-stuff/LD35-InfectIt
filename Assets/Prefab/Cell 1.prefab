@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &140190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 495176}
+  - 58: {fileID: 5846652}
+  - 114: {fileID: 11472060}
+  m_Layer: 9
+  m_Name: VirusHack
+  m_TagString: Cell
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &181292
 GameObject:
   m_ObjectHideFlags: 0
@@ -26,10 +43,23 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181292}
   m_LocalRotation: {x: 0, y: 0, z: 0.006283145, w: 0.9999803}
-  m_LocalPosition: {x: -7.54, y: -3.09, z: -1.26}
+  m_LocalPosition: {x: -13.6, y: -5.1, z: -1.26}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_Children:
+  - {fileID: 495176}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!4 &495176
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140190}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 451118}
   m_RootOrder: 0
 --- !u!50 &5019570
 Rigidbody2D:
@@ -38,16 +68,30 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181292}
-  m_UseAutoMass: 1
-  m_Mass: 1
-  m_LinearDrag: 0
+  m_UseAutoMass: 0
+  m_Mass: 2
+  m_LinearDrag: 1.5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!58 &5846652
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140190}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 7.88
 --- !u!61 &6163136
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -57,7 +101,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -73,6 +117,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca1d0a07a56f61c4188a68d5f17c7754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedThreshold: 0.01
+  accelerationSpeedThreshold: 0.2
+  minForce: 2000
+  maxForce: 3000
+  nbMoveBeforeStopRun: 2
+  m_isAfraid: 0
+--- !u!114 &11472060
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3697ede48de1c4443b6948dadd312d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cellScript: {fileID: 11466654}
 --- !u!212 &21257146
 SpriteRenderer:
   m_ObjectHideFlags: 1
