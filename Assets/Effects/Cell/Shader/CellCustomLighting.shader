@@ -14,7 +14,6 @@
 		_DistortTex("Distort (RGB)", 2D) = "white" {}
 		// Lighting
 		_LightColor("Light Color", Color) = (1,1,1,1)
-		_LightPos("Light Position", Vector) = (0, 0, 0)
 		_LightDistanceMax("Light Distance Max.", Float) = 10.0
 		_NormalTex("Normal Map", 2D) = "white" {}
 	}
@@ -72,7 +71,6 @@
 			// Lighting
 			sampler2D _NormalTex;
 			float4 _LightColor;
-			float4 _LightPos;
 			float _LightDistanceMax;
 
 			struct Input {
@@ -261,7 +259,7 @@
 
 				// Lighting
 				float4 worldPos = mul(_Object2World, i.vertex);
-				float3 lPos = mul(_Object2World, _LightPos);
+				float3 lPos = _WorldSpaceLightPos0.xyz;
 				float3 LtoD = lPos.xyz - worldPos.xyz;
 				float3 EtoD =  _WorldSpaceCameraPos - worldPos.xyz;
 				float3 normal = /*UnpackNormal(*/tex2D(_NormalTex, uv).rgb/*)*/;
