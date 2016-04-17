@@ -46,7 +46,7 @@ public class PlayerManager : MonoBehaviour {
 		if (m_fadeRenderer && (fadeBlanc || fadeClear)) {
 			float step = 1f / fadeDuration;
 			float actualStep = m_fadeTime++ * step;
-			Debug.Log (actualStep);
+		//	Debug.Log (actualStep);
 			actualStep = (actualStep > 1f) ? 1f : actualStep;
 			float alphaValue;
 			if (fadeBlanc) {
