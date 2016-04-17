@@ -13,15 +13,18 @@
 		_Amp("Distort. Amp", Float) = 1.0
 		_DistortTex("Distort (RGB)", 2D) = "white" {}
 		// Lighting
+		_LightPos("Light Pos", Vector) = (0, 0, 0)
 		_LightColor("Light Color", Color) = (1,1,1,1)
 		_LightDistanceMax("Light Distance Max.", Float) = 10.0
 		_NormalTex("Normal Map", 2D) = "white" {}
 	}
 
 	SubShader{
-		Tags{ "Queue" = "Transparent" "Queue" = "Overlay"/* "RenderType" = "Transparent"*/ }
+		Tags{ "Queue" = "Transparent" "LightMode" = "ForwardAdd"/* "RenderType" = "Transparent"*/ }
 		LOD 200
 		Cull Off
+		Zwrite Off
+		ZTest Off
 		Blend SrcAlpha OneMinusSrcAlpha
 
 		GrabPass {}
@@ -45,11 +48,12 @@
 			struct v2f
 			{
 				UNITY_FOG_COORDS(1)
-					float4 vertex : SV_POSITION;
+				float4 vertex : SV_POSITION;
 				float3 color : COLOR;
 				float2 uv : TEXCOORD0;
 				float3 worldRefl : TEXCOORD1;
 				float4 screenPos : TEXCOORD2;
+				float3 lPos : TEXCOORD3;
 			};
 
 			sampler2D _MainTex;
@@ -95,6 +99,7 @@
 				half depth = length(mul(UNITY_MATRIX_MV, v.vertex));
 				o.screenPos.z = depth;
 				o.screenPos.w = depth;
+				o.lPos = unity_LightPosition[0];
 				return o;
 			}
 
@@ -259,15 +264,16 @@
 
 				// Lighting
 				float4 worldPos = mul(_Object2World, i.vertex);
-				float3 lPos = _WorldSpaceLightPos0.xyz;
-				float3 LtoD = lPos.xyz - worldPos.xyz;
+				float3 lPos = _LightPos;
+				float3 LtoD = lPos - worldPos.xyz;
 				float3 EtoD =  _WorldSpaceCameraPos - worldPos.xyz;
-				float3 normal = /*UnpackNormal(*/tex2D(_NormalTex, uv).rgb/*)*/;
-				float Lambert = min(1.0, max(0.0, dot(-normalize(EtoD), normalize(normal))));
-
+				float3 normal = tex2D(_NormalTex, uv).rgb;
+				float Lambert = min(1.0, max(0.0, dot(-normalize(LtoD), normalize(normal))));
+				float3 debug = lPos;
 				//col.rgb = lerp(col.rgb, _LightColor, (1.0 - length(LtoD) / _LightDistanceMax))*max(0.0, dot(normalize(LtoD), normalize(normal)));
 				col.rgb = col.rgb + Lambert * _LightColor * (1.0 - length(LtoD) / _LightDistanceMax);
 				// apply fog
+				//col.rgb = debug;
 				UNITY_APPLY_FOG(i.fogCoord, col);
 				return col;
 			}
