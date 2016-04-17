@@ -99,7 +99,7 @@ public class Cell : MonoBehaviour {
 		Debug.Log("CellNOMNOMNOM");
 		this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = true;
 		this.gameObject.GetComponent<BoxCollider2D> ().enabled = false;
-
+		PlayerManager.m_instance.addDestroyCell ();
 		this.gameObject.SetActive (false);
 		//this.GetComponent<Animation> ().Play ("DeathANimation");
 	}

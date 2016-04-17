@@ -54,7 +54,13 @@ public class GameStateManager : MonoBehaviour {
 			onChangeStateEvent(state);
 		}
         if(m_gameState == GameState.GameOver) {
-
+			if (PlayerManager.m_instance.nbDestroyCell >= PlayerManager.m_instance.nbDestroyCellForWin) {
+				PlayerManager.m_instance.nbDestroyCell = 0;
+				Application.LoadLevelAsync ("SuccessGameOverScene");
+			} else {
+				
+				Application.LoadLevelAsync ("GameOverScene");
+			}
         }
 	}
 }

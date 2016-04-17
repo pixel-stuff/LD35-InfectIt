@@ -21,6 +21,9 @@ public class PlayerManager : MonoBehaviour {
 
 	// Use this for initialization
 
+	public int nbDestroyCellForWin =7;
+	public int nbDestroyCell;
+
 	public int fadeDuration;
 
 	private bool fadeBlanc;
@@ -66,16 +69,19 @@ public class PlayerManager : MonoBehaviour {
 			temp.a = alphaValue;
 			m_fadeRenderer.color = temp;
 		}
-		
-	
-
-
 	}
 
+
+	public void addDestroyCell() {
+		nbDestroyCell++;
+		if (nbDestroyCell == nbDestroyCellForWin) {
+			GameStateManager.setGameState (GameState.GameOver);
+		}
+	}
 	void handleChangeGameState(GameState newState){
 		Debug.Log ("PLAYER SEE THE NEW STATE : " + newState);
         if(GameStateManager.getGameState()==GameState.GameOver) {
-            Camera.main.GetComponent<Effect_Saturation>().startSaturation(4.0f);
+         //   Camera.main.GetComponent<Effect_Saturation>().startSaturation(4.0f);
         }
 	}
 
