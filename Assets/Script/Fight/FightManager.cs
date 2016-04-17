@@ -12,10 +12,8 @@ public struct StepFight{
 						//3 -> rond/right
 	public string m_nameController;
 	public Sprite m_spriteController;
-	public string m_nameKeyBoard;
-	public Sprite m_spriteKeyBoard;
-	public AudioClip m_sonReussi;
-	public AudioClip m_sonFailed;
+	public AudioClip m_soundByCell;
+	public AudioClip m_soundByVirus;
 }
 
 
@@ -39,6 +37,9 @@ public class FightManager : MonoBehaviour {
 	[Space(10)]
 	public GameObject[] m_listGameObjectDisplayable;
 
+
+	public AudioClip m_sonFailed;
+	public Sprite m_spriteInterrogation;
 	private bool m_isInit = false;
 	private int m_numberOfStep = 4;
 	private List<int> m_listOfIDInputWaited = new List<int> ();
@@ -166,13 +167,13 @@ public class FightManager : MonoBehaviour {
 	}
 
 	public void ErrorInput(){
-		this.GetComponent<AudioSource> ().clip = m_listOfInput [m_listOfIDInputWaited[m_currentStepInputWaited]].m_sonFailed;
+		this.GetComponent<AudioSource> ().clip = m_sonFailed;
 		this.GetComponent<AudioSource> ().Play ();
 		m_currentStepInputWaited = 0;
 	}
 
 	public void SuccessInput(){
-		this.GetComponent<AudioSource> ().clip = m_listOfInput [m_listOfIDInputWaited[m_currentStepInputWaited]].m_sonReussi;
+		this.GetComponent<AudioSource> ().clip = m_listOfInput [m_listOfIDInputWaited[m_currentStepInputWaited]].m_soundByVirus;
 		this.GetComponent<AudioSource> ().Play ();
 		m_listGameObjectDisplayable [m_currentStepInputWaited].GetComponent<Animation> ().Play ("ScaleInputEnterFight");
 		m_currentStepInputWaited++;
