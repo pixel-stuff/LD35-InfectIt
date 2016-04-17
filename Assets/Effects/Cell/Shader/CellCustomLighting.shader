@@ -74,6 +74,7 @@
 			sampler2D _DistortTex : register(s2);
 			// Lighting
 			sampler2D _NormalTex;
+			float3 _LightPos;
 			float4 _LightColor;
 			float _LightDistanceMax;
 
