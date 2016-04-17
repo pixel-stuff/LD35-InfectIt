@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Effect_Fire
-  m_Shader: {fileID: 4800000, guid: 49270ce17d6746943a24746f43df4010, type: 3}
+  m_Name: Effect_ColorOnAlphaMask
+  m_Shader: {fileID: 4800000, guid: 03344c7384854c04a822b19209392020, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: 3000
@@ -19,7 +19,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 9e41b5d16b43a3546a16b5263b9d749e, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -78,13 +78,6 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _DistortTex
-        second:
-          m_Texture: {fileID: 2800000, guid: e80c3c84ea861404d8a427db8b7abf04, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -134,22 +127,6 @@ Material:
         first:
           name: _Metallic
         second: 0
-      data:
-        first:
-          name: _Refraction
-        second: 0.12
-      data:
-        first:
-          name: _Speed
-        second: 0.34
-      data:
-        first:
-          name: _Freq
-        second: 6.17
-      data:
-        first:
-          name: _Amp
-        second: 0.18
     m_Colors:
       data:
         first:
@@ -158,4 +135,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: 1, g: 0, b: 0, a: 1}
