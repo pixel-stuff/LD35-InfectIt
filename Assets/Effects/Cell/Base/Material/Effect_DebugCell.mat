@@ -151,19 +151,19 @@ Material:
       data:
         first:
           name: _BorderFreq
-        second: 1.91
+        second: 20.71
       data:
         first:
           name: _BorderAmp
-        second: 0.07
+        second: 0.02
       data:
         first:
           name: _BorderSpeed
-        second: 4
+        second: 6.35
       data:
         first:
           name: _Refraction
-        second: 1
+        second: 1.02
       data:
         first:
           name: _Speed

@@ -5,6 +5,7 @@
 		_BorderAmp("Border Amplitude", Range(0.0, 0.1)) = 0.005
 		_BorderSpeed("Border Speed", Range(0.0, 10000.0)) = 4.0
 		_MainTex("Base (RGB) Trans (A)", 2D) = "white" {}
+/*#ifdef _REFRACTION
 		_MaskTex("Mask texture", 2D) = "white" {}
 	// refraction thing
 		_Refraction("Refraction", Range(0.00, 100.0)) = 1.0
@@ -12,6 +13,7 @@
 		_Freq("Distort. Freq", Float) = 1.0
 		_Amp("Distort. Amp", Float) = 1.0
 		_DistortTex("Distort (RGB)", 2D) = "white" {}
+#endif*/
 		// Lighting
 		_LightPos("Light Pos", Vector) = (0, 0, 0)
 		_LightColor("Light Color", Color) = (1,1,1,1)
@@ -64,15 +66,17 @@
 			float _BorderFreq;
 			float _BorderAmp;
 			float _BorderSpeed;
+			float4 _MainTex_ST;
+#ifdef _REFRACTION
 			// refraction thing
 			float4 _GrabTexture_TexelSize;
-			float4 _DistortTex_ST;
 			float _Refraction;
 			float _Speed;
 			float _Freq;
 			float _Amp;
 			sampler2D _GrabTexture : register(s0);
 			sampler2D _DistortTex : register(s2);
+#endif
 			// Lighting
 			sampler2D _NormalTex;
 			float3 _LightPos;
@@ -81,14 +85,6 @@
 			float _IsLightActive;
 			float _LightIntensity;
 
-			struct Input {
-				float2 uv_MainTex;
-				float4 vertex;
-				float4 color;
-				float2 uv;
-				float4 screenPos;
-			};
-
 			v2f vert(appdata v)
 			{
 				v2f o = (v2f)0;
@@ -96,8 +92,9 @@
 				//v.vertex = v.vertex*sin(v.vertex+_Time.y);
 				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
 				o.worldPos = mul(_Object2World, v.vertex).xyz;
-				o.uv = TRANSFORM_TEX(v.uv, _DistortTex);
+				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 				UNITY_TRANSFER_FOG(o, o.vertex);
+#ifdef _REFRACTION
 				o.color = v.color;
 
 				half4 screenpos = ComputeGrabScreenPos(o.vertex);
@@ -106,9 +103,10 @@
 				o.screenPos.z = depth;
 				o.screenPos.w = depth;
 				o.lPos = unity_LightPosition[0];
+#endif
 				return o;
 			}
-
+#ifdef _REFRACTION
 			float hash(float2 uv) {
 				return frac(sin(dot(uv, float2(100.3f, 10.73f)))*51.214255);
 			}
@@ -185,6 +183,7 @@
 			float2 scaleUV(in float2 uv, in float2 scale) {
 				return uv / scale;
 			}
+#endif
 
 			fixed4 frag(v2f i) : SV_Target
 			{
@@ -228,6 +227,7 @@
 					uv += _borderOffset;
 
 				fixed4 spriteColor = tex2D(_MainTex, uv) * _Color;
+#ifdef _REFRACTION
 				fixed4 mask = tex2D(_MaskTex, uv).a;
 				//col.r = spriteColor.a;
 				// getting 
@@ -244,6 +244,9 @@
 					col.gb = 0.0;*/
 				}
 				else col = spriteColor;
+#else
+				col = spriteColor;
+#endif
 				/*else if (spriteColor.a > 0.0f) {
 					float2 grabTexcoord = i.screenPos.xy;
 					fixed4 colTransparency = tex2D(_GrabTexture, grabTexcoord);

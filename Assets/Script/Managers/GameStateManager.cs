@@ -53,5 +53,8 @@ public class GameStateManager : MonoBehaviour {
 		if(onChangeStateEvent != null){
 			onChangeStateEvent(state);
 		}
+        if(m_gameState == GameState.GameOver) {
+
+        }
 	}
 }

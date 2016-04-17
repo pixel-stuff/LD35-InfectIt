@@ -3,6 +3,7 @@
 		_Color("Main Color", Color) = (1,1,1,1)
 		// refraction thing
 		_MainTex("Main Tex", 2D) = "white" {}
+		_Amp("Amplitude", Float) = 1.0
 	}
 
 	SubShader{
@@ -60,7 +61,7 @@
 			fixed4 frag(v2f i) : SV_Target
 			{
 				fixed4 col = fixed4(0, 0, 0, 1);
-				col.rgb = _Color.rgb*tex2D(_MainTex, i.uv).a;
+				col.rgb = saturate(_Color.rgb*tex2D(_MainTex, i.uv).a*_Amp);
 				UNITY_APPLY_FOG(i.fogCoord, col);
 				return col;
 			}

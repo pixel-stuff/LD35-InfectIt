@@ -91,7 +91,6 @@ public class InputManager : MonoBehaviour {
 	}
 
 	void UpdateGameOverState(){
-
 	}
 
 }

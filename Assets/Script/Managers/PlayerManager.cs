@@ -34,6 +34,9 @@ public class PlayerManager : MonoBehaviour {
 
 	void handleChangeGameState(GameState newState){
 		Debug.Log ("PLAYER SEE THE NEW STATE : " + newState);
+        if(GameStateManager.getGameState()==GameState.GameOver) {
+            Camera.main.GetComponent<Effect_Saturation>().startSaturation(4.0f);
+        }
 	}
 
 	#region Intéraction
