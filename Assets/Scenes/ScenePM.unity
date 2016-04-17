@@ -426,7 +426,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 2100000, guid: 620fb6dfa5d31204080d7113b13e12e0, type: 2}
+  - {fileID: 2100000, guid: 484f8f6e37c5b434fb30914b1ff25fb2, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -857,6 +857,10 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 21271306, guid: 8be9132dfd0cd814284f13faefb8b5a4, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 91312cbfc3571794eaa7d0bfd1f123f1, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8be9132dfd0cd814284f13faefb8b5a4, type: 2}
   m_IsPrefabParent: 0
@@ -1032,6 +1036,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 21276380, guid: 820a0c8ad09ffc747b1ac39814c2a82d, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 484f8f6e37c5b434fb30914b1ff25fb2, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 820a0c8ad09ffc747b1ac39814c2a82d, type: 2}
   m_IsPrefabParent: 0

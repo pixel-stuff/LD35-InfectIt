@@ -95,6 +95,7 @@
 			{
 				v2f o = (v2f)0;
 				UNITY_INITIALIZE_OUTPUT(v2f, o);
+				//v.vertex = v.vertex*sin(v.vertex+_Time.y);
 				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
 				o.worldPos = mul(_Object2World, v.vertex).xyz;
 				o.uv = TRANSFORM_TEX(v.uv, _DistortTex);
@@ -284,6 +285,7 @@
 					col.rgb = col.rgb + Lambert * _LightColor * gradient * _LightIntensity;
 					//col.rgb = debug;
 				}
+				else col.rgb += 0.5;
 				// apply fog
 				//col.rgb = debug;
 				UNITY_APPLY_FOG(i.fogCoord, col);
