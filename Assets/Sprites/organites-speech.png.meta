@@ -1,11 +1,11 @@
 fileFormatVersion: 2
 guid: 9c8cdf6b730c5470b89c7b1c37403062
-timeCreated: 1460904102
+timeCreated: 1460909602
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
     21300000: organites-speech_0
-    21300002: organites-speech_1
+    21300002: rond
     21300004: organites-speech_2
     21300006: organites-speech_3
     21300008: organites-speech_4
@@ -22,9 +22,9 @@ TextureImporter:
     21300030: organites-speech_15
     21300032: organites-speech_16
     21300034: organites-speech_18
-    21300036: organites-speech_19
+    21300036: triangle
     21300038: organites-speech_20
-    21300040: organites-speech_21
+    21300040: croix
     21300042: organites-speech_22
     21300044: organites-speech_23
     21300046: organites-speech_24
@@ -33,7 +33,7 @@ TextureImporter:
     21300052: organites-speech_27
     21300054: organites-speech_28
     21300056: organites-speech_29
-    21300058: organites-speech_30
+    21300058: carre
     21300060: speech bubble
   serializedVersion: 2
   mipmaps:
@@ -92,7 +92,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: organites-speech_1
+    - name: rond
       rect:
         serializedVersion: 2
         x: 113
@@ -404,7 +404,7 @@ TextureImporter:
         - {x: 19.5, y: -20}
         - {x: 19.5, y: 18}
         - {x: 15.5, y: 20}
-    - name: organites-speech_19
+    - name: triangle
       rect:
         serializedVersion: 2
         x: 12
@@ -441,7 +441,7 @@ TextureImporter:
         - {x: 51, y: -45}
         - {x: 51, y: -27}
         - {x: 14, y: 44}
-    - name: organites-speech_21
+    - name: croix
       rect:
         serializedVersion: 2
         x: 940
@@ -652,7 +652,7 @@ TextureImporter:
         - {x: 298.5, y: -66.5}
         - {x: 344.5, y: -14.5}
         - {x: 344.5, y: 96.5}
-    - name: organites-speech_30
+    - name: carre
       rect:
         serializedVersion: 2
         x: 18

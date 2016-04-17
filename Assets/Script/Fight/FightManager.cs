@@ -43,7 +43,7 @@ public class FightManager : MonoBehaviour {
 	private int m_numberOfStep = 4;
 	private List<int> m_listOfIDInputWaited = new List<int> ();
 	private float m_timeBetweenBeat = 0.60f;
-	private float m_percentErrorAceptable = 40.0f;
+	private float m_percentErrorAceptable = 30.0f;
 
 	private int m_currentStepInputWaited = 0;
 
@@ -54,17 +54,17 @@ public class FightManager : MonoBehaviour {
 		m_listOfIDInputWaited.Clear();
 		m_currentStepInputWaited = 0;
 		for (int i = 0; i < m_listGameObjectDisplayable.Length; i++) {
-			if( i < m_numberOfStep){
+			if (i < m_numberOfStep) {
 				int temp = UnityEngine.Random.Range (0, 4);
-				m_listOfIDInputWaited.Add(temp);
-				m_listGameObjectDisplayable [i].GetComponent<Image> ().sprite = m_listOfInput[temp].m_spriteController;
-			}else{
+				m_listOfIDInputWaited.Add (temp);
+				m_listGameObjectDisplayable [i].GetComponent<Image> ().sprite = m_listOfInput [temp].m_spriteController;
+			} else {
 				m_listGameObjectDisplayable [i].SetActive (false);
 			}
 		}
-		for (int i = 0; i < m_listOfIDInputWaited.Count; i++) {
+		/*for (int i = 0; i < m_listOfIDInputWaited.Count; i++) {
 			Debug.Log ("init : " + m_listOfInput[m_listOfIDInputWaited[i]].m_nameKeyBoard);
-		}
+		}*/
 
 		FindObjectOfType<AudioManager> ().m_beatEvent += BeatInvokeHandle;
 		FindObjectOfType<AudioManager> ().PlayFightMusic ();
@@ -86,6 +86,7 @@ public class FightManager : MonoBehaviour {
 				}
 			}
 		}
+
 	}
 
 	// Use this for initialization
@@ -98,16 +99,16 @@ public class FightManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Debug.Log ("Up : " + IsTimingOK());
-		Debug.Log("step : " + m_currentStepInputWaited + ", ID waited " + m_listOfIDInputWaited[m_currentStepInputWaited] + ", name = " + m_listOfInput[m_listOfIDInputWaited[m_currentStepInputWaited]].m_nameKeyBoard);
+		//Debug.Log("step : " + m_currentStepInputWaited + ", ID waited " + m_listOfIDInputWaited[m_currentStepInputWaited] + ", name = " + m_listOfInput[m_listOfIDInputWaited[m_currentStepInputWaited]].m_nameKeyBoard);
 	}
 
 	#region Input
 	public void UpInput(){
-		if (m_listOfIDInputWaited [m_currentStepInputWaited] != 0) {
+		if (!IsTimingOK ()) {
 			ErrorInput ();
 			return;
 		}
-		if (!IsTimingOK ()) {
+		if (m_listOfIDInputWaited [m_currentStepInputWaited] != 0) {
 			ErrorInput ();
 			return;
 		}
@@ -115,11 +116,11 @@ public class FightManager : MonoBehaviour {
 	}
 
 	public void DownInput(){
-		if (m_listOfIDInputWaited [m_currentStepInputWaited] != 2) {
+		if (!IsTimingOK ()) {
 			ErrorInput ();
 			return;
 		}
-		if (!IsTimingOK ()) {
+		if (m_listOfIDInputWaited [m_currentStepInputWaited] != 2) {
 			ErrorInput ();
 			return;
 		}
@@ -127,11 +128,11 @@ public class FightManager : MonoBehaviour {
 	}
 
 	public void RightInput(){
-		if (m_listOfIDInputWaited [m_currentStepInputWaited] != 3) {
+		if (!IsTimingOK ()) {
 			ErrorInput ();
 			return;
 		}
-		if (!IsTimingOK ()) {
+		if (m_listOfIDInputWaited [m_currentStepInputWaited] != 3) {
 			ErrorInput ();
 			return;
 		}
@@ -139,11 +140,11 @@ public class FightManager : MonoBehaviour {
 	}
 
 	public void LeftInput(){
-		if (m_listOfIDInputWaited [m_currentStepInputWaited] != 1) {
+		if (!IsTimingOK ()) {
 			ErrorInput ();
 			return;
 		}
-		if (!IsTimingOK ()) {
+		if (m_listOfIDInputWaited [m_currentStepInputWaited] != 1) {
 			ErrorInput ();
 			return;
 		}
@@ -152,10 +153,13 @@ public class FightManager : MonoBehaviour {
 
 	public bool IsTimingOK(){
 		bool isOK = false;
+		//Debug.Log ("diff1 : " + Mathf.Abs (Time.time - m_lastBeatInvoke) + " -> " + (m_timeBetweenBeat * m_percentErrorAceptable / 100f));
 		if (Mathf.Abs (Time.time - m_lastBeatInvoke) <= m_timeBetweenBeat * m_percentErrorAceptable / 100f) {
 			isOK = true;
 		}
-		if (Mathf.Abs (Time.time + m_timeBetweenBeat - m_lastBeatInvoke) <= m_timeBetweenBeat * m_percentErrorAceptable / 100f) {
+
+		//Debug.Log ("diff2 : " + Mathf.Abs (Time.time - m_timeBetweenBeat - m_lastBeatInvoke) + " -> " + (m_timeBetweenBeat * m_percentErrorAceptable / 100f));
+		if (Mathf.Abs (Time.time - m_timeBetweenBeat - m_lastBeatInvoke) <= m_timeBetweenBeat * m_percentErrorAceptable / 100f) {
 			isOK = true;
 		}
 		return isOK;
