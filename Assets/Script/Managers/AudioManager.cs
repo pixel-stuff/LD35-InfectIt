@@ -23,6 +23,9 @@ public class AudioManager : MonoBehaviour {
 	[SerializeField]
 	private string m_backgroundAudioSource;
 
+	[SerializeField]
+	private static string m_fightMusic;
+
 	private static Transform m_transform;
 
 	public Action m_beatEvent;
@@ -49,11 +52,16 @@ public class AudioManager : MonoBehaviour {
 
 	}
 
+	public static void PlayFightMusic(){
+		Play (m_fightMusic);
+	}
+
 	public void Beat(){
 		if (m_beatEvent != null) {
 			m_beatEvent ();
 		}
 	}
+
 
 
 	// Update is called once per frame

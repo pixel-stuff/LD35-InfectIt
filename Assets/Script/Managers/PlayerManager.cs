@@ -39,33 +39,53 @@ public class PlayerManager : MonoBehaviour {
 	#region Intéraction
 	public static void UP(){
 		Debug.Log("UP ! ");
-		GameObject.FindGameObjectWithTag ("Virus").GetComponent<Virus> ().up ();
 		try{
-		FindObjectOfType<FightManager> ().UpInput ();
+			GameObject.FindGameObjectWithTag ("Virus").GetComponent<Virus> ().up ();
 		}catch(Exception e){}
 	}
 
 	public static void DOWN(){
 		Debug.Log("DOWN ! ");
-		GameObject.FindGameObjectWithTag ("Virus").GetComponent<Virus> ().down ();
 		try{
-			FindObjectOfType<FightManager> ().DownInput ();
+			GameObject.FindGameObjectWithTag ("Virus").GetComponent<Virus> ().down ();
 		}catch(Exception e){}
 	}
 
 	public static void LEFT(){
 		Debug.Log("LEFT ! ");
-		GameObject.FindGameObjectWithTag ("Virus").GetComponent<Virus> ().left ();
 		try{
-			FindObjectOfType<FightManager> ().LeftInput ();
+			GameObject.FindGameObjectWithTag ("Virus").GetComponent<Virus> ().left ();
 		}catch(Exception e){}
 	}
 
 	public static void RIGHT(){
 		Debug.Log("RIGHT ! ");
-		GameObject.FindGameObjectWithTag ("Virus").GetComponent<Virus> ().right ();
+		try{
+			GameObject.FindGameObjectWithTag ("Virus").GetComponent<Virus> ().right ();
+		}catch(Exception e){}
+	}
+
+	public static void UpFight(){
+		try{
+			FindObjectOfType<FightManager> ().UpInput ();
+		}catch(Exception e){}
+	}
+
+	public static void LeftFight(){
+		try{
+			FindObjectOfType<FightManager> ().LeftInput ();
+		}catch(Exception e){}
+	}
+
+	public static void RightFight(){
 		try{
 			FindObjectOfType<FightManager> ().RightInput ();
+		}catch(Exception e){}
+	}
+
+	public static void DownFight(){
+		try{
+			FindObjectOfType<FightManager> ().DownInput ();
 		}catch(Exception e){}
 	}
 	#endregion Intéraction

@@ -12,6 +12,20 @@ public struct StepFight{
 
 
 public class FightManager : MonoBehaviour {
+	#region Singleton
+	private static FightManager m_instance;
+	void Awake(){
+		if(m_instance == null){
+			//If I am the first instance, make me the Singleton
+			m_instance = this;
+		}else{
+			//If a Singleton already exists and you find
+			//another reference in scene, destroy it!
+			if(this != m_instance)
+				Destroy(this.gameObject);
+		}
+	}
+	#endregion Singleton
 	[Space(10)]
 	public StepFight[] m_listStep;
 	[Space(10)]
