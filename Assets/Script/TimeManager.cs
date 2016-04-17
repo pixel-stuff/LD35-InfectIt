@@ -61,6 +61,7 @@ public class TimeManager : MonoBehaviour {
 				anim = true;
 			}
 		}else{
+			b.rate = new ParticleSystem.MinMaxCurve(0f);
 		}
 	}
 
