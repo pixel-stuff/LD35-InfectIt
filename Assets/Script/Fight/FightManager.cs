@@ -40,7 +40,7 @@ public class FightManager : MonoBehaviour {
 	[Space(10)]
 	public GameObject m_bubbleCell;
 	public GameObject m_InputVirus;
-	[Space(10)]
+	[Space(20)]
 	public AudioClip m_sonFailed;
 	public Sprite m_spriteInterrogation;
 
@@ -48,21 +48,23 @@ public class FightManager : MonoBehaviour {
 	private int m_numberOfStep = 4;
 	private List<int> m_listOfIDInputWaited = new List<int> ();
 	private float m_timeBetweenBeat = 0.60f;
-	private float m_percentErrorAceptable = 30.0f;
+	private float m_percentErrorAceptable = 25.0f;
 
 	private int m_currentStepInputWaited = 0;
 
 
 
 	public void InitFight(Cell cell){
+		
 		TimeManager.m_instance.ChangeState (TimeState.fight);
+
 		m_listOfIDInputWaited.Clear();
 		m_currentStepInputWaited = 0;
+
 		for (int i = 0; i < m_listOfInputVirus.Length; i++) {
 			if (i < m_numberOfStep) {
 				int temp = UnityEngine.Random.Range (0, 4);
 				m_listOfIDInputWaited.Add (temp);
-				m_listOfInputVirus [i].GetComponent<Image> ().sprite = m_listOfInput [temp].m_spriteController;
 			} else {
 				m_listOfInputVirus [i].SetActive (false);
 			}
@@ -71,10 +73,9 @@ public class FightManager : MonoBehaviour {
 			Debug.Log ("init : " + m_listOfInput[m_listOfIDInputWaited[i]].m_nameKeyBoard);
 		}*/
 
-		FindObjectOfType<AudioManager> ().m_beatEvent += BeatInvokeHandle;
 		FindObjectOfType<AudioManager> ().PlayFightMusic ();
 		m_lastBeatInvoke = Time.time;
-
+		Invoke("StartCellStatement", 2.0f);
 		m_isInit = true;
 	}
 
@@ -87,12 +88,17 @@ public class FightManager : MonoBehaviour {
 	public void BeatInvokeHandle(){
 		m_numberOfBeatDoneInvoke++;
 		m_lastBeatInvoke = Time.time;
-		for (int i = 0; i < m_listOfInputVirus.Length; i++) {
+
+		/*for (int i = 0; i < m_listOfInputVirus.Length; i++) {
 			if( i < m_numberOfStep){
 				if (!m_listOfInputVirus [i].GetComponent<Animation> ().isPlaying) {
 					m_listOfInputVirus [i].GetComponent<Animation> ().Play ("ScaleInputBeatFight");
 				}
 			}
+		}*/
+
+		if (m_cellStatementActive) {
+			NextStepCellStatement ();
 		}
 
 	}
@@ -102,9 +108,14 @@ public class FightManager : MonoBehaviour {
 		m_cellStatement = 0;
 	}
 
+	private void NextStepCellStatement(){
+
+	}
+
 	// Use this for initialization
 	void Start () {
 		m_timeBetweenBeat = FindObjectOfType<AudioManager> ().m_timeBetweenBeat;
+		FindObjectOfType<AudioManager> ().m_beatEvent += BeatInvokeHandle;
 		InitFight (null);
 		GameStateManager.setGameState (GameState.Playing);
 	}
