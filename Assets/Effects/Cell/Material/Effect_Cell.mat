@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Effect_Cell
-  m_Shader: {fileID: 4800000, guid: c059e40eeab0c904c86da8e399c867ab, type: 3}
+  m_Shader: {fileID: 4800000, guid: 0ae76ac213c06554582f0b016fb82031, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: 3000
@@ -19,7 +19,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 6b871dda9f6506a47990c3711e464f75, type: 3}
+          m_Texture: {fileID: 2800000, guid: e830eb1f02358564397bd8b138be5b42, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -82,7 +82,21 @@ Material:
         first:
           name: _DistortTex
         second:
-          m_Texture: {fileID: 2800000, guid: 17da6d53ec93a0444bd0f751b1d02477, type: 3}
+          m_Texture: {fileID: 2800000, guid: e80c3c84ea861404d8a427db8b7abf04, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MaskTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 6968002de18343c419fe1dd823c56448, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _NormalTex
+        second:
+          m_Texture: {fileID: 2800000, guid: f0d4af3d055fb4c51abe961d81c2d4a5, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -137,7 +151,7 @@ Material:
       data:
         first:
           name: _BorderFreq
-        second: 18
+        second: 16.65
       data:
         first:
           name: _BorderAmp
@@ -162,7 +176,19 @@ Material:
         first:
           name: _Amp
         second: 1
+      data:
+        first:
+          name: _LightDistanceMax
+        second: 1000
     m_Colors:
+      data:
+        first:
+          name: _LightPos
+        second: {r: 292.2, g: 341, b: 0, a: 0}
+      data:
+        first:
+          name: _LightColor
+        second: {r: 0.81437325, g: 0.83793104, b: 0.4374493, a: 1}
       data:
         first:
           name: _EmissionColor
