@@ -21,10 +21,12 @@ public class AudioManager : MonoBehaviour {
 	#endregion Singleton
 
 	[SerializeField]
-	private string m_backgroundAudioSource;
+	private string m_menuMusic = "sneaky_theme_100bpm";
+	private GameObject m_menuMusicGB;
 
 	private static Transform m_transform;
 
+	[Space(25)]
 	[SerializeField]
 	private string m_fightMusic = "infect_it_theme_125bpm";
 	public Action m_beatFightEvent;
@@ -47,23 +49,26 @@ public class AudioManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		m_transform = this.transform;
-		//Play (m_backgroundAudioSource);
+		PlayMenuMusic (m_menuMusic);
 	}
 
-	public static void Play(string clipname){
+	public void PlayMenuMusic(string clipname){
 		//Create an empty game object
-		GameObject go = new GameObject ("Audio_" +  clipname);
-		go.transform.parent = m_transform;
+		m_menuMusicGB = new GameObject ("Audio_" +  clipname);
+		m_menuMusicGB.transform.parent = m_transform;
 		//Load clip from ressources folder
 		AudioClip newClip =  Instantiate(Resources.Load (clipname, typeof(AudioClip))) as AudioClip;
 
 		//Add and bind an audio source
-		AudioSource source = go.AddComponent<AudioSource>();
+		AudioSource source = m_menuMusicGB.AddComponent<AudioSource>();
 		source.clip = newClip;
 		//Play and destroy the component
 		source.Play();
-		Destroy (go, newClip.length);
+		Destroy (m_menuMusicGB, newClip.length);
+	}
 
+	public void StopMenuBeat(){
+		Destroy (m_menuMusicGB);
 	}
 
 	#region Recherche
