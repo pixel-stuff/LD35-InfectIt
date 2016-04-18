@@ -57,7 +57,7 @@ public class FightManager : MonoBehaviour {
 	private int m_numberOfStep = 4;
 	private List<int> m_listOfIDInputWaited = new List<int> ();
 	private float m_timeBetweenBeat = 0.60f;
-	private float m_percentErrorAceptable = 25.0f;
+	private float m_percentErrorAceptable = 40.0f;
 	private bool m_waitingForInput = false;
 
 	private int m_currentStepInputWaited = 0;
