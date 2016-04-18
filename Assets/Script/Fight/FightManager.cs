@@ -317,6 +317,7 @@ public class FightManager : MonoBehaviour {
 	}
 
 	public void SuccessInput(){
+		m_CroixExplication.GetComponent<Image> ().color = Color.white;
 		if (m_currentStepInputWaited < m_listOfIDInputWaited.Count-1) {
 			m_listOfInputVirus [m_currentStepInputWaited].GetComponent<Image> ().sprite = m_listOfInput [m_listOfIDInputWaited [m_currentStepInputWaited]].m_sprite;
 			m_listOfInputVirus [m_currentStepInputWaited].GetComponent<Image> ().color = m_listOfInput [m_listOfIDInputWaited [m_currentStepInputWaited]].m_spriteCoolor;
@@ -334,6 +335,10 @@ public class FightManager : MonoBehaviour {
 			m_listOfInputVirus [m_currentStepInputWaited].GetComponent<Animation> ().Play ("ScaleInputEnterFight");
 			Invoke ("InvokeWinAfterDelay",1.0f);
 		}
+	}
+
+	public void resetInputCroix(){
+
 	}
 
 	public void InvokeWinAfterDelay(){
