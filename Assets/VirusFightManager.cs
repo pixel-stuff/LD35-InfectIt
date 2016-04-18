@@ -10,7 +10,6 @@ public class VirusFightManager : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
-		m_animator.SetTrigger ("Triangle");
 	}
 	
 	// Update is called once per frame
@@ -18,7 +17,19 @@ public class VirusFightManager : MonoBehaviour {
 	
 	}
 
+	public void TriangleAnim(){
+		m_animator.SetTrigger ("Triangle");
+	}
+	public void SquareAnim(){
+		m_animator.SetTrigger ("Square");
+	}
+	public void DonutsAnim(){
+		m_animator.SetTrigger ("Donuts");
+	}
+	public void CrossAnim(){
+		m_animator.SetTrigger ("Cross");
+	}
 	public void BeatAnim(){
-		m_animator.SetTrigger ("Beat");
+		this.GetComponent<Animation> ().Play ();
 	}
 }

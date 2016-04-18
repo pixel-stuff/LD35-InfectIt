@@ -1802,6 +1802,7 @@ GameObject:
   - 212: {fileID: 172479365}
   - 114: {fileID: 172479367}
   - 95: {fileID: 172479364}
+  - 111: {fileID: 172479368}
   m_Layer: 0
   m_Name: virus
   m_TagString: Untagged
@@ -1864,7 +1865,7 @@ Transform:
   m_GameObject: {fileID: 172479363}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 947.38904, y: -399.6, z: -16376.035}
-  m_LocalScale: {x: 171.35715, y: 193.21428, z: 1}
+  m_LocalScale: {x: 175, y: 175, z: 1}
   m_Children:
   - {fileID: 1641015086}
   - {fileID: 1805342574}
@@ -1883,6 +1884,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c51abd97600541259edc16aea4fe522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!111 &172479368
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 172479363}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: e0051f1d1fa10423889e9af07ed339a4, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: e0051f1d1fa10423889e9af07ed339a4, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &197046320
 GameObject:
   m_ObjectHideFlags: 0
@@ -6489,6 +6505,7 @@ MonoBehaviour:
     m_spriteCoolor: {r: 0.91372555, g: 0.227451, b: 0, a: 1}
     m_soundByCell: {fileID: 8300000, guid: a4ceb10e20a034cb8863f9c16c797ef5, type: 3}
     m_soundByVirus: {fileID: 8300000, guid: c54fb7ca14d364423ac699463c60ce2e, type: 3}
+  m_virus: {fileID: 172479367}
   m_bubbleVirus: {fileID: 1772796594}
   m_listOfInputVirus:
   - {fileID: 869671765}

@@ -62,6 +62,7 @@ public class TimeManager : MonoBehaviour {
 			}
 		}else{
 			b.rate = new ParticleSystem.MinMaxCurve(0f);
+			GameStateManager.m_instance.setGameState (GameState.GameOver);
 		}
 	}
 
