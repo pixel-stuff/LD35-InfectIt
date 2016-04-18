@@ -9,7 +9,7 @@ public class Virus : MonoBehaviour {
 
 	public bool EJECT;
 
-	public bool m_isOnCenterAnimation;
+	private bool m_isOnCenterAnimation;
 	private Vector2 m_centerCell; 
 	private float m_animationTime;
 	private Vector3 toto;
@@ -26,12 +26,11 @@ public class Virus : MonoBehaviour {
 	void Update () {
 		if (m_isOnCenterAnimation) {
 			Vector3 dif = -toto + new Vector3(m_centerCell.x,m_centerCell.y,this.transform.position.z);
-			Debug.Log (dif);
 			this.transform.position = toto + dif*(goOnCenterAnimation.Evaluate(m_animationTime/nbFrameAnimation));
 			m_animationTime++;
 			if (m_animationTime > nbFrameAnimation) {
 				m_isOnCenterAnimation = false;
-				//Corrupt ();
+				PlayerManager.m_instance.startFight ();
 			}
 		}
 
@@ -67,19 +66,14 @@ public class Virus : MonoBehaviour {
 		//this.GetComponent<SpriteRenderer> ().material.SetFloat ("_BorderSpeed", 15);
 		if (other.gameObject.layer == LayerMask.NameToLayer("Cell")) {
 			if (!m_isEjected && other.gameObject.GetComponent<virusHack> ().acceptFusion()) {
-				PlayerManager.m_instance.startFight ();
 				Debug.Log ("Start Collide Cell");
-				m_targetCell = other.gameObject;
-				toto = this.transform.position;
 				this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = true;
-				//other.gameObject.GetComponent<virusHack> ().startFusion ();
-				/*this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = true;
 				other.gameObject.GetComponent<virusHack> ().startFusion ();
 				m_isOnCenterAnimation = true;
 				m_centerCell = other.gameObject.transform.position;
 				m_animationTime = 0;
 				toto = this.transform.position;
-				m_targetCell = other.gameObject;*/
+				m_targetCell = other.gameObject;
 			}
 		}
 	}
@@ -101,17 +95,6 @@ public class Virus : MonoBehaviour {
 	}
 
 	public void ConsumeCell() {
-		/*this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = true;
-		m_targetCell.GetComponent<virusHack> ().startFusion ();*/
-		m_isOnCenterAnimation = true;
-		m_centerCell = m_targetCell.transform.position;
-		m_animationTime = 0;
-		toto = this.transform.position;
-
-	}
-
-	public void Corrupt() {
-
 		m_isOnCenterAnimation = false;
 		this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = false;
 		m_targetCell.GetComponent<virusHack> ().consume ();
