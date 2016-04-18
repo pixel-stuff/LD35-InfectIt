@@ -80,16 +80,16 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _DistortTex
+          name: _MaskTex
         second:
-          m_Texture: {fileID: 2800000, guid: e80c3c84ea861404d8a427db8b7abf04, type: 3}
+          m_Texture: {fileID: 2800000, guid: 6b871dda9f6506a47990c3711e464f75, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _MaskTex
+          name: _DistortTex
         second:
-          m_Texture: {fileID: 2800000, guid: 6b871dda9f6506a47990c3711e464f75, type: 3}
+          m_Texture: {fileID: 2800000, guid: e80c3c84ea861404d8a427db8b7abf04, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -150,6 +150,18 @@ Material:
         second: 0
       data:
         first:
+          name: _BorderFreq
+        second: 5.9
+      data:
+        first:
+          name: _BorderAmp
+        second: 0.0134
+      data:
+        first:
+          name: _BorderSpeed
+        second: 10
+      data:
+        first:
           name: _Refraction
         second: 1
       data:
@@ -166,18 +178,6 @@ Material:
         second: 1
       data:
         first:
-          name: _BorderFreq
-        second: 5
-      data:
-        first:
-          name: _BorderAmp
-        second: 0.03
-      data:
-        first:
-          name: _BorderSpeed
-        second: 2.5
-      data:
-        first:
           name: _LightDistanceMax
         second: 10
       data:
@@ -191,7 +191,7 @@ Material:
       data:
         first:
           name: _AnglePenetration
-        second: 198.2
+        second: 0
     m_Colors:
       data:
         first:
