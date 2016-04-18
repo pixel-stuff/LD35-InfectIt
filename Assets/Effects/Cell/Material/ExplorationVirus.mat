@@ -137,15 +137,15 @@ Material:
       data:
         first:
           name: _BorderFreq
-        second: 10
+        second: 6
       data:
         first:
           name: _BorderAmp
-        second: 0.005
+        second: 0.008
       data:
         first:
           name: _BorderSpeed
-        second: 4
+        second: 13
       data:
         first:
           name: _LightDistanceMax
@@ -179,3 +179,7 @@ Material:
         first:
           name: _Color
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _DirPenetration
+        second: {r: 0, g: 0, b: 0, a: 0}

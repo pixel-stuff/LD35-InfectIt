@@ -3062,7 +3062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   downsample: 0
-  blurSize: 0.12
+  blurSize: 3
   blurIterations: 1
   blurType: 0
   blurShader: {fileID: 4800000, guid: b7958cd835664d6419b924e6aba48d94, type: 3}
