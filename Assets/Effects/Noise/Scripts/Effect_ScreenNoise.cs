@@ -21,6 +21,8 @@ public class Effect_ScreenNoise : UnityStandardAssets.ImageEffects.PostEffectsBa
     private Material noiseMaterial = null;
     public Texture noiseTex = null;
 
+    public Color color;
+
 
     public override bool CheckResources() {
         CheckSupport(false);
@@ -47,6 +49,7 @@ public class Effect_ScreenNoise : UnityStandardAssets.ImageEffects.PostEffectsBa
         }
 
         noiseMaterial.SetVector("_Parameter", new Vector4(speed, freq, amp, noiseType));
+        noiseMaterial.SetVector("_Color", color);
         Graphics.Blit(source, destination, noiseMaterial);
     }
 }

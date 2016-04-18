@@ -5,6 +5,7 @@ Shader "Custom/Effect/Noise" {
 		_Bloom("Bloom (RGB)", 2D) = "black" {}
 		_MaskTex("Mask (A)", 2D) = "white" {}
 		_NoiseTex("Mask (A)", 2D) = "white" {}
+		_Color("Color (RGBA)", Color) = (0, 0, 0, 1)
 	}
 
 	CGINCLUDE
@@ -18,6 +19,7 @@ Shader "Custom/Effect/Noise" {
 
 	uniform half4 _MainTex_TexelSize;
 	uniform half4 _Parameter;
+	uniform half4 _Color;
 
 	struct v2f_tap
 	{
@@ -99,7 +101,7 @@ Shader "Custom/Effect/Noise" {
 			N = fixed4(t, t, t, 1.0);
 		}
 
-		return lerp(color, N*_Parameter.z, noiseT.a);
+		return lerp(color, N*_Color*_Parameter.z, noiseT.a);
 	}
 
 	ENDCG
