@@ -7,7 +7,7 @@ public class UIMenuManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		AudioManager.m_instance.PlayMenuMusic ();
 	}
 	
 	// Update is called once per frame

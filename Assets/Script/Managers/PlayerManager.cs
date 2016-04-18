@@ -121,7 +121,7 @@ public class PlayerManager : MonoBehaviour {
 		Debug.Log("StartFight");
 		isFighting = true; 
 		fadeBlanc = true;
-		//AudioManager.m_instance.PlayRechercheMusic (); jmorel
+		AudioManager.m_instance.StopRechercheBeat ();
 		//animation -> blanc
 
 	}
