@@ -1501,6 +1501,10 @@ Prefab:
       propertyPath: parralaxColor.b
       value: 0.43529412
       objectReference: {fileID: 0}
+    - target: {fileID: 11480066, guid: 7ce7fe3f7bf852143a6e7048dbbf1982, type: 2}
+      propertyPath: fullinessFactor
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ce7fe3f7bf852143a6e7048dbbf1982, type: 2}
   m_IsPrefabParent: 0
@@ -4073,6 +4077,10 @@ Prefab:
     - target: {fileID: 11480066, guid: 7ce7fe3f7bf852143a6e7048dbbf1982, type: 2}
       propertyPath: parralaxColor.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11480066, guid: 7ce7fe3f7bf852143a6e7048dbbf1982, type: 2}
+      propertyPath: fullinessFactor
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ce7fe3f7bf852143a6e7048dbbf1982, type: 2}
@@ -7631,6 +7639,10 @@ Prefab:
       propertyPath: parralaxColor.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11480066, guid: 7ce7fe3f7bf852143a6e7048dbbf1982, type: 2}
+      propertyPath: fullinessFactor
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ce7fe3f7bf852143a6e7048dbbf1982, type: 2}
   m_IsPrefabParent: 0
@@ -7682,6 +7694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_particules: {fileID: 1520485729}
+  m_timeMax: 20
 --- !u!114 &1881301695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8345,6 +8358,10 @@ Prefab:
     - target: {fileID: 11480066, guid: 7ce7fe3f7bf852143a6e7048dbbf1982, type: 2}
       propertyPath: parralaxColor.a
       value: 0.365
+      objectReference: {fileID: 0}
+    - target: {fileID: 11480066, guid: 7ce7fe3f7bf852143a6e7048dbbf1982, type: 2}
+      propertyPath: fullinessFactor
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ce7fe3f7bf852143a6e7048dbbf1982, type: 2}
