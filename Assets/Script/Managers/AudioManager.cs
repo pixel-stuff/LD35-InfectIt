@@ -97,6 +97,7 @@ public class AudioManager : MonoBehaviour {
 		//Add and bind an audio source
 		AudioSource source = m_menuMusicGB.AddComponent<AudioSource>();
 		source.clip = newClip;
+		source.loop = true;
 		//Play and destroy the component
 		source.Play();
 		Destroy (m_menuMusicGB, newClip.length);
@@ -155,6 +156,7 @@ public class AudioManager : MonoBehaviour {
 			//Add and bind an audio source
 			AudioSource source = m_fightMusicGB.AddComponent<AudioSource> ();
 			source.clip = newClip;
+			source.loop = true;
 			//Play and destroy the component
 			source.Play ();
 		} else {

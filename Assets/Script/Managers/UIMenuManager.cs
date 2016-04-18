@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class UIMenuManager : MonoBehaviour {
 
 
-
+	public GameObject virus;
 	// Use this for initialization
 	void Start () {
 		AudioManager.m_instance.PlayMenuMusic ();
@@ -25,14 +26,20 @@ public class UIMenuManager : MonoBehaviour {
 	float timeStartLoading;
 
 	public void GoToLevelScene(){
+		loadAnimation ();
 		GameStateManager.m_instance.setGameState (GameState.Playing);
-		a =  Application.LoadLevelAsync ("LevelScene");
+		SceneManager.LoadSceneAsync("LevelScene",LoadSceneMode.Single);//.LoadLevelAsync ("LevelScene");
 		AudioManager.m_instance.StopMenuBeat ();
 		//a.allowSceneActivation = false;
 		timeStartLoading = Time.time;
+
 	}
 
 	public void GoToTutoScene(){
 		a =  Application.LoadLevelAsync ("TutorialScene");
+	}
+
+	public void loadAnimation() {
+		virus.SetActive (true);
 	}
 }
