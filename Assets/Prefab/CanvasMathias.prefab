@@ -11,7 +11,7 @@ GameObject:
   - 198: {fileID: 19810576}
   - 199: {fileID: 19941612}
   m_Layer: 5
-  m_Name: particles2
+  m_Name: particlesDonuts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,7 +117,7 @@ GameObject:
   - 198: {fileID: 19840492}
   - 199: {fileID: 19958060}
   m_Layer: 5
-  m_Name: particles1
+  m_Name: particlesSquare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +150,7 @@ GameObject:
   - 198: {fileID: 19822614}
   - 199: {fileID: 19900874}
   m_Layer: 5
-  m_Name: particles0
+  m_Name: particlesTriangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -310,7 +310,7 @@ GameObject:
   - 198: {fileID: 19852202}
   - 199: {fileID: 19920268}
   m_Layer: 5
-  m_Name: particles3
+  m_Name: particlesCross
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1062,6 +1062,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c51abd97600541259edc16aea4fe522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_triangleParticule: {fileID: 123056}
+  m_squareParticule: {fileID: 122174}
+  m_donutsParticule: {fileID: 101456}
+  m_crossParticule: {fileID: 157594}
 --- !u!114 &11479532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1164,7 +1168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.497}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1279,7 +1283,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300060, guid: 9c8cdf6b730c5470b89c7b1c37403062, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 606e6d62126e340adb83718c20f68595, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -9563,7 +9567,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1, y: 21}
-  m_SizeDelta: {x: 163, y: 139}
+  m_SizeDelta: {x: 125, y: 143}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &100100000
 Prefab:

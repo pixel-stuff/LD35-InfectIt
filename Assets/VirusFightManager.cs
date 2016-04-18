@@ -5,6 +5,11 @@ public class VirusFightManager : MonoBehaviour {
 
 	private Animator m_animator;
 
+	public GameObject m_triangleParticule;
+	public GameObject m_squareParticule;
+	public GameObject m_donutsParticule;
+	public GameObject m_crossParticule;
+
 	void Awake(){
 		m_animator = this.GetComponent<Animator> ();
 	}
@@ -15,6 +20,33 @@ public class VirusFightManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public void StartTriangleParticles(){
+		m_triangleParticule.SetActive (true);
+		Invoke ("StopParticles",0.3f);
+	}
+
+	public void StartSquareParticles(){
+		m_squareParticule.SetActive (true);
+		Invoke ("StopParticles",0.3f);
+	}
+
+	public void StartDonutsParticles(){
+		m_donutsParticule.SetActive (true);
+		Invoke ("StopParticles",0.3f);
+	}
+
+	public void StartCrossParticles(){
+		m_crossParticule.SetActive (true);
+		Invoke ("StopParticles",0.3f);
+	}
+
+	public void StopParticles(){
+		m_triangleParticule.SetActive (false);
+		m_squareParticule.SetActive (false);
+		m_donutsParticule.SetActive (false);
+		m_crossParticule.SetActive (false);
 	}
 
 	public void TriangleAnim(){

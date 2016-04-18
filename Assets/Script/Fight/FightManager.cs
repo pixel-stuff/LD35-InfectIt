@@ -231,6 +231,7 @@ public class FightManager : MonoBehaviour {
 			return;
 		}
 		m_virus.TriangleAnim ();
+		m_virus.StartTriangleParticles ();
 		SuccessInput ();
 	}
 
@@ -248,6 +249,7 @@ public class FightManager : MonoBehaviour {
 			return;
 		}
 		m_virus.CrossAnim ();
+		m_virus.StartCrossParticles ();
 		SuccessInput ();
 	}
 
@@ -265,6 +267,7 @@ public class FightManager : MonoBehaviour {
 			return;
 		}
 		m_virus.DonutsAnim ();
+		m_virus.StartDonutsParticles ();
 		SuccessInput ();
 	}
 
@@ -282,6 +285,7 @@ public class FightManager : MonoBehaviour {
 			return;
 		}
 		m_virus.SquareAnim ();
+		m_virus.StartSquareParticles ();
 		SuccessInput ();
 	}
 
@@ -318,6 +322,7 @@ public class FightManager : MonoBehaviour {
 
 	public void SuccessInput(){
 		m_CroixExplication.GetComponent<Image> ().color = Color.white;
+		Invoke ("resetInputCroix", 0.3f);
 		if (m_currentStepInputWaited < m_listOfIDInputWaited.Count-1) {
 			m_listOfInputVirus [m_currentStepInputWaited].GetComponent<Image> ().sprite = m_listOfInput [m_listOfIDInputWaited [m_currentStepInputWaited]].m_sprite;
 			m_listOfInputVirus [m_currentStepInputWaited].GetComponent<Image> ().color = m_listOfInput [m_listOfIDInputWaited [m_currentStepInputWaited]].m_spriteCoolor;
@@ -338,7 +343,7 @@ public class FightManager : MonoBehaviour {
 	}
 
 	public void resetInputCroix(){
-
+		m_CroixExplication.GetComponent<Image> ().color = new Color (1f, 1f, 1f, 0.5f);
 	}
 
 	public void InvokeWinAfterDelay(){
