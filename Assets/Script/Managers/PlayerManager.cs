@@ -140,7 +140,14 @@ public class PlayerManager : MonoBehaviour {
 	void freezeGame(bool freeze) {
 		GameObject[] cells = GameObject.FindGameObjectsWithTag("CellRenderer");
 		for (int i = 0; i < cells.Length; i++) {
+			Debug.Log ("freezze  "+ freeze);
 			cells [i].GetComponent<Rigidbody2D> ().isKinematic = freeze;
+		}
+
+		GameObject[] indicators = GameObject.FindGameObjectsWithTag("Indicator");
+		for (int i = 0; i < indicators.Length; i++) {
+			Debug.Log ("freezze  "+ freeze);
+			indicators [i].GetComponent<Rigidbody2D> ().isKinematic = freeze;
 		}
 	}
 

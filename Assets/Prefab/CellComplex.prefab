@@ -240,6 +240,7 @@ MonoBehaviour:
   maxForce: 3000
   nbMoveBeforeStopRun: 2
   m_isAfraid: 0
+  exterior: {fileID: 21255360}
 --- !u!114 &11422376
 MonoBehaviour:
   m_ObjectHideFlags: 1

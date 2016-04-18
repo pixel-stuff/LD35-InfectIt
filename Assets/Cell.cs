@@ -18,6 +18,8 @@ public class Cell : MonoBehaviour {
 	private float m_speed;
 	private Vector3 m_OldPosition;
 	private bool m_accelerationPhase;
+
+	public SpriteRenderer exterior;
 	// Use this for initialization
 	void Start () {
 		m_speed = 0;
@@ -102,5 +104,10 @@ public class Cell : MonoBehaviour {
 		PlayerManager.m_instance.addDestroyCell ();
 		this.gameObject.SetActive (false);
 		//this.GetComponent<Animation> ().Play ("DeathANimation");
+	}
+
+	public bool isOnCamera() {
+		Vector3 viewport = Camera.main.WorldToViewportPoint (this.transform.position);
+		return (viewport.x >0 && viewport.x <1 && viewport.y >0 && viewport.y <1);
 	}
 }

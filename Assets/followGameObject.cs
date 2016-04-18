@@ -19,15 +19,19 @@ public class followGameObject : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (followGO.activeSelf) {
+			if (followGO.gameObject.GetComponent<Cell> ().isOnCamera ()) {
+				container.SetActive (false);
+			} else {
+				container.SetActive (true);
+			}
+				Vector2 moveVector = new Vector2 (followGO.transform.position.x, followGO.transform.position.y) - new Vector2 (this.transform.position.x, this.transform.position.y);
+				moveVector.Normalize ();
 
-			Vector2 moveVector = new Vector2 (followGO.transform.position.x, followGO.transform.position.y) - new Vector2 (this.transform.position.x, this.transform.position.y);
-			moveVector.Normalize ();
-
-			float angle = Mathf.Atan2(moveVector.y, moveVector.x);
-			angle = (-180.0f / Mathf.PI * angle)%360.0f;
-			this.gameObject.GetComponent<Rigidbody2D> ().AddRelativeForce (moveVector * force);
-			container.transform.Rotate( Vector3.forward * (OldRotation -angle));
-			OldRotation = angle;
+				float angle = Mathf.Atan2 (moveVector.y, moveVector.x);
+				angle = (-180.0f / Mathf.PI * angle) % 360.0f;
+				this.gameObject.GetComponent<Rigidbody2D> ().AddRelativeForce (moveVector * force);
+				container.transform.Rotate (Vector3.forward * (OldRotation - angle));
+				OldRotation = angle;
 		} else {
 			this.gameObject.SetActive (false);
 		}

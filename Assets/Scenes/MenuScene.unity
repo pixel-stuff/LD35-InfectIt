@@ -401,21 +401,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!1 &1395961543 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100180, guid: 0d073dabbae925f47bab7000e44e6206, type: 2}
-  m_PrefabInternal: {fileID: 1973071492}
---- !u!114 &1395961544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1395961543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ee019ae2c5db3d45b5d4bae7471c9cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1831705502
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,7 +477,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22435552, guid: 0d073dabbae925f47bab7000e44e6206, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22435552, guid: 0d073dabbae925f47bab7000e44e6206, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -534,11 +519,18 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11470374, guid: 0d073dabbae925f47bab7000e44e6206, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11494574, guid: 0d073dabbae925f47bab7000e44e6206, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 22388716, guid: 0d073dabbae925f47bab7000e44e6206, type: 2}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 647266340}
-    m_RemovedComponents:
-    - {fileID: 11415356, guid: 0d073dabbae925f47bab7000e44e6206, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d073dabbae925f47bab7000e44e6206, type: 2}
   m_IsPrefabParent: 0
