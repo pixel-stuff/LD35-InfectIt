@@ -8300,7 +8300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_particules: {fileID: 1520485729}
-  m_timeMax: 20
+  m_timeMax: 45
 --- !u!114 &1881301695
 MonoBehaviour:
   m_ObjectHideFlags: 0
