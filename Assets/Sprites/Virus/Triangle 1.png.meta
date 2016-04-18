@@ -1,0 +1,945 @@
+fileFormatVersion: 2
+guid: a33c7312c12ca43928254ba9f2d4324b
+timeCreated: 1460993019
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Triangle 1_0
+    21300002: Triangle 1_1
+    21300004: Triangle 1_2
+    21300006: Triangle 1_3
+    21300008: Triangle 1_4
+    21300010: Triangle 1_5
+    21300012: Triangle 1_6
+    21300014: Triangle 1_7
+    21300016: Triangle 1_8
+    21300018: Triangle 1_9
+    21300020: Triangle 1_10
+    21300022: Triangle 1_11
+    21300024: Triangle 1_12
+    21300026: Triangle 1_13
+    21300028: Triangle 1_14
+    21300030: Triangle 1_15
+    21300032: Triangle 1_16
+    21300034: Triangle 1_17
+    21300036: Triangle 1_18
+    21300038: Triangle 1_19
+    21300040: Triangle 1_20
+    21300042: Triangle 1_21
+    21300044: Triangle 1_22
+    21300046: Triangle 1_23
+    21300048: Triangle 1_24
+    21300050: Triangle 1_25
+    21300052: Triangle 1_26
+    21300054: Triangle 1_27
+    21300056: Triangle 1_28
+    21300058: Triangle 1_29
+    21300060: Triangle 1_30
+    21300062: Triangle 1_31
+    21300064: Triangle 1_32
+    21300066: Triangle 1_33
+    21300068: Triangle 1_34
+    21300070: Triangle 1_35
+    21300072: Triangle 1_36
+    21300074: Triangle 1_37
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Triangle 1_0
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 1825
+        width: 189
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41.5, y: 94}
+        - {x: -94.5, y: 59}
+        - {x: -94.5, y: -37}
+        - {x: -66.5, y: -78}
+        - {x: -37.5, y: -94}
+        - {x: 60.5, y: -94}
+        - {x: 94.5, y: -44}
+        - {x: 94.5, y: 45}
+        - {x: 47.5, y: 94}
+    - name: Triangle 1_1
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 1822
+        width: 195
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 97.5, y: 27}
+        - {x: 85.5, y: 60}
+        - {x: 49.5, y: 94}
+        - {x: 26.5, y: 97}
+        - {x: -31.5, y: 97}
+        - {x: -67.5, y: 85}
+        - {x: -97.5, y: 37}
+        - {x: -97.5, y: -40}
+        - {x: -61.5, y: -97}
+        - {x: 37.5, y: -97}
+        - {x: 66.5, y: -81}
+        - {x: 93.5, y: -45}
+        - {x: 97.5, y: -17}
+    - name: Triangle 1_2
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 1816
+        width: 204
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 94, y: 65}
+        - {x: 55, y: 98}
+        - {x: 32, y: 102}
+        - {x: -31, y: 102}
+        - {x: -49, y: 93}
+        - {x: -76, y: 86}
+        - {x: -102, y: 34}
+        - {x: -102, y: -36}
+        - {x: -96, y: -53}
+        - {x: -57, y: -89}
+        - {x: -24, y: -102}
+        - {x: 30, y: -102}
+        - {x: 88, y: -72}
+        - {x: 102, y: -35}
+        - {x: 102, y: 27}
+    - name: Triangle 1_3
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 1813
+        width: 208
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 101, y: 50.5}
+        - {x: 65, y: 92.5}
+        - {x: 34, y: 104.5}
+        - {x: -21, y: 104.5}
+        - {x: -37, y: 103.5}
+        - {x: -67, y: 86.5}
+        - {x: -101, y: 42.5}
+        - {x: -104, y: 34.5}
+        - {x: -104, y: -26.5}
+        - {x: -97, y: -56.5}
+        - {x: -77, y: -78.5}
+        - {x: -36, y: -104.5}
+        - {x: 27, y: -104.5}
+        - {x: 80, y: -84.5}
+        - {x: 97, y: -61.5}
+        - {x: 104, y: -27.5}
+        - {x: 104, y: 42.5}
+    - name: Triangle 1_4
+      rect:
+        serializedVersion: 2
+        x: 1053
+        y: 1810
+        width: 214
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 107, y: 47}
+        - {x: 70, y: 99}
+        - {x: 38, y: 108}
+        - {x: -26, y: 108}
+        - {x: -33, y: 106}
+        - {x: -72, y: 88}
+        - {x: -105, y: 39}
+        - {x: -107, y: 23}
+        - {x: -107, y: -28}
+        - {x: -90, y: -68}
+        - {x: -41, y: -106}
+        - {x: -21, y: -108}
+        - {x: 20, y: -108}
+        - {x: 54, y: -101}
+        - {x: 97, y: -62}
+        - {x: 107, y: -28}
+    - name: Triangle 1_5
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 1808
+        width: 220
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 83, y: 79.5}
+        - {x: 54, y: 102.5}
+        - {x: 36, y: 109.5}
+        - {x: -25, y: 109.5}
+        - {x: -43, y: 107.5}
+        - {x: -70, y: 90.5}
+        - {x: -93, y: 66.5}
+        - {x: -110, y: 36.5}
+        - {x: -110, y: -32.5}
+        - {x: -80, y: -85.5}
+        - {x: -27, y: -109.5}
+        - {x: 18, y: -109.5}
+        - {x: 61, y: -101.5}
+        - {x: 110, y: -43.5}
+        - {x: 110, y: 28.5}
+        - {x: 102, y: 51.5}
+    - name: Triangle 1_6
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 1808
+        width: 224
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 112, y: 24}
+        - {x: 103, y: 64}
+        - {x: 73, y: 92}
+        - {x: 36, y: 110}
+        - {x: -30, y: 110}
+        - {x: -41, y: 108}
+        - {x: -65, y: 100}
+        - {x: -112, y: 42}
+        - {x: -112, y: -26}
+        - {x: -94, y: -65}
+        - {x: -45, y: -104}
+        - {x: -23, y: -110}
+        - {x: 28, y: -110}
+        - {x: 79, y: -93}
+        - {x: 106, y: -42}
+        - {x: 112, y: -24}
+    - name: Triangle 1_7
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1554
+        width: 211
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 104.5, y: 49.5}
+        - {x: 65.5, y: 95.5}
+        - {x: 36.5, y: 105.5}
+        - {x: -33.5, y: 105.5}
+        - {x: -70.5, y: 86.5}
+        - {x: -100.5, y: 42.5}
+        - {x: -105.5, y: 30.5}
+        - {x: -105.5, y: -28.5}
+        - {x: -95.5, y: -58.5}
+        - {x: -73.5, y: -81.5}
+        - {x: -30.5, y: -105.5}
+        - {x: 23.5, y: -105.5}
+        - {x: 25.5, y: -104.5}
+        - {x: 78.5, y: -83.5}
+        - {x: 105.5, y: -29.5}
+        - {x: 105.5, y: 44.5}
+    - name: Triangle 1_8
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1565
+        width: 192
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 47, y: 95.5}
+        - {x: -51, y: 95.5}
+        - {x: -96, y: 39.5}
+        - {x: -96, y: -24.5}
+        - {x: -88, y: -58.5}
+        - {x: -62, y: -88.5}
+        - {x: -27, y: -95.5}
+        - {x: 46, y: -95.5}
+        - {x: 70, y: -86.5}
+        - {x: 96, y: -38.5}
+        - {x: 96, y: 42.5}
+    - name: Triangle 1_9
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 1576
+        width: 168
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 43, y: 84}
+        - {x: -64, y: 84}
+        - {x: -84, y: 32}
+        - {x: -84, y: -63}
+        - {x: -83, y: -68}
+        - {x: -28, y: -84}
+        - {x: 76, y: -84}
+        - {x: 84, y: -66}
+        - {x: 84, y: 44}
+        - {x: 60, y: 79}
+    - name: Triangle 1_10
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 1580
+        width: 181
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.5, y: 82}
+        - {x: -84.5, y: 26}
+        - {x: -90.5, y: 3}
+        - {x: -90.5, y: -82}
+        - {x: 90.5, y: -82}
+        - {x: 90.5, y: 41}
+        - {x: 15.5, y: 82}
+    - name: Triangle 1_11
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 1570
+        width: 199
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 25.5, y: 91.5}
+        - {x: -23.5, y: 91.5}
+        - {x: -99.5, y: -48.5}
+        - {x: -99.5, y: -80.5}
+        - {x: -87.5, y: -91.5}
+        - {x: 90.5, y: -91.5}
+        - {x: 99.5, y: -86.5}
+        - {x: 99.5, y: -43.5}
+        - {x: 38.5, y: 87.5}
+    - name: Triangle 1_12
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 1560
+        width: 217
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 108.5, y: -44.5}
+        - {x: 31.5, y: 75.5}
+        - {x: 34.5, y: 89.5}
+        - {x: 18.5, y: 100.5}
+        - {x: -16.5, y: 100.5}
+        - {x: -40.5, y: 80.5}
+        - {x: -108.5, y: -41.5}
+        - {x: -108.5, y: -81.5}
+        - {x: -103.5, y: -97.5}
+        - {x: -90.5, y: -100.5}
+        - {x: 93.5, y: -100.5}
+        - {x: 106.5, y: -93.5}
+        - {x: 108.5, y: -82.5}
+    - name: Triangle 1_13
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 1555
+        width: 231
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 83.5, y: 1}
+        - {x: 25.5, y: 104}
+        - {x: 10.5, y: 106}
+        - {x: -16.5, y: 106}
+        - {x: -35.5, y: 82}
+        - {x: -115.5, y: -55}
+        - {x: -115.5, y: -83}
+        - {x: -92.5, y: -105}
+        - {x: -91.5, y: -106}
+        - {x: 97.5, y: -106}
+        - {x: 112.5, y: -94}
+        - {x: 115.5, y: -80}
+        - {x: 115.5, y: -52}
+    - name: Triangle 1_14
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 1294
+        width: 237
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 80.5, y: 8.5}
+        - {x: 35.5, y: 81.5}
+        - {x: 27.5, y: 106.5}
+        - {x: 13.5, y: 108.5}
+        - {x: -19.5, y: 108.5}
+        - {x: -40.5, y: 79.5}
+        - {x: -118.5, y: -58.5}
+        - {x: -118.5, y: -82.5}
+        - {x: -95.5, y: -108.5}
+        - {x: 100.5, y: -108.5}
+        - {x: 118.5, y: -86.5}
+        - {x: 118.5, y: -55.5}
+    - name: Triangle 1_15
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 1295
+        width: 240
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 77, y: 11}
+        - {x: 35, y: 96}
+        - {x: 14, y: 108}
+        - {x: -17, y: 108}
+        - {x: -21, y: 106}
+        - {x: -83, y: 0}
+        - {x: -120, y: -60}
+        - {x: -120, y: -79}
+        - {x: -104, y: -105}
+        - {x: -99, y: -108}
+        - {x: 103, y: -108}
+        - {x: 120, y: -90}
+        - {x: 120, y: -61}
+        - {x: 91, y: -5}
+    - name: Triangle 1_16
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 1297
+        width: 233
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 25.5, y: 106}
+        - {x: -19.5, y: 106}
+        - {x: -116.5, y: -48}
+        - {x: -116.5, y: -78}
+        - {x: -111.5, y: -86}
+        - {x: -98.5, y: -104}
+        - {x: -95.5, y: -106}
+        - {x: 99.5, y: -106}
+        - {x: 116.5, y: -85}
+        - {x: 116.5, y: -54}
+        - {x: 28.5, y: 105}
+    - name: Triangle 1_17
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 1301
+        width: 226
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 86, y: -12}
+        - {x: 27, y: 101}
+        - {x: 20, y: 102}
+        - {x: -21, y: 102}
+        - {x: -74, y: 12}
+        - {x: -113, y: -53}
+        - {x: -113, y: -82}
+        - {x: -95, y: -102}
+        - {x: 92, y: -102}
+        - {x: 113, y: -86}
+        - {x: 113, y: -54}
+    - name: Triangle 1_18
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 1304
+        width: 215
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.5, y: 98}
+        - {x: -16.5, y: 98}
+        - {x: -23.5, y: 91}
+        - {x: -107.5, y: -52}
+        - {x: -107.5, y: -82}
+        - {x: -91.5, y: -98}
+        - {x: 90.5, y: -98}
+        - {x: 107.5, y: -82}
+        - {x: 107.5, y: -53}
+        - {x: 22.5, y: 97}
+    - name: Triangle 1_19
+      rect:
+        serializedVersion: 2
+        x: 1318
+        y: 1311
+        width: 205
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.5, y: 92.5}
+        - {x: -28.5, y: 76.5}
+        - {x: -102.5, y: -50.5}
+        - {x: -102.5, y: -82.5}
+        - {x: -98.5, y: -92.5}
+        - {x: 90.5, y: -92.5}
+        - {x: 102.5, y: -82.5}
+        - {x: 102.5, y: -42.5}
+        - {x: 24.5, y: 92.5}
+    - name: Triangle 1_20
+      rect:
+        serializedVersion: 2
+        x: 1579
+        y: 1312
+        width: 199
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27.5, y: 90.5}
+        - {x: -98.5, y: -41.5}
+        - {x: -99.5, y: -43.5}
+        - {x: -99.5, y: -75.5}
+        - {x: -87.5, y: -90.5}
+        - {x: 85.5, y: -90.5}
+        - {x: 99.5, y: -83.5}
+        - {x: 99.5, y: -42.5}
+        - {x: 24.5, y: 90.5}
+    - name: Triangle 1_21
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1057
+        width: 196
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 88.5}
+        - {x: -32, y: 73.5}
+        - {x: -98, y: -42.5}
+        - {x: -98, y: -79.5}
+        - {x: -89, y: -88.5}
+        - {x: 97, y: -88.5}
+        - {x: 98, y: -85.5}
+        - {x: 98, y: -36.5}
+        - {x: 22, y: 88.5}
+    - name: Triangle 1_22
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 1057
+        width: 197
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.5, y: 89}
+        - {x: -98.5, y: -43}
+        - {x: -98.5, y: -80}
+        - {x: -85.5, y: -89}
+        - {x: 89.5, y: -89}
+        - {x: 98.5, y: -76}
+        - {x: 98.5, y: -49}
+        - {x: 25.5, y: 89}
+    - name: Triangle 1_23
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 1055
+        width: 201
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: 90.5}
+        - {x: -30.5, y: 86.5}
+        - {x: -100.5, y: -33.5}
+        - {x: -100.5, y: -84.5}
+        - {x: -87.5, y: -90.5}
+        - {x: 86.5, y: -90.5}
+        - {x: 100.5, y: -81.5}
+        - {x: 100.5, y: -39.5}
+        - {x: 22.5, y: 90.5}
+    - name: Triangle 1_24
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 1053
+        width: 205
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.5, y: 93.5}
+        - {x: -14.5, y: 93.5}
+        - {x: -25.5, y: 82.5}
+        - {x: -102.5, y: -51.5}
+        - {x: -102.5, y: -83.5}
+        - {x: -89.5, y: -93.5}
+        - {x: 86.5, y: -93.5}
+        - {x: 102.5, y: -84.5}
+        - {x: 102.5, y: -51.5}
+        - {x: 19.5, y: 91.5}
+    - name: Triangle 1_25
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 1051
+        width: 210
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 25, y: 85}
+        - {x: 16, y: 95}
+        - {x: -18, y: 95}
+        - {x: -105, y: -45}
+        - {x: -105, y: -87}
+        - {x: -98, y: -95}
+        - {x: 102, y: -95}
+        - {x: 105, y: -85}
+        - {x: 105, y: -42}
+        - {x: 58, y: 30}
+    - name: Triangle 1_26
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 1047
+        width: 216
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28, y: 88}
+        - {x: 21, y: 98}
+        - {x: -19, y: 98}
+        - {x: -34, y: 93}
+        - {x: -93, y: -15}
+        - {x: -108, y: -55}
+        - {x: -108, y: -89}
+        - {x: -100, y: -95}
+        - {x: -87, y: -98}
+        - {x: 95, y: -98}
+        - {x: 108, y: -91}
+        - {x: 108, y: -50}
+    - name: Triangle 1_27
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 1044
+        width: 223
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 100.5, y: -23}
+        - {x: 29.5, y: 93}
+        - {x: 15.5, y: 102}
+        - {x: -6.5, y: 102}
+        - {x: -20.5, y: 97}
+        - {x: -28.5, y: 85}
+        - {x: -111.5, y: -58}
+        - {x: -111.5, y: -88}
+        - {x: -99.5, y: -102}
+        - {x: 101.5, y: -102}
+        - {x: 111.5, y: -94}
+        - {x: 111.5, y: -59}
+    - name: Triangle 1_28
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 782
+        width: 232
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 38, y: 89.5}
+        - {x: 20, y: 104.5}
+        - {x: -11, y: 104.5}
+        - {x: -32, y: 86.5}
+        - {x: -116, y: -60.5}
+        - {x: -116, y: -90.5}
+        - {x: -100, y: -104.5}
+        - {x: 109, y: -104.5}
+        - {x: 116, y: -102.5}
+        - {x: 116, y: -53.5}
+    - name: Triangle 1_29
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 780
+        width: 236
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 96, y: -15}
+        - {x: 35, y: 90}
+        - {x: 21, y: 107}
+        - {x: -13, y: 107}
+        - {x: -50, y: 64}
+        - {x: -118, y: -61}
+        - {x: -118, y: -98}
+        - {x: -98, y: -107}
+        - {x: 106, y: -107}
+        - {x: 118, y: -97}
+        - {x: 118, y: -60}
+    - name: Triangle 1_30
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 779
+        width: 239
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 36.5, y: 86.5}
+        - {x: 19.5, y: 108.5}
+        - {x: -5.5, y: 108.5}
+        - {x: -24.5, y: 95.5}
+        - {x: -100.5, y: -21.5}
+        - {x: -119.5, y: -65.5}
+        - {x: -119.5, y: -93.5}
+        - {x: -110.5, y: -105.5}
+        - {x: -105.5, y: -108.5}
+        - {x: 110.5, y: -108.5}
+        - {x: 119.5, y: -106.5}
+        - {x: 119.5, y: -49.5}
+    - name: Triangle 1_31
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 783
+        width: 228
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 93, y: -18.5}
+        - {x: 83, y: -4.5}
+        - {x: 28, y: 103.5}
+        - {x: 25, y: 104.5}
+        - {x: -8, y: 104.5}
+        - {x: -26, y: 93.5}
+        - {x: -114, y: -50.5}
+        - {x: -114, y: -93.5}
+        - {x: -101, y: -104.5}
+        - {x: 112, y: -104.5}
+        - {x: 114, y: -100.5}
+        - {x: 114, y: -52.5}
+    - name: Triangle 1_32
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 796
+        width: 200
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19, y: 91}
+        - {x: -10, y: 91}
+        - {x: -21, y: 88}
+        - {x: -100, y: -42}
+        - {x: -100, y: -83}
+        - {x: -96, y: -91}
+        - {x: 100, y: -91}
+        - {x: 100, y: -28}
+        - {x: 32, y: 77}
+    - name: Triangle 1_33
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 814
+        width: 160
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 72.5}
+        - {x: -78, y: 32.5}
+        - {x: -80, y: 3.5}
+        - {x: -80, y: -64.5}
+        - {x: -70, y: -72.5}
+        - {x: 80, y: -72.5}
+        - {x: 80, y: 20.5}
+        - {x: 45, y: 72.5}
+    - name: Triangle 1_34
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 808
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 57, y: 80}
+        - {x: -31, y: 80}
+        - {x: -63, y: 52}
+        - {x: -80, y: 27}
+        - {x: -80, y: -67}
+        - {x: -77, y: -80}
+        - {x: 66, y: -80}
+        - {x: 80, y: -66}
+        - {x: 80, y: 62}
+        - {x: 77, y: 79}
+    - name: Triangle 1_35
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 541
+        width: 175
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 54.5, y: 84}
+        - {x: 38.5, y: 88}
+        - {x: -39.5, y: 88}
+        - {x: -87.5, y: 45}
+        - {x: -87.5, y: -43}
+        - {x: -58.5, y: -81}
+        - {x: -32.5, y: -88}
+        - {x: 38.5, y: -88}
+        - {x: 59.5, y: -76}
+        - {x: 87.5, y: -62}
+        - {x: 87.5, y: 55}
+    - name: Triangle 1_36
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 535
+        width: 185
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 72.5, y: 67.5}
+        - {x: 37.5, y: 93.5}
+        - {x: -43.5, y: 93.5}
+        - {x: -92.5, y: 54.5}
+        - {x: -92.5, y: -48.5}
+        - {x: -59.5, y: -89.5}
+        - {x: -37.5, y: -93.5}
+        - {x: 40.5, y: -93.5}
+        - {x: 90.5, y: -54.5}
+        - {x: 92.5, y: -39.5}
+        - {x: 92.5, y: 33.5}
+    - name: Triangle 1_37
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 535
+        width: 189
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 82.5, y: 61}
+        - {x: 35.5, y: 94}
+        - {x: -35.5, y: 94}
+        - {x: -75.5, y: 81}
+        - {x: -94.5, y: 35}
+        - {x: -94.5, y: -46}
+        - {x: -58.5, y: -94}
+        - {x: 37.5, y: -94}
+        - {x: 82.5, y: -63}
+        - {x: 94.5, y: -32}
+        - {x: 94.5, y: 39}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
