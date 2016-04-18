@@ -2100,8 +2100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf673750c43484ab6a0075a519352822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_backgroundAudioSource: BackgroundTest
+  m_backgroundAudioSource: sneaky_theme_100bpm
   m_fightMusic: infect_it_theme_125bpm
+  m_rechercheMusic: chase_to_leave_theme_125bpm
 --- !u!4 &811175036
 Transform:
   m_ObjectHideFlags: 0
