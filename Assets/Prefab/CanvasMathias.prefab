@@ -132,7 +132,6 @@ GameObject:
   - 114: {fileID: 11448002}
   - 114: {fileID: 11407974}
   - 114: {fileID: 11475100}
-  - 111: {fileID: 11182552}
   m_Layer: 9
   m_Name: CellComplexZoneFight
   m_TagString: CellRenderer
@@ -235,6 +234,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 450924}
   - 212: {fileID: 21258790}
+  - 111: {fileID: 11135080}
   m_Layer: 0
   m_Name: Inner
   m_TagString: Untagged
@@ -444,6 +444,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!111 &11135080
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199346}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 52f5a85f39412439ea31169d435008d3, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 52f5a85f39412439ea31169d435008d3, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!111 &11174428
 Animation:
   m_ObjectHideFlags: 1
@@ -455,21 +470,6 @@ Animation:
   m_Animation: {fileID: 7400000, guid: e0051f1d1fa10423889e9af07ed339a4, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: e0051f1d1fa10423889e9af07ed339a4, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
---- !u!111 &11182552
-Animation:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151592}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: cfc628f20a4de4b3386b24d5175d81a9, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: cfc628f20a4de4b3386b24d5175d81a9, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -524,7 +524,7 @@ MonoBehaviour:
     type: 3}
   m_colorInterrogation: {r: 0, g: 0, b: 0, a: 1}
   m_CroixExplication: {fileID: 0}
-  m_CellAnimation: {fileID: 11182552}
+  m_CellAnimation: {fileID: 11135080}
 --- !u!114 &11407974
 MonoBehaviour:
   m_ObjectHideFlags: 1
