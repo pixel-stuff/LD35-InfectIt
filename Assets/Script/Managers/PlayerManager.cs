@@ -106,7 +106,11 @@ public class PlayerManager : MonoBehaviour {
 										//freezeGame(false);
 		//If win - NOMNOM
 		//if !win EJECT
+
+		AudioManager.m_instance.ReprendreRechercheBeat ();
 	}
+
+
 	void fadeClearOver() {
 		if (isFighting) {
 		} else {
