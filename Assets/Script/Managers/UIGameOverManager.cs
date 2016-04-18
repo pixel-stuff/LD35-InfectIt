@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class UIGameOverManager : MonoBehaviour {
-
+	public GameObject virus;
 	// Use this for initialization
 	void Start () {
 	
@@ -19,8 +19,13 @@ public class UIGameOverManager : MonoBehaviour {
 	}
 	
 	public void ReturnToLevelScene(){
+		loadAnimation ();
 		GameStateManager.m_instance.setGameState (GameState.Playing);
 		Application.LoadLevelAsync ("LevelScene");
 		
+	}
+
+	public void loadAnimation() {
+		virus.SetActive (true);
 	}
 }
