@@ -129,7 +129,6 @@ GameObject:
   - 50: {fileID: 5040520}
   - 61: {fileID: 6105068}
   - 114: {fileID: 11456100}
-  - 114: {fileID: 11477990}
   - 114: {fileID: 11448002}
   - 114: {fileID: 11407974}
   - 114: {fileID: 11475100}
@@ -211,23 +210,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &187180
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 453170}
-  - 58: {fileID: 5858116}
-  - 114: {fileID: 11458134}
-  m_Layer: 9
-  m_Name: VirusHack
-  m_TagString: Cell
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
 --- !u!1 &189756
 GameObject:
   m_ObjectHideFlags: 1
@@ -312,18 +294,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 491094}
   m_RootOrder: 1
---- !u!4 &453170
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 187180}
-  m_LocalRotation: {x: 0, y: 0, z: 0.006283145, w: 0.9999803}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8000002, y: 0.8, z: 1}
-  m_Children: []
-  m_Father: {fileID: 491094}
-  m_RootOrder: 4
 --- !u!4 &458920
 Transform:
   m_ObjectHideFlags: 1
@@ -350,7 +320,6 @@ Transform:
   - {fileID: 450924}
   - {fileID: 424916}
   - {fileID: 414776}
-  - {fileID: 453170}
   m_Father: {fileID: 22489958}
   m_RootOrder: 1
 --- !u!50 &5040520
@@ -370,27 +339,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &5858116
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 187180}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 5.82
 --- !u!61 &6105068
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151592}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -657,18 +612,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85d7e3dcc287e344dad859f4735457e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11458134
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 187180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3697ede48de1c4443b6948dadd312d58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cellScript: {fileID: 11477990}
 --- !u!114 &11464784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -707,27 +650,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a47c608b47f73fe48a1fb0b9c730ad6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11477990
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151592}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca1d0a07a56f61c4188a68d5f17c7754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  afraidColor: {r: 0, g: 0, b: 0, a: 0}
-  corruptColor: {r: 0, g: 0, b: 0, a: 0}
-  speedThreshold: 0.05
-  accelerationSpeedThreshold: 0.2
-  minForce: 2000
-  maxForce: 3000
-  nbMoveBeforeStopRun: 50
-  m_isAfraid: 0
-  exterior: {fileID: 21245376}
-  isTrueCell: 0
 --- !u!114 &11478906
 MonoBehaviour:
   m_ObjectHideFlags: 1
