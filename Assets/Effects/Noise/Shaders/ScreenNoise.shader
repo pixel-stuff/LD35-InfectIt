@@ -91,17 +91,21 @@ Shader "Custom/Effect/Noise" {
 		fixed4 color = tex2D(_MainTex, i.uv);
 		fixed4 noiseT = tex2D(_NoiseTex, i.uv);
 		fixed4 N = fixed4(0.0, 0.0, 0.0, 1.0);
-		if (_Parameter.w == 0.0)
+		float Np = 0.0;
+		if (_Parameter.w == 0.0) {
 			N = fixed4(noiseT.r, noiseT.g, noiseT.b, 1.0);
-		else if (_Parameter.w == 1.0) {
+			Np = (noiseT.r + noiseT.g + noiseT.b)*0.3333;
+		}else if (_Parameter.w == 1.0) {
 			fixed t = hash2((i.uv + _Time.y*_Parameter.x)*_Parameter.y)*_Parameter.z;
 			N = fixed4(t, t, t, 1.0);
+			Np = t;
 		}else if (_Parameter.w == 2.0) {
 			fixed t = cnoise((i.uv + _Time.y*_Parameter.x)*_Parameter.y)*_Parameter.z;
 			N = fixed4(t, t, t, 1.0);
+			Np = t;
 		}
 
-		return lerp(color, N*_Color*_Parameter.z, noiseT.a);
+		return lerp(color, lerp(N, _Color, Np)*_Parameter.z, noiseT.a);
 	}
 
 	ENDCG
