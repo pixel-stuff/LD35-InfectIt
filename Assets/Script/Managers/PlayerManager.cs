@@ -36,6 +36,7 @@ public class PlayerManager : MonoBehaviour {
 
 	void Start () {
 		GameStateManager.onChangeStateEvent += handleChangeGameState;
+		FindObjectOfType<CompteurManager> ().SetNumberAtStart (nbDestroyCellForWin);
 	}
 	
 	// Update is called once per frame
@@ -74,6 +75,7 @@ public class PlayerManager : MonoBehaviour {
 
 	public void addDestroyCell() {
 		nbDestroyCell++;
+		FindObjectOfType<CompteurManager> ().SetNumberAtStart (nbDestroyCell);
 		if (nbDestroyCell == nbDestroyCellForWin) {
 			GameStateManager.setGameState (GameState.GameOver);
 		}
