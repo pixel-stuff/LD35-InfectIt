@@ -69,7 +69,7 @@ public class Virus : MonoBehaviour {
 		//this.GetComponent<SpriteRenderer> ().material.SetFloat ("_BorderSpeed", 15);
 		if (other.gameObject.layer == LayerMask.NameToLayer("Cell")) {
 			other.gameObject.GetComponent<virusHack> ().startFusion ();
-			if (!m_isEjected && other.gameObject.GetComponent<virusHack> ().acceptFusion() && !fighting) {
+			if (other.gameObject.GetComponent<virusHack> ().acceptFusion() && !fighting) {
 				PlayerManager.m_instance.startFight ();
 				fighting = true;
 				Debug.Log ("Start Collide Cell");
@@ -83,20 +83,20 @@ public class Virus : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerExit2D(Collider2D other) {
+/*	void OnTriggerExit2D(Collider2D other) {
 		if (other.gameObject.layer == LayerMask.NameToLayer ("Cell")) {
-			m_isEjected = false;
 			this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = false;
 			other.gameObject.GetComponent<virusHack> ().stopFusion ();
 		}
-	}
+	}*/
 
 	public void ejectVirus() {
-		m_isEjected = true;
+		fighting = false;
 		m_isOnCenterAnimation = false;
 		this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = false;
 		Vector2 direction = Random.insideUnitCircle;
-		this.GetComponent<Rigidbody2D> ().AddRelativeForce (moveForce * direction*200);
+		this.GetComponent<Rigidbody2D> ().AddRelativeForce (moveForce * direction*20);
+		m_targetCell.GetComponent<virusHack> ().stopFusion ();
 	}
 
 	public void ConsumeCell() {

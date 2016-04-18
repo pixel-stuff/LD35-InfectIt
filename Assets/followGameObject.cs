@@ -18,7 +18,7 @@ public class followGameObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (followGO.activeSelf) {
+		if (followGO.gameObject.GetComponent<Cell> ().isTrueCell && !followGO.gameObject.GetComponent<Cell> ().m_isAfraid) {
 			if (followGO.gameObject.GetComponent<Cell> ().isOnCamera ()) {
 				container.SetActive (false);
 			} else {

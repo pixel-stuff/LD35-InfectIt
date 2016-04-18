@@ -130,7 +130,7 @@ public class PlayerManager : MonoBehaviour {
 			fadeClear = true;
 
 			//DEBUG 
-			FightOver(true);
+			FightOver(false);
 		} else {
 			//hide fight sceen
 			fadeClear = true;

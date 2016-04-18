@@ -3,6 +3,9 @@ using System.Collections;
 
 public class Cell : MonoBehaviour {
 
+	public Color afraidColor;
+	public Color corruptColor;
+
 	public float speedThreshold;
 	public float accelerationSpeedThreshold;
 	public int minForce;
@@ -20,12 +23,15 @@ public class Cell : MonoBehaviour {
 	private bool m_accelerationPhase;
 
 	public SpriteRenderer exterior;
+
+	public bool isTrueCell;
 	// Use this for initialization
 	void Start () {
 		m_speed = 0;
 		m_OldPosition = this.transform.position;
 		m_accelerationPhase = false;
 		m_run = false;
+		isTrueCell = true;
 
 		//moveRandomDirection ();
 	}
@@ -71,8 +77,9 @@ public class Cell : MonoBehaviour {
 		Vector2 direction = -(m_endFusionPosition - new Vector2(this.transform.position.x, this.transform.position.y));
 		direction.Normalize();
 		int force = Random.Range (minForce,maxForce);
-		this.GetComponent<Rigidbody2D> ().AddRelativeForce (force * direction);
+		this.GetComponent<Rigidbody2D> ().AddRelativeForce (force * direction*2);
 		m_accelerationPhase = true;
+		setColor (afraidColor);
 	}
 
 	public void startFusion(){
@@ -93,21 +100,28 @@ public class Cell : MonoBehaviour {
 		m_endFusionPosition = this.transform.position;
 		m_isAfraid = true;
 		m_run = true;
-		//this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = false;
+		this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = false;
 		this.gameObject.GetComponent<BoxCollider2D> ().enabled = true;
 	}
 
 	public void consume() {
 		Debug.Log("CellNOMNOMNOM");
-		this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = true;
+		this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = false;
 		this.gameObject.GetComponent<BoxCollider2D> ().enabled = false;
 		PlayerManager.m_instance.addDestroyCell ();
-		this.gameObject.SetActive (false);
+		isTrueCell = false;
+		setColor (corruptColor);
+		//this.gameObject.SetActive (false);
 		//this.GetComponent<Animation> ().Play ("DeathANimation");
 	}
 
 	public bool isOnCamera() {
 		Vector3 viewport = Camera.main.WorldToViewportPoint (this.transform.position);
 		return (viewport.x >0 && viewport.x <1 && viewport.y >0 && viewport.y <1);
+	}
+
+
+	public void setColor(Color color) {
+		exterior.color = color;
 	}
 }

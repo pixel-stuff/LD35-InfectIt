@@ -132,7 +132,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114340}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.1, y: -5.2, z: 0}
+  m_LocalPosition: {x: -3.6, y: 6.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 411736}
@@ -234,13 +234,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca1d0a07a56f61c4188a68d5f17c7754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  afraidColor: {r: 0, g: 0, b: 0, a: 0}
+  corruptColor: {r: 0, g: 0, b: 0, a: 0}
   speedThreshold: 0.05
   accelerationSpeedThreshold: 0.2
   minForce: 2000
   maxForce: 3000
-  nbMoveBeforeStopRun: 2
+  nbMoveBeforeStopRun: 50
   m_isAfraid: 0
   exterior: {fileID: 21255360}
+  isTrueCell: 0
 --- !u!114 &11422376
 MonoBehaviour:
   m_ObjectHideFlags: 1
