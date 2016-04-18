@@ -1,0 +1,205 @@
+fileFormatVersion: 2
+guid: ce458f717ff956542b76c0b6f1e4215e
+timeCreated: 1460992933
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: organites_0
+    21300002: organites_1
+    21300004: organites_2
+    21300006: organites_3
+    21300008: organites_4
+    21300010: organites_5
+    21300012: organites_6
+    21300014: organites_7
+    21300016: organites_8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: organites_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 13
+        width: 34
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 41}
+        - {x: -17, y: 40}
+        - {x: -17, y: -41}
+        - {x: 17, y: -41}
+        - {x: 17, y: 41}
+    - name: organites_1
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 13
+        width: 34
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 41}
+        - {x: -17, y: -41}
+        - {x: 17, y: -41}
+        - {x: 17, y: 41}
+    - name: organites_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 28
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 26.5}
+        - {x: -27, y: 20.5}
+        - {x: -27, y: -21.5}
+        - {x: -19, y: -26.5}
+        - {x: 20, y: -26.5}
+        - {x: 27, y: -21.5}
+        - {x: 27, y: 19.5}
+        - {x: 24, y: 26.5}
+    - name: organites_3
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 7
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -48, y: 48}
+        - {x: -48, y: -48}
+        - {x: 21, y: -48}
+        - {x: 34, y: -45}
+        - {x: 48, y: -34}
+        - {x: 48, y: 27}
+        - {x: 38, y: 48}
+    - name: organites_4
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 7
+        width: 94
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 47.5}
+        - {x: -47, y: 24.5}
+        - {x: -47, y: -24.5}
+        - {x: -35, y: -47.5}
+        - {x: 38, y: -47.5}
+        - {x: 47, y: -30.5}
+        - {x: 47, y: 30.5}
+        - {x: 24, y: 47.5}
+    - name: organites_5
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 0
+        width: 23
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: organites_6
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 0
+        width: 23
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: organites_7
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 0
+        width: 23
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: organites_8
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 28
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 26.5}
+        - {x: -27, y: 18.5}
+        - {x: -27, y: -16.5}
+        - {x: -17, y: -26.5}
+        - {x: 19, y: -26.5}
+        - {x: 27, y: -14.5}
+        - {x: 27, y: 23.5}
+        - {x: 17, y: 26.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

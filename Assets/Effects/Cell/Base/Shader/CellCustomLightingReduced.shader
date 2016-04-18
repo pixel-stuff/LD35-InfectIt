@@ -102,7 +102,7 @@
 				float angle = atan2(coord.y, coord.x);
 				angle = fmod(-180.0 / PI * angle, 360.0)*DEG2RAD;
 				if (angle < 0.0) angle += 2.0 * PI;
-				float sinAngle = sin(angle);
+				float sinAngle = sin(angle+PI/2.0);
 
 				// penetration
 				float penetrationAngleStart = (_AnglePenetration - 15.0)*DEG2RAD;
