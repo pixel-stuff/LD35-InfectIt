@@ -331,7 +331,7 @@ Prefab:
     - target: {fileID: 11410122, guid: 0d073dabbae925f47bab7000e44e6206, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: acbc48b2d64ea4347b00eef3685f663a,
+      objectReference: {fileID: 21300000, guid: b0995cb71661a43faa2ecdc91d5f45ff,
         type: 3}
     - target: {fileID: 22421100, guid: 0d073dabbae925f47bab7000e44e6206, type: 2}
       propertyPath: m_AnchoredPosition.x
