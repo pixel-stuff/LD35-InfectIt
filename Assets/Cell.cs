@@ -25,6 +25,8 @@ public class Cell : MonoBehaviour {
 	public SpriteRenderer exterior;
 	public SpriteRenderer interior;
 
+	public int nbParticule = 20;
+
 	public bool isTrueCell;
 	// Use this for initialization
 	void Start () {
@@ -133,6 +135,8 @@ public class Cell : MonoBehaviour {
 		//setColor (corruptColor);
 		exterior.enabled = false;
 		interior.enabled = false;
+
+		this?gameObject.GetComponent<ParticleSystem>().Emit(nbParticule);
 		//this.gameObject.SetActive (false);
 		//this.GetComponent<Animation> ().Play ("DeathANimation");
 	}
