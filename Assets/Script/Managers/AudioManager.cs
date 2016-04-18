@@ -50,7 +50,6 @@ public class AudioManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		m_transform = this.transform;
-		PlayMenuMusic ();
 	}
 
 	public void PlayMusic(string name){
