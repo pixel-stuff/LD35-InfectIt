@@ -30,7 +30,7 @@
 		Cull Off
 		Blend SrcAlpha OneMinusSrcAlpha
 
-		GrabPass {}
+		//GrabPass {}
 
 		Pass {
 			CGPROGRAM

@@ -11,7 +11,7 @@
 	}
 
 	SubShader{
-		Tags{ "Queue" = "Transparent"/* "RenderType" = "Transparent"*/ }
+		Tags{ "Queue" = "Transparent" "IgnoreProjector" = "True"/* "RenderType" = "Transparent"*/ }
 		LOD 200
 		Cull Off
 		Zwrite Off
@@ -159,7 +159,11 @@
 
 				float2 uv = i.uv;
 				//uv.y += sin((uv.x + _Time.y*_Speed)*_Freq)*_Amp;
-				float2 coord = -1.0 + 2.0*uv;
+				#ifdef SHADER_API_GLES
+				float2 coord = -1.0 + 2.5*i.uv;
+				#else
+				float2 coord = -1.0 + 2.0*i.uv;
+				#endif
 
 				float3 distort = dispHeat(uv) * float3(i.color.r, i.color.g, i.color.b);
 				float2 offset = distort * _Refraction * _GrabTexture_TexelSize.xy;
