@@ -144,7 +144,7 @@ public class FightManager : MonoBehaviour {
 			m_listOfInputVirus [i].SetActive (false);
 		}
 		AudioManager.m_instance.m_beatFightEvent += BeatInvokeHandle;
-		AudioManager.m_instance.m_beforeBeatFightEvent += BeforeBeatInvokeHandle;
+		//AudioManager.m_instance.m_beforeBeatFightEvent += BeforeBeatInvokeHandle;
 
 		AudioManager.m_instance.StopMenuBeat ();
 		/*InitFight (null);
@@ -169,6 +169,7 @@ public class FightManager : MonoBehaviour {
 		m_bubbleVirus.SetActive (false);
 		m_bubbleCell.SetActive (false);
 		m_CroixExplication.SetActive (false);
+		TimeManager.m_instance.SubSecond (2f);
 		if (isWin) {
 			Debug.Log ("YOU WIN");
 		} else {
@@ -354,5 +355,9 @@ public class FightManager : MonoBehaviour {
 	}
 	#endregion Input
 
+
+	void OnDestroy() {
+		AudioManager.m_instance.m_beatFightEvent -= BeatInvokeHandle;
+	}
 
 }
