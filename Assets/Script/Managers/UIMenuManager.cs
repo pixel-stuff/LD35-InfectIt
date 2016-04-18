@@ -26,7 +26,7 @@ public class UIMenuManager : MonoBehaviour {
 
 	public void GoToLevelScene(){
 		GameStateManager.setGameState (GameState.Playing);
-		a =  Application.LoadLevelAsync ("SceneMathias");
+		a =  Application.LoadLevelAsync ("LevelScene");
 		//a.allowSceneActivation = false;
 		timeStartLoading = Time.time;
 	}

@@ -19,6 +19,7 @@ TagManager:
   - Cell
   - Fade
   - CellRenderer
+  - Indicator
   layers:
   - Default
   - TransparentFX
@@ -30,8 +31,8 @@ TagManager:
   - 
   - Virus
   - Cell
-  - 
-  - 
+  - IndicatorCollider
+  - Indicator
   - 
   - 
   - 
