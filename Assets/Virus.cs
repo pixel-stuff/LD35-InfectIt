@@ -17,9 +17,12 @@ public class Virus : MonoBehaviour {
 	private bool m_isEjected;
 
 	private GameObject m_targetCell;
+
+	private bool fighting;
 	// Use this for initialization
 	void Start () {
 		m_isEjected = false;
+		fighting = false;
 	}
 	
 	// Update is called once per frame
@@ -30,7 +33,7 @@ public class Virus : MonoBehaviour {
 			m_animationTime++;
 			if (m_animationTime > nbFrameAnimation) {
 				m_isOnCenterAnimation = false;
-				PlayerManager.m_instance.startFight ();
+				Corrupt ();
 			}
 		}
 
@@ -65,11 +68,13 @@ public class Virus : MonoBehaviour {
 		Debug.Log ("Start Collide " + other.gameObject.layer);
 		//this.GetComponent<SpriteRenderer> ().material.SetFloat ("_BorderSpeed", 15);
 		if (other.gameObject.layer == LayerMask.NameToLayer("Cell")) {
-			if (!m_isEjected && other.gameObject.GetComponent<virusHack> ().acceptFusion()) {
+			other.gameObject.GetComponent<virusHack> ().startFusion ();
+			if (!m_isEjected && other.gameObject.GetComponent<virusHack> ().acceptFusion() && !fighting) {
+				PlayerManager.m_instance.startFight ();
+				fighting = true;
 				Debug.Log ("Start Collide Cell");
 				this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = true;
-				other.gameObject.GetComponent<virusHack> ().startFusion ();
-				m_isOnCenterAnimation = true;
+				//m_isOnCenterAnimation = true;
 				m_centerCell = other.gameObject.transform.position;
 				m_animationTime = 0;
 				toto = this.transform.position;
@@ -95,9 +100,19 @@ public class Virus : MonoBehaviour {
 	}
 
 	public void ConsumeCell() {
+		m_isOnCenterAnimation = true;
+		m_targetCell.GetComponent<virusHack> ().startFusion ();
+	/*	m_isOnCenterAnimation = false;
+		this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = false;
+		m_targetCell.GetComponent<virusHack> ().consume ();*/
+
+	}
+
+	public void Corrupt() {
+		m_targetCell.GetComponent<virusHack> ().startFusion ();
 		m_isOnCenterAnimation = false;
+		fighting = false;
 		this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = false;
 		m_targetCell.GetComponent<virusHack> ().consume ();
-
 	}
 }
