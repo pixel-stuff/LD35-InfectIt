@@ -1517,7 +1517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &653675409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2026,10 +2026,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 5818526, guid: 5909ab43ecfc0374695506b3028f87f0, type: 2}
-      propertyPath: m_Radius
-      value: 5.82
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5909ab43ecfc0374695506b3028f87f0, type: 2}
   m_IsPrefabParent: 0
@@ -2454,6 +2450,30 @@ Prefab:
       propertyPath: m_Name
       value: CellComplex (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 11416246, guid: 5909ab43ecfc0374695506b3028f87f0, type: 2}
+      propertyPath: afraidColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11416246, guid: 5909ab43ecfc0374695506b3028f87f0, type: 2}
+      propertyPath: afraidColor.g
+      value: 0.9724138
+      objectReference: {fileID: 0}
+    - target: {fileID: 11416246, guid: 5909ab43ecfc0374695506b3028f87f0, type: 2}
+      propertyPath: afraidColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11416246, guid: 5909ab43ecfc0374695506b3028f87f0, type: 2}
+      propertyPath: corruptColor.r
+      value: 0.022058815
+      objectReference: {fileID: 0}
+    - target: {fileID: 11416246, guid: 5909ab43ecfc0374695506b3028f87f0, type: 2}
+      propertyPath: corruptColor.g
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11416246, guid: 5909ab43ecfc0374695506b3028f87f0, type: 2}
+      propertyPath: corruptColor.b
+      value: 0.14401625
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5909ab43ecfc0374695506b3028f87f0, type: 2}
   m_IsPrefabParent: 0
@@ -2666,6 +2686,10 @@ Prefab:
     - target: {fileID: 114340, guid: 5909ab43ecfc0374695506b3028f87f0, type: 2}
       propertyPath: m_Name
       value: CellComplex (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11416246, guid: 5909ab43ecfc0374695506b3028f87f0, type: 2}
+      propertyPath: nbMoveBeforeStopRun
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5909ab43ecfc0374695506b3028f87f0, type: 2}
@@ -3282,7 +3306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1478206900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3417,7 +3441,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1515235231
 MonoBehaviour:
   m_ObjectHideFlags: 0
