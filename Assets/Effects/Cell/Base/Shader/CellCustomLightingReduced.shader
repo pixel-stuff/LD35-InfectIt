@@ -119,7 +119,7 @@
 				/*if(abs(_AnglePenetration*DEG2RAD - angle) / ((penetrationAngleEnd - penetrationAngleStart)*0.7)<1.0 && angle < (penetrationAngleEnd - penetrationAngleStart)*0.7) angle += _AnglePenetration-angle;
 				if (abs(_AnglePenetration*DEG2RAD - angle) / ((penetrationAngleEnd - penetrationAngleStart)*0.7) < 1.0 && angle > (360.0*DEG2RAD - (penetrationAngleEnd - penetrationAngleStart)*0.7)) angle += _AnglePenetration + angle;
 					alpha = min(1.0, max(0.0, 1.0 - abs(_AnglePenetration*DEG2RAD - angle) / ((penetrationAngleEnd - penetrationAngleStart)*0.7)));*/
-				alpha = (max(0.0, dot(coord, _DirPenetration)) - 0.1)/0.9;
+				alpha = (max(0.0, dot(normalize(coord), normalize(_DirPenetration))) - 0.1)/0.9;
 					_borderOffset = lerp(_borderOffset, /*(angle<25.0*DEG2RAD || angle>185.0*DEG2RAD)?alpha*0.2:*/alpha, alpha);
 					//_borderOffset -= (sin(sinAngle*_BorderFreq*4.0 + _Time.y*_BorderSpeed) + PI*0.5)*_BorderAmp*1.6;
 				//}

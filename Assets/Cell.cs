@@ -132,5 +132,6 @@ public class Cell : MonoBehaviour {
 
 	public void setColor(Color color) {
 		exterior.color = color;
+        exterior.material.SetColor("_Color", color);
 	}
 }
