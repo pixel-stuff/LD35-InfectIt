@@ -128,7 +128,7 @@ public class Cell : MonoBehaviour {
 
 	public void consume() {
 		Debug.Log("CellNOMNOMNOM");
-		this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = false;
+		this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = true;
 		this.gameObject.GetComponent<BoxCollider2D> ().enabled = false;
 		PlayerManager.m_instance.addDestroyCell ();
 		isTrueCell = false;

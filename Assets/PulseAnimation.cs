@@ -12,4 +12,8 @@ public class PulseAnimation : MonoBehaviour {
 	public void BeatHandler(){
 		this.GetComponent<Animation> ().Play ("ScaleBeatAnimation");
 	}
+
+	void OnDestroy() {
+		AudioManager.m_instance.m_beatFightEvent -= BeatHandler;
+	}
 }

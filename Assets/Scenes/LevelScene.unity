@@ -1602,7 +1602,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11480066, guid: 7ce7fe3f7bf852143a6e7048dbbf1982, type: 2}
       propertyPath: fullinessFactor
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ce7fe3f7bf852143a6e7048dbbf1982, type: 2}
@@ -4535,7 +4535,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11480066, guid: 7ce7fe3f7bf852143a6e7048dbbf1982, type: 2}
       propertyPath: fullinessFactor
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ce7fe3f7bf852143a6e7048dbbf1982, type: 2}
@@ -8247,7 +8247,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11480066, guid: 7ce7fe3f7bf852143a6e7048dbbf1982, type: 2}
       propertyPath: fullinessFactor
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ce7fe3f7bf852143a6e7048dbbf1982, type: 2}
@@ -8961,7 +8961,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11480066, guid: 7ce7fe3f7bf852143a6e7048dbbf1982, type: 2}
       propertyPath: fullinessFactor
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ce7fe3f7bf852143a6e7048dbbf1982, type: 2}
