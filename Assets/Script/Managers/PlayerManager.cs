@@ -4,6 +4,8 @@ using System;
 
 public class PlayerManager : MonoBehaviour {
 
+	public FightManager myFightManager;
+
 	#region Singleton
 	public static PlayerManager m_instance;
 	void Awake(){
@@ -127,12 +129,15 @@ public class PlayerManager : MonoBehaviour {
 			freezeGame (true);//is kinetic GO
 			//change state fight
 			//appear fight sceen
+			myFightManager.gameObject.SetActive(true);
+			myFightManager.InitFight (null);
 			fadeClear = true;
 
 			//DEBUG 
-			FightOver(false);
+			//FightOver(false);
 		} else {
 			//hide fight sceen
+			myFightManager.gameObject.SetActive(false);
 			fadeClear = true;
 		}
 	}

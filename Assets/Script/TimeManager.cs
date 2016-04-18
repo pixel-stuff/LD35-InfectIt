@@ -37,7 +37,7 @@ public class TimeManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		AddSecond(10f);
+		AddSecond(1000f);
 		m_particulesStartPos = new Vector2 (this.GetComponent<RectTransform> ().rect.width, 0f);
 
 		m_particules.GetComponent<RectTransform> ().anchoredPosition = m_particulesPos;
@@ -56,13 +56,11 @@ public class TimeManager : MonoBehaviour {
 			m_particulesPos = m_particulesStartPos * m_currentTime * 100 / 10 * 1 / 100;
 			m_particules.GetComponent<RectTransform> ().anchoredPosition = m_particulesPos;
 
-			if( ( m_currentTime * 100 / 10 * 1 / 100) <= 0.80f && !anim){
-				SubSecond(3f);
-				anim = true;
-			}
 		}else{
-			b.rate = new ParticleSystem.MinMaxCurve(0f);
-			GameStateManager.m_instance.setGameState (GameState.GameOver);
+			if (GameStateManager.getGameState() != GameState.GameOver) {
+				b.rate = new ParticleSystem.MinMaxCurve (0f);
+				GameStateManager.m_instance.setGameState (GameState.GameOver);
+			}
 		}
 	}
 

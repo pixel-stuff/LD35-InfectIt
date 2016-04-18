@@ -141,8 +141,8 @@ public class FightManager : MonoBehaviour {
 		AudioManager.m_instance.m_beforeBeatFightEvent += BeforeBeatInvokeHandle;
 
 		AudioManager.m_instance.StopMenuBeat ();
-		InitFight (null);
-		GameStateManager.m_instance.setGameState (GameState.Playing);
+		/*InitFight (null);
+		GameStateManager.m_instance.setGameState (GameState.Playing);*/
 	}
 
 	// Update is called once per frame
@@ -167,11 +167,12 @@ public class FightManager : MonoBehaviour {
 		} else {
 			Debug.Log ("YOU DIIEIEEEIEIEE");
 		}
-		Debug.Log ("RESTART");
+		/*Debug.Log ("RESTART");
 		InitFight (null);
-		AudioManager.m_instance.StopFightBeat ();
+		AudioManager.m_instance.PlayFightMusic ();	
+*/
 
-		AudioManager.m_instance.PlayFightMusic ();
+		AudioManager.m_instance.StopFightBeat ();
 		try{
 			PlayerManager.m_instance.FightOver (isWin);
 		}catch(Exception e){}
