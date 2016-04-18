@@ -6,7 +6,7 @@ public class VirusFightManager : MonoBehaviour {
 	private Animator m_animator;
 
 	void Awake(){
-		m_animator = this.GetComponent<Animation> ();
+		m_animator = this.GetComponent<Animator> ();
 	}
 	// Use this for initialization
 	void Start () {
