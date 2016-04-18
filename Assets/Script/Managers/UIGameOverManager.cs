@@ -5,7 +5,7 @@ public class UIGameOverManager : MonoBehaviour {
 	public GameObject virus;
 	// Use this for initialization
 	void Start () {
-	
+		AudioManager.m_instance.PlayMenuMusic ();
 	}
 	
 	// Update is called once per frame
