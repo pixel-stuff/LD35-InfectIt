@@ -3,7 +3,7 @@ using UnityEngine;
 
 [ExecuteInEditMode]
 [RequireComponent(typeof(Camera))]
-[AddComponentMenu("Image Effects/Blur/Blur (Optimized)")]
+[AddComponentMenu("Image Effects/Custom/Blur/Blur (Optimized)")]
 public class Effect_Blur : UnityStandardAssets.ImageEffects.PostEffectsBase {
 
     [Range(0, 2)]
