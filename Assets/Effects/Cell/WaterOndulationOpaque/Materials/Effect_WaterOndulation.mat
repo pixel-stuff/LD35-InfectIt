@@ -130,19 +130,19 @@ Material:
       data:
         first:
           name: _Refraction
-        second: 0.1
+        second: 17.1
       data:
         first:
           name: _Speed
-        second: 0.5
+        second: 1.09
       data:
         first:
           name: _Freq
-        second: 1
+        second: 1.42
       data:
         first:
           name: _Amp
-        second: 0.2
+        second: 0.86
       data:
         first:
           name: _Mask
