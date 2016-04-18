@@ -131,6 +131,8 @@ public class FightManager : MonoBehaviour {
 			m_listOfInputVirus [i].SetActive (false);
 		}
 		AudioManager.m_instance.m_beatFightEvent += BeatInvokeHandle;
+
+		AudioManager.m_instance.StopMenuBeat ();
 		InitFight (null);
 		GameStateManager.setGameState (GameState.Playing);
 	}

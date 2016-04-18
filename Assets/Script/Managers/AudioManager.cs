@@ -31,7 +31,7 @@ public class AudioManager : MonoBehaviour {
 	private string m_fightMusic = "infect_it_theme_125bpm";
 	public Action m_beatFightEvent;
 	private GameObject m_fightMusicGB;
-	private float m_timeBetweenFightBeat = 60f / 125f;
+	private float m_timeBetweenFightBeat = 60f / 100f;
 	public float timeBetweenFightBeat{
 		get { return m_timeBetweenFightBeat; }
 	}
