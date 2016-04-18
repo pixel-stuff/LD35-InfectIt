@@ -22,6 +22,7 @@ public class UIGameOverManager : MonoBehaviour {
 		loadAnimation ();
 		GameStateManager.m_instance.setGameState (GameState.Playing);
 		Application.LoadLevelAsync ("LevelScene");
+		AudioManager.m_instance.StopMenuBeat ();
 		
 	}
 
