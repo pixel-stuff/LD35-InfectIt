@@ -118,6 +118,7 @@ public class AudioManager : MonoBehaviour {
 			//Add and bind an audio source
 			AudioSource source = m_rechercheMusicGB.AddComponent<AudioSource> ();
 			source.clip = newClip;
+			source.loop = true;
 			//Play and destroy the component
 			source.Play ();
 			InvokeRepeating ("BeatRechercheEvent", m_timeBetweenRechercheBeat * 1f, m_timeBetweenRechercheBeat);
