@@ -130,11 +130,11 @@ Material:
       data:
         first:
           name: _Refraction
-        second: 0.1
+        second: 0
       data:
         first:
           name: _Speed
-        second: 1.09
+        second: 61.11
       data:
         first:
           name: _Freq
