@@ -14,6 +14,7 @@
 		_NormalTex("Normal Map", 2D) = "bleu" {}
 		// shifting penetration
 		_AnglePenetration("Angle of Penetration", Float) = -1.0
+		_DirPenetration("Dir. of Penetration", Vector) = (0, 0, 0, 0)
 	}
 	SubShader{
 		Tags{ "Queue" = "Transparent" "IgnoreProjector" = "True"/* "RenderType" = "Transparent"*/ }
@@ -66,6 +67,7 @@
 
 			// Penetration
 			float _AnglePenetration;
+			float4 _DirPenetration;
 
 			v2f vert(appdata v)
 			{
@@ -114,7 +116,10 @@
 				float alpha = 0.0;
 				//if (_AnglePenetration >= 0.0 && abs(_AnglePenetration*DEG2RAD - angle) < 15.0*DEG2RAD) {
 					// when the angle is _AnglePenetration it is 0 else it becomes 1
-					alpha = min(1.0, max(0.0, 1.0 - abs(_AnglePenetration*DEG2RAD - angle) / ((penetrationAngleEnd - penetrationAngleStart)*0.7)));
+				/*if(abs(_AnglePenetration*DEG2RAD - angle) / ((penetrationAngleEnd - penetrationAngleStart)*0.7)<1.0 && angle < (penetrationAngleEnd - penetrationAngleStart)*0.7) angle += _AnglePenetration-angle;
+				if (abs(_AnglePenetration*DEG2RAD - angle) / ((penetrationAngleEnd - penetrationAngleStart)*0.7) < 1.0 && angle > (360.0*DEG2RAD - (penetrationAngleEnd - penetrationAngleStart)*0.7)) angle += _AnglePenetration + angle;
+					alpha = min(1.0, max(0.0, 1.0 - abs(_AnglePenetration*DEG2RAD - angle) / ((penetrationAngleEnd - penetrationAngleStart)*0.7)));*/
+				alpha = (max(0.0, dot(coord, _DirPenetration)) - 0.1)/0.9;
 					_borderOffset = lerp(_borderOffset, /*(angle<25.0*DEG2RAD || angle>185.0*DEG2RAD)?alpha*0.2:*/alpha, alpha);
 					//_borderOffset -= (sin(sinAngle*_BorderFreq*4.0 + _Time.y*_BorderSpeed) + PI*0.5)*_BorderAmp*1.6;
 				//}
