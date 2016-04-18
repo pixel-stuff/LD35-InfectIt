@@ -20,12 +20,12 @@ public class UILevelManager : MonoBehaviour {
 
 
 	public void ReturnToSceneMenu(){
-		GameStateManager.setGameState (GameState.Menu);
+		GameStateManager.m_instance.setGameState (GameState.Menu);
 		Application.LoadLevelAsync ("MenuScene");
 	}
 
 	public void GoToGameOverScene(){
-		GameStateManager.setGameState (GameState.GameOver);
+		GameStateManager.m_instance.setGameState (GameState.GameOver);
 		Application.LoadLevelAsync ("GameOverScene");
 
 	}

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.SceneManagement;
 
 public enum GameState{
 	Menu,
@@ -47,7 +48,7 @@ public class GameStateManager : MonoBehaviour {
 		return m_gameState;
 	}
 
-	public static void setGameState(GameState state){
+	public void setGameState(GameState state){
 
 		m_gameState = state;
 		if(onChangeStateEvent != null){
@@ -56,11 +57,19 @@ public class GameStateManager : MonoBehaviour {
         if(m_gameState == GameState.GameOver) {
 			if (PlayerManager.m_instance.nbDestroyCell >= PlayerManager.m_instance.nbDestroyCellForWin) {
 				PlayerManager.m_instance.nbDestroyCell = 0;
-				Application.LoadLevelAsync ("SuccessGameOverScene");
+				SceneManager.LoadSceneAsync ("SuccessGameOverScene");
 			} else {
-				
-				Application.LoadLevelAsync ("GameOverScene");
+				try{
+					Camera.main.GetComponent<Effect_Saturation>().startSaturation(3.0f);
+				}catch(Exception e){}
+				AudioManager.m_instance.PlayMusic ("the_end_100bpm");
+				Invoke ("GoToGameOver", 3f);
 			}
         }
 	}
+
+	public void GoToGameOver(){
+		Application.LoadLevelAsync ("GameOverScene");
+	}
+
 }

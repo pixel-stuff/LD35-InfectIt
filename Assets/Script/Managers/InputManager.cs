@@ -43,7 +43,7 @@ public class InputManager : MonoBehaviour {
 
 	void UpdateMenuState(){
 		if(Input.GetKeyDown(KeyCode.Return)){
-			GameStateManager.setGameState (GameState.Playing);
+			GameStateManager.m_instance.setGameState (GameState.Playing);
 			Application.LoadLevelAsync ("LevelScene");
 		}
 	}
@@ -51,7 +51,7 @@ public class InputManager : MonoBehaviour {
 	void UpdatePlayingState(){
 		if(Input.GetKeyDown("p")){
 			Debug.Log("PAUSE ! ");
-			GameStateManager.setGameState(GameState.Pause);
+			GameStateManager.m_instance.setGameState(GameState.Pause);
 		}
 
 		if(Input.GetKey(KeyCode.UpArrow)){
@@ -86,7 +86,7 @@ public class InputManager : MonoBehaviour {
 	void UpdatePauseState(){
 		if(Input.GetKeyDown("p")){
 			Debug.Log("DÉPAUSE ! ");
-			GameStateManager.setGameState(GameState.Playing);
+			GameStateManager.m_instance.setGameState(GameState.Playing);
 		}
 	}
 

@@ -134,7 +134,7 @@ public class FightManager : MonoBehaviour {
 
 		AudioManager.m_instance.StopMenuBeat ();
 		InitFight (null);
-		GameStateManager.setGameState (GameState.Playing);
+		GameStateManager.m_instance.setGameState (GameState.Playing);
 	}
 
 	// Update is called once per frame

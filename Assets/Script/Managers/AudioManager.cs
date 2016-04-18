@@ -49,15 +49,31 @@ public class AudioManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		m_transform = this.transform;
-		PlayMenuMusic (m_menuMusic);
+		PlayMenuMusic ();
 	}
 
-	public void PlayMenuMusic(string clipname){
+	public void PlayMusic(string name){
 		//Create an empty game object
-		m_menuMusicGB = new GameObject ("Audio_" +  clipname);
+		GameObject go = new GameObject ("Audio_" +  name);
+		go.transform.parent = m_transform;
+		//Load clip from ressources folder
+		AudioClip newClip =  Instantiate(Resources.Load (name, typeof(AudioClip))) as AudioClip;
+
+		//Add and bind an audio source
+		AudioSource source = go.AddComponent<AudioSource>();
+		source.clip = newClip;
+		//Play and destroy the component
+		source.Play();
+		Destroy (go, newClip.length);
+	}
+
+	#region Menu
+	public void PlayMenuMusic(){
+		//Create an empty game object
+		m_menuMusicGB = new GameObject ("Audio_" +  m_menuMusic);
 		m_menuMusicGB.transform.parent = m_transform;
 		//Load clip from ressources folder
-		AudioClip newClip =  Instantiate(Resources.Load (clipname, typeof(AudioClip))) as AudioClip;
+		AudioClip newClip =  Instantiate(Resources.Load (m_menuMusic, typeof(AudioClip))) as AudioClip;
 
 		//Add and bind an audio source
 		AudioSource source = m_menuMusicGB.AddComponent<AudioSource>();
@@ -70,6 +86,7 @@ public class AudioManager : MonoBehaviour {
 	public void StopMenuBeat(){
 		Destroy (m_menuMusicGB);
 	}
+	#endregion Menu
 
 	#region Recherche
 	public void PlayRechercheMusic(){

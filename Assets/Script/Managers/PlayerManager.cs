@@ -36,7 +36,9 @@ public class PlayerManager : MonoBehaviour {
 
 	void Start () {
 		GameStateManager.onChangeStateEvent += handleChangeGameState;
-		FindObjectOfType<CompteurManager> ().SetNumberAtStart (nbDestroyCellForWin);
+		try{
+			FindObjectOfType<CompteurManager> ().SetNumberAtStart (nbDestroyCellForWin);
+		}catch(Exception e){};
 	}
 	
 	// Update is called once per frame
@@ -75,9 +77,11 @@ public class PlayerManager : MonoBehaviour {
 
 	public void addDestroyCell() {
 		nbDestroyCell++;
-		FindObjectOfType<CompteurManager> ().SetNumberAtStart (nbDestroyCell);
+		try{
+			FindObjectOfType<CompteurManager> ().SetNumberAtStart (nbDestroyCell);
+		}catch(Exception e){};
 		if (nbDestroyCell == nbDestroyCellForWin) {
-			GameStateManager.setGameState (GameState.GameOver);
+			GameStateManager.m_instance.setGameState (GameState.GameOver);
 		}
 	}
 	void handleChangeGameState(GameState newState){
