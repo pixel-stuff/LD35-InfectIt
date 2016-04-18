@@ -9,7 +9,8 @@ public class CompteurManager : MonoBehaviour {
 		this.GetComponent<Text> ().text = "" + number.ToString () + " / " + m_numberAtStart.ToString ();
 	}
 
-	public void SetNumberAtStart(){
+	public void SetNumberAtStart(int number){
+		m_numberAtStart = number;
 		this.GetComponent<Text> ().text = "0 / " + m_numberAtStart.ToString();
 	}
 }
