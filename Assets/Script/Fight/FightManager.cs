@@ -53,6 +53,10 @@ public class FightManager : MonoBehaviour {
 	[SerializeField]
 	private GameObject m_CroixExplication;
 
+	[Space(20)]
+	[SerializeField]
+	private Animation m_CellAnimation;
+
 	private bool m_isInit = false;
 	private int m_numberOfStep = 4;
 	private List<int> m_listOfIDInputWaited = new List<int> ();
@@ -94,6 +98,7 @@ public class FightManager : MonoBehaviour {
 		AudioManager.m_instance.PlayFightMusic ();
 		m_lastBeatInvoke = Time.time;
 		Invoke("StartCellStatement", 1.5f);
+		m_CellAnimation.Play ();
 		m_isInit = true;
 	}
 
