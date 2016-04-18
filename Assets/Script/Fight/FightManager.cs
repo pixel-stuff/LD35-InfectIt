@@ -49,6 +49,10 @@ public class FightManager : MonoBehaviour {
 	public Sprite m_spriteInterrogation;
 	public Color m_colorInterrogation;
 
+	[Space(20)]
+	[SerializeField]
+	private GameObject m_CroixExplication;
+
 	private bool m_isInit = false;
 	private int m_numberOfStep = 4;
 	private List<int> m_listOfIDInputWaited = new List<int> ();

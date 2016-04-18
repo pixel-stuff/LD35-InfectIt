@@ -123,7 +123,7 @@ Material:
       data:
         first:
           name: _BorderSpeed
-        second: 1467
+        second: 4
       data:
         first:
           name: _LightDistanceMax

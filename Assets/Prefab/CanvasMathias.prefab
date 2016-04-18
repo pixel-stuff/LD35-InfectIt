@@ -751,6 +751,7 @@ MonoBehaviour:
   m_spriteInterrogation: {fileID: 21300018, guid: 9c8cdf6b730c5470b89c7b1c37403062,
     type: 3}
   m_colorInterrogation: {r: 0, g: 0, b: 0, a: 1}
+  m_CroixExplication: {fileID: 127658}
 --- !u!114 &11402610
 MonoBehaviour:
   m_ObjectHideFlags: 1

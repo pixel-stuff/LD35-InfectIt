@@ -120,8 +120,11 @@ public class AudioManager : MonoBehaviour {
 	}
 
 	public void StopRechercheBeat(){
-		CancelInvoke ("BeatRechercheEvent");
-		m_rechercheMusicGB.GetComponent<AudioSource> ().Pause ();
+		m_rechercheMusicGB.GetComponent<AudioSource> ().volume = 0.0f;
+	}
+
+	public void ReprendreRechercheBeat(){
+		m_rechercheMusicGB.GetComponent<AudioSource> ().volume = 1.0f;
 	}
 	#endregion Recherche
 
