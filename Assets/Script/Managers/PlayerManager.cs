@@ -88,6 +88,8 @@ public class PlayerManager : MonoBehaviour {
 			GameStateManager.m_instance.setGameState (GameState.GameOver);
 		}
 	}
+
+
 	void handleChangeGameState(GameState newState){
 		Debug.Log ("PLAYER SEE THE NEW STATE : " + newState);
         if(GameStateManager.getGameState()==GameState.GameOver) {
