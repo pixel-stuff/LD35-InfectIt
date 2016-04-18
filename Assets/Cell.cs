@@ -136,7 +136,7 @@ public class Cell : MonoBehaviour {
 		exterior.enabled = false;
 		interior.enabled = false;
 
-		this?gameObject.GetComponent<ParticleSystem>().Emit(nbParticule);
+		this.gameObject.GetComponent<ParticleSystem>().Emit(nbParticule);
 		//this.gameObject.SetActive (false);
 		//this.GetComponent<Animation> ().Play ("DeathANimation");
 	}
