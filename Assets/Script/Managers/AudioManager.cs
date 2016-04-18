@@ -30,6 +30,7 @@ public class AudioManager : MonoBehaviour {
 	[SerializeField]
 	private string m_fightMusic = "infect_it_theme_125bpm";
 	public Action m_beatFightEvent;
+	public Action m_beforeBeatFightEvent;
 	private GameObject m_fightMusicGB;
 	private float m_timeBetweenFightBeat = 60f / 100f;
 	public float timeBetweenFightBeat{
@@ -134,17 +135,23 @@ public class AudioManager : MonoBehaviour {
 			source.clip = newClip;
 			//Play and destroy the component
 			source.Play ();
-			InvokeRepeating ("BeatFightEvent", m_timeBetweenFightBeat * 1f, m_timeBetweenFightBeat);
 		} else {
 			m_fightMusicGB.GetComponent<AudioSource> ().time = 0f;
 			m_fightMusicGB.GetComponent<AudioSource> ().Play ();
-			InvokeRepeating ("BeatFightEvent", m_timeBetweenFightBeat * 1f, m_timeBetweenFightBeat);
 		}
+		InvokeRepeating ("BeatFightEvent", m_timeBetweenFightBeat * 1f, m_timeBetweenFightBeat);
+		InvokeRepeating ("BeforeBeatFightEvent", m_timeBetweenFightBeat * 1f - 0.10f, m_timeBetweenFightBeat - 0.10f);
 	}
 
 	public void BeatFightEvent(){
 		if (m_beatFightEvent != null) {
 			m_beatFightEvent ();
+		}
+	}
+
+	public void BeforeBeatFightEvent(){
+		if (m_beforeBeatFightEvent != null) {
+			m_beforeBeatFightEvent ();
 		}
 	}
 

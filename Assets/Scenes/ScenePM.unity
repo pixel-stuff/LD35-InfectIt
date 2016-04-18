@@ -99,6 +99,7 @@ GameObject:
   - 81: {fileID: 125423202}
   - 114: {fileID: 125423207}
   - 114: {fileID: 125423208}
+  - 114: {fileID: 125423209}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -324,6 +325,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12eafe22868e6c14894de317b4b76993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &125423209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 125423201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3210ecf52fdeb7498d4c6a67660f0a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  downsample: 1
+  blurSize: 3
+  blurIterations: 2
+  blurType: 0
+  blurShader: {fileID: 4800000, guid: b7958cd835664d6419b924e6aba48d94, type: 3}
+  blurMask: {fileID: 2800000, guid: 87162e51368045c4a9a7bd83750f99b3, type: 3}
 --- !u!1 &252017985
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,14 +614,22 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 195528, guid: 5909ab43ecfc0374695506b3028f87f0, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 129738, guid: 5909ab43ecfc0374695506b3028f87f0, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 165676, guid: 5909ab43ecfc0374695506b3028f87f0, type: 2}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11447724, guid: 5909ab43ecfc0374695506b3028f87f0, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11416246, guid: 5909ab43ecfc0374695506b3028f87f0, type: 2}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1343,7 +1369,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1877518413
 SpriteRenderer:
   m_ObjectHideFlags: 0

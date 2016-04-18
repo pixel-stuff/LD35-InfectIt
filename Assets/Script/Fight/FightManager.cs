@@ -35,6 +35,9 @@ public class FightManager : MonoBehaviour {
 	#endregion Singleton
 	[Space(10)]
 	public StepFight[] m_listOfInput; 	
+
+	[Space(10)]
+	public VirusFightManager m_virus;
 	[Space(10)]
 	public GameObject m_bubbleVirus;
 	public GameObject[] m_listOfInputVirus;
@@ -117,8 +120,12 @@ public class FightManager : MonoBehaviour {
 		if (m_waitingForInput) {
 			m_numberOfBeatWithNoInput++;
 		}
+		//m_virus.BeatAnim ();
 	}
 
+	public void BeforeBeatInvokeHandle(){
+		//m_virus.SquareAnim ();
+	}
 
 
 	// Use this for initialization
@@ -131,6 +138,7 @@ public class FightManager : MonoBehaviour {
 			m_listOfInputVirus [i].SetActive (false);
 		}
 		AudioManager.m_instance.m_beatFightEvent += BeatInvokeHandle;
+		AudioManager.m_instance.m_beforeBeatFightEvent += BeforeBeatInvokeHandle;
 
 		AudioManager.m_instance.StopMenuBeat ();
 		InitFight (null);
@@ -217,6 +225,7 @@ public class FightManager : MonoBehaviour {
 			ErrorInput ();
 			return;
 		}
+		m_virus.TriangleAnim ();
 		SuccessInput ();
 	}
 
@@ -233,6 +242,7 @@ public class FightManager : MonoBehaviour {
 			ErrorInput ();
 			return;
 		}
+		m_virus.CrossAnim ();
 		SuccessInput ();
 	}
 
@@ -249,6 +259,7 @@ public class FightManager : MonoBehaviour {
 			ErrorInput ();
 			return;
 		}
+		m_virus.DonutsAnim ();
 		SuccessInput ();
 	}
 
@@ -265,6 +276,7 @@ public class FightManager : MonoBehaviour {
 			ErrorInput ();
 			return;
 		}
+		m_virus.SquareAnim ();
 		SuccessInput ();
 	}
 

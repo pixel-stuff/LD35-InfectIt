@@ -3,18 +3,33 @@ using System.Collections;
 
 public class VirusFightManager : MonoBehaviour {
 
-	private Animation m_animation;
+	private Animator m_animator;
 
 	void Awake(){
-		m_animation = this.GetComponent<Animation> ();
+		m_animator = this.GetComponent<Animator> ();
 	}
 	// Use this for initialization
 	void Start () {
-		m_animation.Play ("IdleToSquare");
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public void TriangleAnim(){
+		m_animator.SetTrigger ("Triangle");
+	}
+	public void SquareAnim(){
+		m_animator.SetTrigger ("Square");
+	}
+	public void DonutsAnim(){
+		m_animator.SetTrigger ("Donuts");
+	}
+	public void CrossAnim(){
+		m_animator.SetTrigger ("Cross");
+	}
+	public void BeatAnim(){
+		this.GetComponent<Animation> ().Play ();
 	}
 }
