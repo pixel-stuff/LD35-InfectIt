@@ -93,7 +93,7 @@ public class Cell : MonoBehaviour {
 		m_endFusionPosition = this.transform.position;
 		m_isAfraid = true;
 		m_run = true;
-		this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = false;
+		//this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = false;
 		this.gameObject.GetComponent<BoxCollider2D> ().enabled = true;
 	}
 

@@ -97,7 +97,7 @@ public class PlayerManager : MonoBehaviour {
 		isWinning = win;
 		//hide canvas fight
 		//animation transparent 
-		freezeGame(false);
+										//freezeGame(false);
 		//If win - NOMNOM
 		//if !win EJECT
 	}
@@ -143,12 +143,12 @@ public class PlayerManager : MonoBehaviour {
 			Debug.Log ("freezze  "+ freeze);
 			cells [i].GetComponent<Rigidbody2D> ().isKinematic = freeze;
 		}
-
+		/*
 		GameObject[] indicators = GameObject.FindGameObjectsWithTag("Indicator");
 		for (int i = 0; i < indicators.Length; i++) {
 			Debug.Log ("freezze  "+ freeze);
 			indicators [i].GetComponent<Rigidbody2D> ().isKinematic = freeze;
-		}
+		}*/
 	}
 
 	#region Intéraction
