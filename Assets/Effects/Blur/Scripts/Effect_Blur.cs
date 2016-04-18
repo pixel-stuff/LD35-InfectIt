@@ -26,6 +26,8 @@ public class Effect_Blur : UnityStandardAssets.ImageEffects.PostEffectsBase {
     private Material blurMaterial = null;
     public Texture blurMask = null;
 
+    public Color color;
+
 
     public override bool CheckResources() {
         CheckSupport(false);
@@ -54,6 +56,7 @@ public class Effect_Blur : UnityStandardAssets.ImageEffects.PostEffectsBase {
         float widthMod = 1.0f / (1.0f * (1 << downsample));
 
         blurMaterial.SetVector("_Parameter", new Vector4(blurSize * widthMod, -blurSize * widthMod, 0.0f, 0.0f));
+        blurMaterial.SetVector("_Color", color);
         source.filterMode = FilterMode.Bilinear;
 
         int rtW = source.width >> downsample;

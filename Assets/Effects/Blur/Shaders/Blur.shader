@@ -4,6 +4,7 @@ Shader "Custom/Effect/FastBlurMask" {
 		_MainTex("Base (RGB)", 2D) = "white" {}
 		_Bloom("Bloom (RGB)", 2D) = "black" {}
 		_MaskTex("Mask (A)", 2D) = "white" {}
+		_Color("Color (RGBA)", Color) = (1, 1, 1, 1)
 	}
 
 	CGINCLUDE
@@ -13,6 +14,8 @@ Shader "Custom/Effect/FastBlurMask" {
 	sampler2D _MainTex;
 	sampler2D _Bloom;
 	sampler2D _MaskTex;
+
+	uniform half4 _Color;
 
 	uniform half4 _MainTex_TexelSize;
 	uniform half4 _Parameter;
@@ -47,7 +50,7 @@ Shader "Custom/Effect/FastBlurMask" {
 		color += tex2D(_MainTex, i.uv21);
 		color += tex2D(_MainTex, i.uv22);
 		color += tex2D(_MainTex, i.uv23);
-		return lerp(tex2D(_MainTex, i.uv), color / 4, tex2D(_MaskTex, i.uv).a);
+		return lerp(tex2D(_MainTex, i.uv), color / 4*_Color, tex2D(_MaskTex, i.uv).a);
 	}
 
 		// weight curves
@@ -106,7 +109,7 @@ Shader "Custom/Effect/FastBlurMask" {
 			color += tap * curve4[l];
 			coords += netFilterWidth;
 		}
-		return lerp(tex2D(_MainTex, uv), color, tex2D(_MaskTex, uv).a);
+		return lerp(tex2D(_MainTex, uv), color*_Color, tex2D(_MaskTex, uv).a);
 		//return color;
 	}
 
@@ -160,7 +163,7 @@ Shader "Custom/Effect/FastBlurMask" {
 			color += (tapA + tapB) * curve4[l];
 		}
 
-		return lerp(tex2D(_MainTex, uv), color, tex2D(_MaskTex, uv).a);
+		return lerp(tex2D(_MainTex, uv), color*_Color, tex2D(_MaskTex, uv).a);
 		//return color;
 
 	}

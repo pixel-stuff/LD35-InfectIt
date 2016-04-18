@@ -343,6 +343,7 @@ MonoBehaviour:
   blurType: 0
   blurShader: {fileID: 4800000, guid: b7958cd835664d6419b924e6aba48d94, type: 3}
   blurMask: {fileID: 2800000, guid: 87162e51368045c4a9a7bd83750f99b3, type: 3}
+  color: {r: 0.8724138, g: 0.8724138, b: 0.8724138, a: 0.50980395}
 --- !u!114 &125423210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,9 +355,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e816c50b62b634bb0adcb21eadde55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  freq: 1
-  amp: 0.5
+  speed: 40
+  freq: 5.7
+  amp: 1
+  noiseType: 1
   noiseShader: {fileID: 4800000, guid: 25d08b6732f77bb419fe1038b0547023, type: 3}
   noiseTex: {fileID: 2800000, guid: 8a9a17ae21240734ba7ecfa4a5d4184d, type: 3}
 --- !u!1 &252017985
