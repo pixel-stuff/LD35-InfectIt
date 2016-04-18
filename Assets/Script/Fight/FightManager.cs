@@ -78,9 +78,9 @@ public class FightManager : MonoBehaviour {
 				m_listOfInputVirus [i].SetActive (false);
 			}
 		}
-		for (int i = 0; i < m_listOfIDInputWaited.Count; i++) {
+		/*for (int i = 0; i < m_listOfIDInputWaited.Count; i++) {
 			Debug.Log ("init : " + m_listOfInput[m_listOfIDInputWaited[i]].m_nameController);
-		}
+		}*/
 
 		AudioManager.m_instance.PlayFightMusic ();
 		m_lastBeatInvoke = Time.time;
@@ -130,7 +130,7 @@ public class FightManager : MonoBehaviour {
 		for (int i = 0; i < m_listOfInputVirus.Length; i++) {
 			m_listOfInputVirus [i].SetActive (false);
 		}
-		AudioManager.m_instance.m_beatEvent += BeatInvokeHandle;
+		AudioManager.m_instance.m_beatFightEvent += BeatInvokeHandle;
 		InitFight (null);
 		GameStateManager.setGameState (GameState.Playing);
 	}
@@ -160,6 +160,7 @@ public class FightManager : MonoBehaviour {
 		Debug.Log ("RESTART");
 		InitFight (null);
 		AudioManager.m_instance.StopBeat ();
+
 		AudioManager.m_instance.PlayFightMusic ();
 		try{
 			PlayerManager.m_instance.FightOver (isWin);
@@ -297,7 +298,6 @@ public class FightManager : MonoBehaviour {
 	}
 
 	public void SuccessInput(){
-		Debug.Log ("SUCCESS = " + m_currentStepInputWaited + "/" + m_listOfIDInputWaited.Count);
 		if (m_currentStepInputWaited < m_listOfIDInputWaited.Count-1) {
 			m_listOfInputVirus [m_currentStepInputWaited].GetComponent<Image> ().sprite = m_listOfInput [m_listOfIDInputWaited [m_currentStepInputWaited]].m_sprite;
 			m_listOfInputVirus [m_currentStepInputWaited].GetComponent<Image> ().color = m_listOfInput [m_listOfIDInputWaited [m_currentStepInputWaited]].m_spriteCoolor;

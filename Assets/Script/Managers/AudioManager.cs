@@ -29,11 +29,14 @@ public class AudioManager : MonoBehaviour {
 	private string m_fightMusic = "infect_it_theme_125bpm";
 
 
-	public Action m_beatEvent;
+	public Action m_beatFightEvent;
 	private float m_timeBetweenBeat = 60f / 125f;
 	public float timeBetweenBeat{
 		get { return m_timeBetweenBeat; }
 	}
+
+
+	private GameObject m_fightMusicGB;
 
 	// Use this for initialization
 	void Start () {
@@ -76,11 +79,10 @@ public class AudioManager : MonoBehaviour {
 			InvokeRepeating ("BeatEvent", m_timeBetweenBeat * 1f, m_timeBetweenBeat);
 		}
 	}
-	private GameObject m_fightMusicGB;
 
 	public void BeatEvent(){
-		if (m_beatEvent != null) {
-			m_beatEvent ();
+		if (m_beatFightEvent != null) {
+			m_beatFightEvent ();
 		}
 	}
 
