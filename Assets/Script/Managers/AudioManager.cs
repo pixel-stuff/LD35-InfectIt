@@ -53,6 +53,19 @@ public class AudioManager : MonoBehaviour {
 	}
 
 	public void PlayMusic(string name){
+		if (m_menuMusicGB != null) {
+			Destroy (m_menuMusicGB);
+		}
+		if (m_fightMusicGB != null) {
+			Destroy (m_fightMusicGB);
+			CancelInvoke ("BeatFightEvent");
+		}
+
+		if (m_rechercheMusicGB != null) {
+			Destroy (m_rechercheMusicGB);
+			CancelInvoke ("BeatRechercheEvent");
+		}
+
 		//Create an empty game object
 		GameObject go = new GameObject ("Audio_" +  name);
 		go.transform.parent = m_transform;
@@ -70,6 +83,9 @@ public class AudioManager : MonoBehaviour {
 	#region Menu
 	public void PlayMenuMusic(){
 		if (m_menuMusic.Equals (""))
+			return;
+
+		if (m_menuMusicGB != null)
 			return;
 		
 		//Create an empty game object
@@ -145,7 +161,7 @@ public class AudioManager : MonoBehaviour {
 			m_fightMusicGB.GetComponent<AudioSource> ().Play ();
 		}
 		InvokeRepeating ("BeatFightEvent", m_timeBetweenFightBeat * 1f, m_timeBetweenFightBeat);
-		InvokeRepeating ("BeforeBeatFightEvent", m_timeBetweenFightBeat * 1f - 0.10f, m_timeBetweenFightBeat - 0.10f);
+		//InvokeRepeating ("BeforeBeatFightEvent", m_timeBetweenFightBeat * 1f - 0.10f, m_timeBetweenFightBeat - 0.10f);
 	}
 
 	public void BeatFightEvent(){
@@ -169,6 +185,20 @@ public class AudioManager : MonoBehaviour {
 	}
 	#endregion Fight
 
+	public void DestroyAllMusic(){
+		if (m_menuMusicGB != null) {
+			Destroy (m_menuMusicGB);
+		}
+		if (m_fightMusicGB != null) {
+			Destroy (m_fightMusicGB);
+			CancelInvoke ("BeatFightEvent");
+		}
+
+		if (m_rechercheMusicGB != null) {
+			Destroy (m_rechercheMusicGB);
+			CancelInvoke ("BeatRechercheEvent");
+		}
+	}
 
 	// Update is called once per frame
 	void Update () {

@@ -54,7 +54,8 @@ public class GameStateManager : MonoBehaviour {
 		if(onChangeStateEvent != null){
 			onChangeStateEvent(state);
 		}
-        if(m_gameState == GameState.GameOver) {
+		if(m_gameState == GameState.GameOver) {
+			AudioManager.m_instance.DestroyAllMusic ();
 			if (PlayerManager.m_instance.nbDestroyCell >= PlayerManager.m_instance.nbDestroyCellForWin) {
 				PlayerManager.m_instance.nbDestroyCell = 0;
 				SceneManager.LoadSceneAsync ("SuccessGameOverScene");
