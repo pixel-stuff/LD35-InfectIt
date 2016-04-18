@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UIMenuManager : MonoBehaviour {
+public class UITutoManager : MonoBehaviour {
 
 
 
 	// Use this for initialization
 	void Start () {
-	
+		Debug.Log ("ICI");
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		/*if (a != null) {
@@ -22,17 +22,11 @@ public class UIMenuManager : MonoBehaviour {
 	}
 
 	AsyncOperation a;
-	float timeStartLoading;
 
-	public void GoToLevelScene(){
-		GameStateManager.setGameState (GameState.Playing);
-		a =  Application.LoadLevelAsync ("SceneMathias");
-		AudioManager.m_instance.StopMenuBeat ();
-		//a.allowSceneActivation = false;
-		timeStartLoading = Time.time;
-	}
 
-	public void GoToTutoScene(){
-		a =  Application.LoadLevelAsync ("TutorialScene");
+	public void GoToMenuScene(){
+		Debug.Log ("LA");
+		Application.LoadLevelAsync ("MenuScene");
+		Debug.Log ("LA");
 	}
 }
