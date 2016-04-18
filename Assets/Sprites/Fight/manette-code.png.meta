@@ -1,0 +1,220 @@
+fileFormatVersion: 2
+guid: 866b3d5553fff4091b8148c7d01049e1
+timeCreated: 1460996380
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: manette
+    21300002: triangle_petit
+    21300004: triangle_grand
+    21300006: carre_petit
+    21300008: donuts_grand
+    21300010: cross_petit
+    21300012: donuts_petit
+    21300014: cross_grand
+    21300016: carre_grand
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: manette
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 84
+        width: 233
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.5, y: 116.5}
+        - {x: -51.5, y: 97.5}
+        - {x: -116.5, y: 23.5}
+        - {x: -116.5, y: -26.5}
+        - {x: -25.5, y: -116.5}
+        - {x: 56.5, y: -116.5}
+        - {x: 116.5, y: -58.5}
+        - {x: 116.5, y: 43.5}
+        - {x: 50.5, y: 116.5}
+      - - {x: -30.5, y: -26.5}
+        - {x: -30.5, y: 24.5}
+        - {x: 24.5, y: 32.5}
+        - {x: 33.5, y: -20.5}
+    - name: triangle_petit
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 255
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 16}
+        - {x: -7, y: 14}
+        - {x: -18, y: -2}
+        - {x: -18, y: -16}
+        - {x: 18, y: -16}
+        - {x: 18, y: -3}
+        - {x: 7, y: 16}
+    - name: triangle_grand
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 238
+        width: 68
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 30}
+        - {x: -34, y: -7}
+        - {x: -34, y: -30}
+        - {x: 34, y: -30}
+        - {x: 34, y: -7}
+        - {x: 8, y: 30}
+    - name: carre_petit
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 204
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: donuts_grand
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 160
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.5, y: 30.5}
+        - {x: -30.5, y: 25.5}
+        - {x: -30.5, y: -27.5}
+        - {x: -20.5, y: -30.5}
+        - {x: 22.5, y: -30.5}
+        - {x: 30.5, y: -19.5}
+        - {x: 30.5, y: 18.5}
+        - {x: 20.5, y: 30.5}
+    - name: cross_petit
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 159
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+    - name: donuts_petit
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 113
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 16.5}
+        - {x: -15, y: 16.5}
+        - {x: -16, y: 12.5}
+        - {x: -16, y: -14.5}
+        - {x: -13, y: -16.5}
+        - {x: 9, y: -16.5}
+        - {x: 14, y: -12.5}
+        - {x: 16, y: -10.5}
+        - {x: 16, y: 9.5}
+    - name: cross_grand
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 89
+        width: 59
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.5, y: 29.5}
+        - {x: -29.5, y: -29.5}
+        - {x: 29.5, y: -29.5}
+        - {x: 29.5, y: 29.5}
+    - name: carre_grand
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 15
+        width: 59
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.5, y: 29.5}
+        - {x: -29.5, y: -29.5}
+        - {x: 29.5, y: -29.5}
+        - {x: 29.5, y: 29.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
