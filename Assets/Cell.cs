@@ -82,6 +82,12 @@ public class Cell : MonoBehaviour {
 		setColor (afraidColor);
 	}
 
+    private float getRightVectorComponent(float x1, float x2) {
+        float v = Mathf.Abs(x1-x2);
+        if (x1 < x2) v = -v;
+        return v;
+    }
+
 	public void startFusion(Vector3 virusPos){
 		Debug.Log ("StartFusion");
 		if (m_isAfraid) {
@@ -93,7 +99,11 @@ public class Cell : MonoBehaviour {
         } else {
 			this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = true;
 			this.gameObject.GetComponent<BoxCollider2D> ().enabled = false;
-            setFusionVectorDir(virusPos - transform.position);
+            Vector3 dir = transform.position - virusPos;
+            setFusionVectorDir(new Vector3(
+                getRightVectorComponent(transform.position.x, virusPos.x),
+                getRightVectorComponent(transform.position.y, virusPos.y),
+                0.0f));
         }
 	}
 
