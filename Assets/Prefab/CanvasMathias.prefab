@@ -235,6 +235,7 @@ GameObject:
   - 4: {fileID: 450924}
   - 212: {fileID: 21258790}
   - 111: {fileID: 11135080}
+  - 114: {fileID: 11417510}
   m_Layer: 0
   m_Name: Inner
   m_TagString: Untagged
@@ -452,9 +453,9 @@ Animation:
   m_GameObject: {fileID: 199346}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 52f5a85f39412439ea31169d435008d3, type: 2}
+  m_Animation: {fileID: 7400000, guid: 6dab31522c45b4021a4a220e77db039c, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: 52f5a85f39412439ea31169d435008d3, type: 2}
+  - {fileID: 7400000, guid: 6dab31522c45b4021a4a220e77db039c, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -524,7 +525,6 @@ MonoBehaviour:
     type: 3}
   m_colorInterrogation: {r: 0, g: 0, b: 0, a: 1}
   m_CroixExplication: {fileID: 0}
-  m_CellAnimation: {fileID: 11135080}
 --- !u!114 &11407974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -540,6 +540,17 @@ MonoBehaviour:
   m_shaderTimeCurrentUniName: _TimeCurrent
   m_shaderTimeEndUniName: _TimeEnd
   m_referenceMaterial: {fileID: 2100000, guid: d3caad23681b98841a9ad1143a5f0ad6, type: 2}
+--- !u!114 &11417510
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d753ee9469214c3ab0c61365b30781d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11448002
 MonoBehaviour:
   m_ObjectHideFlags: 1
