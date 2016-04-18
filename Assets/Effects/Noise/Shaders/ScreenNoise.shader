@@ -88,7 +88,12 @@ Shader "Custom/Effect/Noise" {
 	{
 		fixed4 color = tex2D(_MainTex, i.uv);
 		fixed noiseAlpha = tex2D(_NoiseTex, i.uv).a;
-		fixed N = cnoise((i.uv + _Time.y*_Parameter.x)*_Parameter.y)*_Parameter.z;
+		fixed N = 0.0;
+		if(_Parameter.w==0.0)
+			N = hash2((i.uv + _Time.y*_Parameter.x)*_Parameter.y)*_Parameter.z;
+		else if(_Parameter.w==1.0)
+			N = cnoise((i.uv + _Time.y*_Parameter.x)*_Parameter.y)*_Parameter.z;
+
 		return lerp(color, fixed4(N, N, N, 1.0)*_Parameter.z, noiseAlpha);
 	}
 

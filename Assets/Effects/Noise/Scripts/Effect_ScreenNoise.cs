@@ -14,6 +14,8 @@ public class Effect_ScreenNoise : UnityStandardAssets.ImageEffects.PostEffectsBa
 
     [Range(0.0f, 10.0f)]
     public float amp = 0.5f;
+    [Range(0.0f, 1.0f)]
+    public float noiseType = 0.5f;
 
     public Shader noiseShader = null;
     private Material noiseMaterial = null;
@@ -44,7 +46,7 @@ public class Effect_ScreenNoise : UnityStandardAssets.ImageEffects.PostEffectsBa
             return;
         }
 
-        noiseMaterial.SetVector("_Parameter", new Vector4(speed, freq, amp, 0.0f));
+        noiseMaterial.SetVector("_Parameter", new Vector4(speed, freq, amp, noiseType));
         Graphics.Blit(source, destination, noiseMaterial);
     }
 }
