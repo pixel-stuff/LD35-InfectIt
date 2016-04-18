@@ -123,7 +123,7 @@ public class FightManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		m_timeBetweenBeat = AudioManager.m_instance.timeBetweenBeat;
+		m_timeBetweenBeat = AudioManager.m_instance.timeBetweenFightBeat;
 		m_bubbleVirus.SetActive(false);
 		m_bubbleCell.SetActive (false);
 		m_InputCell.SetActive (false);
@@ -159,7 +159,7 @@ public class FightManager : MonoBehaviour {
 		}
 		Debug.Log ("RESTART");
 		InitFight (null);
-		AudioManager.m_instance.StopBeat ();
+		AudioManager.m_instance.StopFightBeat ();
 
 		AudioManager.m_instance.PlayFightMusic ();
 		try{

@@ -27,16 +27,22 @@ public class AudioManager : MonoBehaviour {
 
 	[SerializeField]
 	private string m_fightMusic = "infect_it_theme_125bpm";
-
-
 	public Action m_beatFightEvent;
-	private float m_timeBetweenBeat = 60f / 125f;
-	public float timeBetweenBeat{
-		get { return m_timeBetweenBeat; }
+	private GameObject m_fightMusicGB;
+	private float m_timeBetweenFightBeat = 60f / 125f;
+	public float timeBetweenFightBeat{
+		get { return m_timeBetweenFightBeat; }
 	}
 
-
-	private GameObject m_fightMusicGB;
+	[Space(25)]
+	[SerializeField]
+	private string m_rechercheMusic = "chase_to_leave_theme_125bpm";
+	public Action m_beatRechercheEvent;
+	private GameObject m_rechercheMusicGB;
+	private float m_timeBetweenRechercheBeat = 60f / 125f;
+	public float timeBetweenRechercheBeat{
+		get { return m_timeBetweenRechercheBeat; }
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -60,6 +66,40 @@ public class AudioManager : MonoBehaviour {
 
 	}
 
+	#region Recherche
+	public void PlayRechercheMusic(){
+		if (m_rechercheMusicGB == null) {
+			m_rechercheMusicGB = new GameObject ("Audio_" + m_rechercheMusic);
+			m_rechercheMusicGB.transform.parent = m_transform;
+			//Load clip from ressources folder
+			AudioClip newClip = Instantiate (Resources.Load (m_rechercheMusic, typeof(AudioClip))) as AudioClip;
+
+			//Add and bind an audio source
+			AudioSource source = m_rechercheMusicGB.AddComponent<AudioSource> ();
+			source.clip = newClip;
+			//Play and destroy the component
+			source.Play ();
+			InvokeRepeating ("BeatRechercheEvent", m_timeBetweenRechercheBeat * 1f, m_timeBetweenRechercheBeat);
+		} else {
+			m_rechercheMusicGB.GetComponent<AudioSource> ().time = 0f;
+			m_rechercheMusicGB.GetComponent<AudioSource> ().Play ();
+			InvokeRepeating ("BeatRechercheEvent", m_timeBetweenRechercheBeat * 1f, m_timeBetweenRechercheBeat);
+		}
+	}
+
+	public void BeatRechercheEvent(){
+		if (m_beatRechercheEvent != null) {
+			m_beatRechercheEvent ();
+		}
+	}
+
+	public void StopRechercheBeat(){
+		CancelInvoke ("BeatRechercheEvent");
+		m_rechercheMusicGB.GetComponent<AudioSource> ().Pause ();
+	}
+	#endregion Recherche
+
+	#region Fight
 	public void PlayFightMusic(){
 		if (m_fightMusicGB == null) {
 			m_fightMusicGB = new GameObject ("Audio_" + m_fightMusic);
@@ -72,28 +112,28 @@ public class AudioManager : MonoBehaviour {
 			source.clip = newClip;
 			//Play and destroy the component
 			source.Play ();
-			InvokeRepeating ("BeatEvent", m_timeBetweenBeat * 1f, m_timeBetweenBeat);
+			InvokeRepeating ("BeatFightEvent", m_timeBetweenFightBeat * 1f, m_timeBetweenFightBeat);
 		} else {
 			m_fightMusicGB.GetComponent<AudioSource> ().time = 0f;
 			m_fightMusicGB.GetComponent<AudioSource> ().Play ();
-			InvokeRepeating ("BeatEvent", m_timeBetweenBeat * 1f, m_timeBetweenBeat);
+			InvokeRepeating ("BeatFightEvent", m_timeBetweenFightBeat * 1f, m_timeBetweenFightBeat);
 		}
 	}
 
-	public void BeatEvent(){
+	public void BeatFightEvent(){
 		if (m_beatFightEvent != null) {
 			m_beatFightEvent ();
 		}
 	}
 
-	public void StopBeat(){
-		CancelInvoke ("BeatEvent");
+	public void StopFightBeat(){
+		CancelInvoke ("BeatFightEvent");
 		m_fightMusicGB.GetComponent<AudioSource> ().Pause ();
 		//if (m_fightMusicGB != null) {
 			//Destroy (m_fightMusicGB);
 		//}
 	}
-
+	#endregion Fight
 
 
 	// Update is called once per frame
