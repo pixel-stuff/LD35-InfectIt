@@ -85,6 +85,21 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &547363959 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100180, guid: 0d073dabbae925f47bab7000e44e6206, type: 2}
+  m_PrefabInternal: {fileID: 1973071492}
+--- !u!114 &547363960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 547363959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ee02114915c427d9bdace95847022b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &611157358
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,15 +537,32 @@ Prefab:
     - target: {fileID: 11470374, guid: 0d073dabbae925f47bab7000e44e6206, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 547363960}
     - target: {fileID: 11494574, guid: 0d073dabbae925f47bab7000e44e6206, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 547363960}
     - target: {fileID: 22388716, guid: 0d073dabbae925f47bab7000e44e6206, type: 2}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 647266340}
-    m_RemovedComponents: []
+    - target: {fileID: 11410122, guid: 0d073dabbae925f47bab7000e44e6206, type: 2}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11470374, guid: 0d073dabbae925f47bab7000e44e6206, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToTutoScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 11494574, guid: 0d073dabbae925f47bab7000e44e6206, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToLevelScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 11470374, guid: 0d073dabbae925f47bab7000e44e6206, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11428252, guid: 0d073dabbae925f47bab7000e44e6206, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0d073dabbae925f47bab7000e44e6206, type: 2}
   m_IsPrefabParent: 0
