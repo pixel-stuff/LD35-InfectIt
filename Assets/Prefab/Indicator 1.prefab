@@ -11,9 +11,9 @@ GameObject:
   - 212: {fileID: 21215142}
   - 111: {fileID: 11153602}
   - 114: {fileID: 11477442}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: IndicatorSprite
-  m_TagString: Untagged
+  m_TagString: IndicatorRenderer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +26,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 405766}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,11 +41,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 432270}
-  - 212: {fileID: 21227744}
   - 114: {fileID: 11466536}
   - 50: {fileID: 5075038}
   - 58: {fileID: 5865854}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Indicator 1
   m_TagString: Indicator
   m_Icon: {fileID: 0}
@@ -169,36 +168,6 @@ SpriteRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 140380}
   m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7f489363c9715c6478804301500b605d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
---- !u!212 &21227744
-SpriteRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 173830}
-  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:

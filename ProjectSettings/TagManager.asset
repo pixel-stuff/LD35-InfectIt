@@ -20,6 +20,11 @@ TagManager:
   - Fade
   - CellRenderer
   - Indicator
+  - PivotPoint
+  - TreeBrotherPosition
+  - TreeManager
+  - Beaver
+  - IndicatorRenderer
   layers:
   - Default
   - TransparentFX

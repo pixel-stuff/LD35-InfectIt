@@ -3304,16 +3304,8 @@ Prefab:
       value: 
       objectReference: {fileID: 557886590}
     - target: {fileID: 140380, guid: dfbb87541103a6a4cba5e9b01e20ed29, type: 2}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 140892, guid: dfbb87541103a6a4cba5e9b01e20ed29, type: 2}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 173830, guid: dfbb87541103a6a4cba5e9b01e20ed29, type: 2}
-      propertyPath: m_Layer
-      value: 11
+      propertyPath: m_TagString
+      value: IndicatorRenderer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dfbb87541103a6a4cba5e9b01e20ed29, type: 2}
@@ -6765,22 +6757,6 @@ Prefab:
     - target: {fileID: 173830, guid: dfbb87541103a6a4cba5e9b01e20ed29, type: 2}
       propertyPath: m_Name
       value: Indicator 1 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 140892, guid: dfbb87541103a6a4cba5e9b01e20ed29, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 140380, guid: dfbb87541103a6a4cba5e9b01e20ed29, type: 2}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 140892, guid: dfbb87541103a6a4cba5e9b01e20ed29, type: 2}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 173830, guid: dfbb87541103a6a4cba5e9b01e20ed29, type: 2}
-      propertyPath: m_Layer
-      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dfbb87541103a6a4cba5e9b01e20ed29, type: 2}
