@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21215142}
   - 111: {fileID: 11153602}
   - 114: {fileID: 11477442}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: IndicatorSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 405766}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - 114: {fileID: 11466536}
   - 50: {fileID: 5075038}
   - 58: {fileID: 5865854}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: Indicator 1
   m_TagString: Indicator
   m_Icon: {fileID: 0}
