@@ -68,7 +68,7 @@ public class Virus : MonoBehaviour {
 		Debug.Log ("Start Collide " + other.gameObject.layer);
 		//this.GetComponent<SpriteRenderer> ().material.SetFloat ("_BorderSpeed", 15);
 		if (other.gameObject.layer == LayerMask.NameToLayer("Cell")) {
-			other.gameObject.GetComponent<virusHack> ().startFusion ();
+			other.gameObject.GetComponent<virusHack> ().startFusion (transform.position);
 			if (other.gameObject.GetComponent<virusHack> ().acceptFusion() && !fighting) {
 				PlayerManager.m_instance.startFight ();
 				fighting = true;
@@ -101,7 +101,7 @@ public class Virus : MonoBehaviour {
 
 	public void ConsumeCell() {
 		m_isOnCenterAnimation = true;
-		m_targetCell.GetComponent<virusHack> ().startFusion ();
+		m_targetCell.GetComponent<virusHack> ().startFusion (transform.position);
 	/*	m_isOnCenterAnimation = false;
 		this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = false;
 		m_targetCell.GetComponent<virusHack> ().consume ();*/
@@ -109,7 +109,7 @@ public class Virus : MonoBehaviour {
 	}
 
 	public void Corrupt() {
-		m_targetCell.GetComponent<virusHack> ().startFusion ();
+		m_targetCell.GetComponent<virusHack> ().startFusion (transform.position);
 		m_isOnCenterAnimation = false;
 		fighting = false;
 		this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = false;

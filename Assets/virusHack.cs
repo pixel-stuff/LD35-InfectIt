@@ -5,8 +5,8 @@ public class virusHack : MonoBehaviour {
 
 	public Cell cellScript;
 
-	public void startFusion() {
-		cellScript.startFusion ();
+	public void startFusion(Vector3 virusPos) {
+		cellScript.startFusion (virusPos);
 	}
 
 	public void stopFusion() {

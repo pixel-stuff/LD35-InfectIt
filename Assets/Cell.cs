@@ -82,25 +82,34 @@ public class Cell : MonoBehaviour {
 		setColor (afraidColor);
 	}
 
-	public void startFusion(){
+	public void startFusion(Vector3 virusPos){
 		Debug.Log ("StartFusion");
 		if (m_isAfraid) {
 			m_run = true;
 			m_endFusionPosition = this.transform.position;
-			//TODO animation afarid here
+            //TODO animation afarid here
 
-			//this.gameObject.SetActive(false);
-		} else {
+            //this.gameObject.SetActive(false);
+        } else {
 			this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = true;
 			this.gameObject.GetComponent<BoxCollider2D> ().enabled = false;
-		}
+            setFusionVectorDir(virusPos - transform.position);
+        }
 	}
+
+    public void setFusionVectorDir(Vector3 dir) {
+        Debug.Log(dir);
+        if (exterior != null) {
+            exterior.material.SetVector("_DirPenetration", dir);
+        }
+    }
 
 	public void stopFusion() {
 		m_endFusionPosition = this.transform.position;
 		m_isAfraid = true;
 		m_run = true;
-		this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = false;
+        setFusionVectorDir(Vector3.zero);
+        this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = false;
 		this.gameObject.GetComponent<BoxCollider2D> ().enabled = true;
 	}
 
