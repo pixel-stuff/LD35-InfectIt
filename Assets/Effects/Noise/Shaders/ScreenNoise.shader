@@ -94,7 +94,7 @@ Shader "Custom/Effect/Noise" {
 		float Np = 0.0;
 		if (_Parameter.w == 0.0) {
 			N = fixed4(noiseT.r, noiseT.g, noiseT.b, 1.0);
-			Np = (noiseT.r + noiseT.g + noiseT.b)*0.3333;
+			Np = noiseT.a;// (noiseT.r + noiseT.g + noiseT.b)*0.3333;
 		}else if (_Parameter.w == 1.0) {
 			fixed t = hash2((i.uv + _Time.y*_Parameter.x)*_Parameter.y)*_Parameter.z;
 			N = fixed4(t, t, t, 1.0);
