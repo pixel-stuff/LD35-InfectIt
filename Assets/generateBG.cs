@@ -34,6 +34,8 @@ public class generateBG : MonoBehaviour {
 
 	private int m_propabilitySomme=0;
 
+	public Color parralaxColor;
+
 	// Use this for initialization
 	void Start () {
 		m_gameObject = new List<GameObject>();
@@ -88,7 +90,7 @@ public class generateBG : MonoBehaviour {
 					asset.GetComponentInChildren<randomMove> ().maxForce = maxForce;
 					asset.GetComponentInChildren<randomMove> ().minForce = maxForce;
 					asset.transform.localScale = new Vector3 (scale,scale,1);
-				
+					asset.GetComponentInChildren<SpriteRenderer> ().color = parralaxColor;
 					m_gameObject.Add (asset);
 				}
 
