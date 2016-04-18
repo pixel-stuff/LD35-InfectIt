@@ -3,14 +3,14 @@ using System.Collections;
 
 public class VirusFightManager : MonoBehaviour {
 
-	private Animation m_animation;
+	private Animator m_animator;
 
 	void Awake(){
-		m_animation = this.GetComponent<Animation> ();
+		m_animator = this.GetComponent<Animation> ();
 	}
 	// Use this for initialization
 	void Start () {
-		m_animation.Play ("IdleToSquare");
+		
 	}
 	
 	// Update is called once per frame
