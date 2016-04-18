@@ -169,11 +169,12 @@ public class FightManager : MonoBehaviour {
 		m_bubbleVirus.SetActive (false);
 		m_bubbleCell.SetActive (false);
 		m_CroixExplication.SetActive (false);
-		TimeManager.m_instance.SubSecond (2f);
 		if (isWin) {
 			Debug.Log ("YOU WIN");
+			TimeManager.m_instance.AddSecond (3f);
 		} else {
 			Debug.Log ("YOU DIIEIEEEIEIEE");
+			TimeManager.m_instance.SubSecond (2f);
 		}
 		/*Debug.Log ("RESTART");
 		InitFight (null);
