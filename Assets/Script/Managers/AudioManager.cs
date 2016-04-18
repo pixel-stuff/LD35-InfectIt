@@ -70,6 +70,9 @@ public class AudioManager : MonoBehaviour {
 
 	#region Menu
 	public void PlayMenuMusic(){
+		if (m_menuMusic.Equals (""))
+			return;
+		
 		//Create an empty game object
 		m_menuMusicGB = new GameObject ("Audio_" +  m_menuMusic);
 		m_menuMusicGB.transform.parent = m_transform;
@@ -117,8 +120,11 @@ public class AudioManager : MonoBehaviour {
 	}
 
 	public void StopRechercheBeat(){
-		CancelInvoke ("BeatRechercheEvent");
-		m_rechercheMusicGB.GetComponent<AudioSource> ().Pause ();
+		m_rechercheMusicGB.GetComponent<AudioSource> ().volume = 0.0f;
+	}
+
+	public void ReprendreRechercheBeat(){
+		m_rechercheMusicGB.GetComponent<AudioSource> ().volume = 1.0f;
 	}
 	#endregion Recherche
 

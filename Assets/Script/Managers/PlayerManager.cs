@@ -82,7 +82,7 @@ public class PlayerManager : MonoBehaviour {
 	public void addDestroyCell() {
 		nbDestroyCell++;
 		try{
-			FindObjectOfType<CompteurManager> ().SetNumberAtStart (nbDestroyCell);
+			FindObjectOfType<CompteurManager> ().SetCurrentCellDestroy (nbDestroyCell);
 		}catch(Exception e){};
 		if (nbDestroyCell == nbDestroyCellForWin) {
 			GameStateManager.m_instance.setGameState (GameState.GameOver);
