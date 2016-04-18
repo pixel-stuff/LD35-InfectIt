@@ -361,6 +361,7 @@ MonoBehaviour:
   noiseType: 1
   noiseShader: {fileID: 4800000, guid: 25d08b6732f77bb419fe1038b0547023, type: 3}
   noiseTex: {fileID: 2800000, guid: 8a9a17ae21240734ba7ecfa4a5d4184d, type: 3}
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &252017985
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,6 +623,29 @@ Prefab:
     - target: {fileID: 462980, guid: 5e7abf010e94cc043a61afaa5b2fa9cf, type: 2}
       propertyPath: m_RootOrder
       value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 21208380, guid: 5e7abf010e94cc043a61afaa5b2fa9cf, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b9fad9873d6f1a14ea3502e711552919,
+        type: 3}
+    - target: {fileID: 21298604, guid: 5e7abf010e94cc043a61afaa5b2fa9cf, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b4471b6ee2f10d84d8e34a44f96c5283,
+        type: 3}
+    - target: {fileID: 21215152, guid: 5e7abf010e94cc043a61afaa5b2fa9cf, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b4471b6ee2f10d84d8e34a44f96c5283,
+        type: 3}
+    - target: {fileID: 462980, guid: 5e7abf010e94cc043a61afaa5b2fa9cf, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 462980, guid: 5e7abf010e94cc043a61afaa5b2fa9cf, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e7abf010e94cc043a61afaa5b2fa9cf, type: 2}
