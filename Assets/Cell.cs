@@ -148,9 +148,9 @@ public class Cell : MonoBehaviour {
 
 
 	public void setColor(Color color) {
-		exterior.color = color;
+	/*	exterior.color = color;
         exterior.material.SetColor("_Color", color);
 		interior.color = color;
-		interior.material.SetColor("_Color", color);
+		interior.material.SetColor("_Color", color);*/
 	}
 }
