@@ -304,7 +304,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_menuMusic: sneaky_theme_100bpm
-  m_fightMusic: infect_it_theme_125bpm
+  m_fightMusic: infect_it_theme_100bpm
   m_rechercheMusic: chase_to_leave_theme_125bpm
 --- !u!4 &683952205
 Transform:
