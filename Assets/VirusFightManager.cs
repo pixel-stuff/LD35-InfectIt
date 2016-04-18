@@ -3,6 +3,7 @@ using System.Collections;
 
 public class VirusFightManager : MonoBehaviour {
 
+	public int NbParticules;
 	private Animator m_animator;
 
 	public GameObject m_triangleParticule;
@@ -23,23 +24,23 @@ public class VirusFightManager : MonoBehaviour {
 	}
 
 	public void StartTriangleParticles(){
-		m_triangleParticule.SetActive (true);
-		Invoke ("StopParticles",0.3f);
-	}
+		m_triangleParticule.GetComponent<ParticleSystem>().Emit(NbParticules);//.SetActive (true);
+		//	Invoke ("StopParticles",0.3f);
+	}//
 
 	public void StartSquareParticles(){
-		m_squareParticule.SetActive (true);
-		Invoke ("StopParticles",0.3f);
+		m_squareParticule.GetComponent<ParticleSystem>().Emit(NbParticules);
+		//Invoke ("StopParticles",0.3f);
 	}
 
 	public void StartDonutsParticles(){
-		m_donutsParticule.SetActive (true);
-		Invoke ("StopParticles",0.3f);
+		m_donutsParticule.GetComponent<ParticleSystem>().Emit(NbParticules);
+		//Invoke ("StopParticles",0.3f);
 	}
 
 	public void StartCrossParticles(){
-		m_crossParticule.SetActive (true);
-		Invoke ("StopParticles",0.3f);
+		m_crossParticule.GetComponent<ParticleSystem>().Emit(NbParticules);
+		//Invoke ("StopParticles",0.3f);
 	}
 
 	public void StopParticles(){

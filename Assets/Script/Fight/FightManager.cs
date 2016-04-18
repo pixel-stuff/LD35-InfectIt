@@ -65,9 +65,11 @@ public class FightManager : MonoBehaviour {
 
 
 	public void InitFight(Cell cell){
+		m_CroixExplication.SetActive (true);
 		m_bubbleVirus.SetActive(false);
 		m_bubbleCell.SetActive (false);
 		m_InputCell.SetActive (false);
+		m_numberOfStatementDone = 0;
 		for (int i = 0; i < m_listOfInputVirus.Length; i++) {
 			m_listOfInputVirus [i].SetActive (false);
 		}
@@ -166,6 +168,7 @@ public class FightManager : MonoBehaviour {
 	private void EndFight(bool isWin){
 		m_bubbleVirus.SetActive (false);
 		m_bubbleCell.SetActive (false);
+		m_CroixExplication.SetActive (false);
 		if (isWin) {
 			Debug.Log ("YOU WIN");
 		} else {
