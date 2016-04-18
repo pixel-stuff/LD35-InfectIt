@@ -34,10 +34,12 @@ public class TimeManager : MonoBehaviour {
 
 	private TimeState m_timeState = TimeState.recherche;
 	private float m_coef = 1f;
+	[Space(20)]
+	public float m_timeMax = 20f;
 
 	// Use this for initialization
 	void Start () {
-		AddSecond(10f);
+		AddSecond(20f);
 		m_particulesStartPos = new Vector2 (this.GetComponent<RectTransform> ().rect.width, 0f);
 
 		m_particules.GetComponent<RectTransform> ().anchoredPosition = m_particulesPos;
@@ -52,8 +54,8 @@ public class TimeManager : MonoBehaviour {
 	void Update () {
 		if (m_currentTime > 0) {
 			m_currentTime -= (Time.deltaTime*m_coef);
-			this.GetComponent<Image> ().fillAmount = m_currentTime * 100 / 10 * 1 / 100;
-			m_particulesPos = m_particulesStartPos * m_currentTime * 100 / 10 * 1 / 100;
+			this.GetComponent<Image> ().fillAmount = m_currentTime * 100 / m_timeMax * 1 / 100;
+			m_particulesPos = m_particulesStartPos * m_currentTime * 100 / m_timeMax * 1 / 100;
 			m_particules.GetComponent<RectTransform> ().anchoredPosition = m_particulesPos;
 
 		}else{
@@ -74,12 +76,12 @@ public class TimeManager : MonoBehaviour {
 
 	public void AddSecond(float second){
 		m_currentTime += second;
-		this.GetComponent<Image> ().fillAmount = m_currentTime*100/10* 1/100;
+		this.GetComponent<Image> ().fillAmount = m_currentTime*100/m_timeMax* 1/100;
 	}
 
 	public void SubSecond(float second){
 		m_currentTime -= second;
-		this.GetComponent<Image> ().fillAmount = m_currentTime*100/10* 1/100;
+		this.GetComponent<Image> ().fillAmount = m_currentTime*100/m_timeMax* 1/100;
 		StartCoroutine (SubTimeAnimation ());
 	}
 
