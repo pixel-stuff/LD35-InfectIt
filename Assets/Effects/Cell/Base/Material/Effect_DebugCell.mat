@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Effect_DebugCell
-  m_Shader: {fileID: 4800000, guid: 0ae76ac213c06554582f0b016fb82031, type: 3}
+  m_Shader: {fileID: 4800000, guid: 0ffee2e3e8356e349975839ca9393949, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: 3000
@@ -19,7 +19,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: e830eb1f02358564397bd8b138be5b42, type: 3}
+          m_Texture: {fileID: 2800000, guid: 6968002de18343c419fe1dd823c56448, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -80,16 +80,16 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _MaskTex
+          name: _DistortTex
         second:
-          m_Texture: {fileID: 2800000, guid: d58f0f6053745d8489f5c578cbe205f1, type: 3}
+          m_Texture: {fileID: 2800000, guid: e80c3c84ea861404d8a427db8b7abf04, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _DistortTex
+          name: _MaskTex
         second:
-          m_Texture: {fileID: 2800000, guid: e80c3c84ea861404d8a427db8b7abf04, type: 3}
+          m_Texture: {fileID: 2800000, guid: d58f0f6053745d8489f5c578cbe205f1, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -150,18 +150,6 @@ Material:
         second: 0
       data:
         first:
-          name: _BorderFreq
-        second: 20.71
-      data:
-        first:
-          name: _BorderAmp
-        second: 0.02
-      data:
-        first:
-          name: _BorderSpeed
-        second: 6.35
-      data:
-        first:
           name: _Refraction
         second: 1.02
       data:
@@ -178,6 +166,18 @@ Material:
         second: 1
       data:
         first:
+          name: _BorderFreq
+        second: 10.59
+      data:
+        first:
+          name: _BorderAmp
+        second: 0.01
+      data:
+        first:
+          name: _BorderSpeed
+        second: 6.05
+      data:
+        first:
           name: _LightDistanceMax
         second: 10
       data:
@@ -191,7 +191,7 @@ Material:
       data:
         first:
           name: _AnglePenetration
-        second: 371.11
+        second: -20.8
     m_Colors:
       data:
         first:
