@@ -716,26 +716,26 @@ MonoBehaviour:
   m_listOfInput:
   - m_id: 0
     m_nameController: triangle
-    m_sprite: {fileID: 21300036, guid: 9c8cdf6b730c5470b89c7b1c37403062, type: 3}
-    m_spriteCoolor: {r: 0.26666668, g: 0.46274513, b: 0.9843138, a: 1}
+    m_sprite: {fileID: 21300004, guid: 866b3d5553fff4091b8148c7d01049e1, type: 3}
+    m_spriteCoolor: {r: 1, g: 1, b: 1, a: 1}
     m_soundByCell: {fileID: 8300000, guid: 18fc610a536bb45a098e4b91ed6e7da2, type: 3}
     m_soundByVirus: {fileID: 8300000, guid: 9237b3daea98b42f7b3472aa1c63816c, type: 3}
   - m_id: 1
     m_nameController: carre
-    m_sprite: {fileID: 21300058, guid: 9c8cdf6b730c5470b89c7b1c37403062, type: 3}
-    m_spriteCoolor: {r: 0, g: 0.8313726, b: 0.2392157, a: 1}
+    m_sprite: {fileID: 21300016, guid: 866b3d5553fff4091b8148c7d01049e1, type: 3}
+    m_spriteCoolor: {r: 1, g: 1, b: 1, a: 1}
     m_soundByCell: {fileID: 8300000, guid: eb33e7e4388c64687a248c6de596d1a4, type: 3}
     m_soundByVirus: {fileID: 8300000, guid: cc0c3a0e3725c40dd973d829a452428e, type: 3}
   - m_id: 2
     m_nameController: croix
-    m_sprite: {fileID: 21300040, guid: 9c8cdf6b730c5470b89c7b1c37403062, type: 3}
-    m_spriteCoolor: {r: 1, g: 0.654902, b: 0.16470589, a: 1}
+    m_sprite: {fileID: 21300014, guid: 866b3d5553fff4091b8148c7d01049e1, type: 3}
+    m_spriteCoolor: {r: 1, g: 1, b: 1, a: 1}
     m_soundByCell: {fileID: 8300000, guid: a23335caba9184c509792ebf9caeb76b, type: 3}
     m_soundByVirus: {fileID: 8300000, guid: ae63d545b92374e6f87ba17d7ad8dfcd, type: 3}
   - m_id: 3
     m_nameController: rond
-    m_sprite: {fileID: 21300002, guid: 9c8cdf6b730c5470b89c7b1c37403062, type: 3}
-    m_spriteCoolor: {r: 0.91372555, g: 0.227451, b: 0, a: 1}
+    m_sprite: {fileID: 21300008, guid: 866b3d5553fff4091b8148c7d01049e1, type: 3}
+    m_spriteCoolor: {r: 1, g: 1, b: 1, a: 1}
     m_soundByCell: {fileID: 8300000, guid: a4ceb10e20a034cb8863f9c16c797ef5, type: 3}
     m_soundByVirus: {fileID: 8300000, guid: c54fb7ca14d364423ac699463c60ce2e, type: 3}
   m_virus: {fileID: 11478906}
@@ -934,7 +934,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f548c0cfb9c234a99a162041dfeb5595, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a8d2ef61d317843c683598596eb22e04, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1251,7 +1251,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: adc68f0b655074895a28f92ecbfa143c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3f1a88e622ae74d2782bbd5e889e84b1, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7508,7 +7508,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4294967295
+        rgba: 4283320831
       minMaxState: 0
     startSize:
       scalar: 0.1
@@ -9185,8 +9185,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 60, y: 60}
-  m_SizeDelta: {x: 1804, y: 51}
+  m_AnchoredPosition: {x: 52.9, y: 76.4}
+  m_SizeDelta: {x: 1811, y: 55}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!224 &22412060
 RectTransform:
@@ -9561,7 +9561,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -70}
+  m_AnchoredPosition: {x: -1, y: 21}
   m_SizeDelta: {x: 163, y: 139}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &100100000
