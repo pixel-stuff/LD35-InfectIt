@@ -106,9 +106,9 @@
 
 				// penetration
 				float penetrationAngleStart = (_AnglePenetration - 15.0)*DEG2RAD;
-				if (penetrationAngleStart < -15.0*DEG2RAD) penetrationAngleStart += 2.0 * PI;
+				//if (penetrationAngleStart < -15.0*DEG2RAD) penetrationAngleStart += 2.0 * PI;
 				float penetrationAngleEnd = (_AnglePenetration + 15.0)*DEG2RAD;
-				if (penetrationAngleEnd < 15.0*DEG2RAD) penetrationAngleEnd += 2.0 * PI;
+				//if (penetrationAngleEnd < 15.0*DEG2RAD) penetrationAngleEnd += 2.0 * PI;
 
 				float _borderOffset = sin(sinAngle*_BorderFreq + _Time.y*_BorderSpeed)*_BorderAmp;
 				float alpha = 0.0;
