@@ -35,11 +35,11 @@ public class TimeManager : MonoBehaviour {
 	private TimeState m_timeState = TimeState.recherche;
 	private float m_coef = 1f;
 	[Space(20)]
-	public float m_timeMax = 20f;
+	public float m_timeMax = 35f;
 
 	// Use this for initialization
 	void Start () {
-		AddSecond(20f);
+		AddSecond(35f);
 		m_particulesStartPos = new Vector2 (this.GetComponent<RectTransform> ().rect.width, 0f);
 
 		m_particules.GetComponent<RectTransform> ().anchoredPosition = m_particulesPos;

@@ -134,12 +134,12 @@ public class PlayerManager : MonoBehaviour {
 			freezeGame (true);//is kinetic GO
 			//change state fight
 			//appear fight sceen
-			myFightManager.gameObject.SetActive(true);
-			myFightManager.InitFight (null);
+			/*myFightManager.gameObject.SetActive(true);
+			myFightManager.InitFight (null);*/
 			fadeClear = true;
 
 			//DEBUG 
-			//FightOver(false);
+			FightOver(true);
 		} else {
 			//hide fight sceen
 			myFightManager.gameObject.SetActive(false);

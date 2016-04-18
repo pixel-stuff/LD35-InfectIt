@@ -23,6 +23,7 @@ public class Cell : MonoBehaviour {
 	private bool m_accelerationPhase;
 
 	public SpriteRenderer exterior;
+	public SpriteRenderer interior;
 
 	public bool isTrueCell;
 	// Use this for initialization
@@ -129,7 +130,9 @@ public class Cell : MonoBehaviour {
 		this.gameObject.GetComponent<BoxCollider2D> ().enabled = false;
 		PlayerManager.m_instance.addDestroyCell ();
 		isTrueCell = false;
-		setColor (corruptColor);
+		//setColor (corruptColor);
+		exterior.enabled = false;
+		interior.enabled = false;
 		//this.gameObject.SetActive (false);
 		//this.GetComponent<Animation> ().Play ("DeathANimation");
 	}
@@ -143,5 +146,7 @@ public class Cell : MonoBehaviour {
 	public void setColor(Color color) {
 		exterior.color = color;
         exterior.material.SetColor("_Color", color);
+		interior.color = color;
+		interior.material.SetColor("_Color", color);
 	}
 }
