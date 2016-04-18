@@ -111,10 +111,10 @@ public class Cell : MonoBehaviour {
 	}
 
     public void setFusionVectorDir(Vector3 dir) {
-        Debug.Log(dir);
+       /* Debug.Log(dir);
         if (exterior != null) {
             exterior.material.SetVector("_DirPenetration", dir);
-        }
+        }*/
     }
 
 	public void stopFusion() {
