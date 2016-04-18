@@ -41,6 +41,8 @@ public class PlayerManager : MonoBehaviour {
 		try{
 			FindObjectOfType<CompteurManager> ().SetNumberAtStart (nbDestroyCellForWin);
 		}catch(Exception e){};
+		AudioManager.m_instance.PlayRechercheMusic ();
+
 	}
 	
 	// Update is called once per frame
@@ -119,6 +121,7 @@ public class PlayerManager : MonoBehaviour {
 		Debug.Log("StartFight");
 		isFighting = true; 
 		fadeBlanc = true;
+		//AudioManager.m_instance.PlayRechercheMusic (); jmorel
 		//animation -> blanc
 
 	}
