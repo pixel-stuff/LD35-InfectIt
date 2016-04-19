@@ -568,7 +568,7 @@ MonoBehaviour:
   - {fileID: 0}
   m_bubbleCell: {fileID: 0}
   m_InputCell: {fileID: 0}
-  m_sonFailed: {fileID: 8300000, guid: 5ff97bbf14f484c37bfe2ea251e9f010, type: 3}
+  m_sonFailed: {fileID: 8300000, guid: 91ee399d421474e39b26e5ccc7ba9fc2, type: 3}
   m_spriteInterrogation: {fileID: 21300018, guid: 9c8cdf6b730c5470b89c7b1c37403062,
     type: 3}
   m_colorInterrogation: {r: 0, g: 0, b: 0, a: 1}
