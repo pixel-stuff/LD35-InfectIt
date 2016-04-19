@@ -207,14 +207,20 @@ public class FightManager : MonoBehaviour {
 			this.GetComponent<AudioSource> ().clip = m_listOfInput [m_listOfIDInputWaited [m_cellStatement]].m_soundByCell;
 			this.GetComponent<AudioSource> ().Play ();
 			m_bubbleCell.SetActive (true);
+			Invoke ("DisableCellBubble",0.3f);
 			m_InputCell.SetActive (true);
 			m_cellStatement++;
 		} else {
 			m_cellStatementActive = false;
 			m_InputCell.GetComponent<Image> ().sprite = m_spriteInterrogation;
 			m_InputCell.GetComponent<Image> ().color = m_colorInterrogation;
+			m_bubbleCell.SetActive (true);
 			StartWaitingPlayerInput ();
 		}
+	}
+
+	public void DisableCellBubble(){
+		m_bubbleCell.SetActive (false);
 	}
 
 	private void StartWaitingPlayerInput(){
