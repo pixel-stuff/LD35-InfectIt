@@ -323,6 +323,7 @@ public class FightManager : MonoBehaviour {
 		this.GetComponent<AudioSource> ().clip = m_sonFailed;
 		this.GetComponent<AudioSource> ().Play ();
 		m_bubbleVirus.SetActive (false);
+		m_bubbleCell.SetActive (false);
 		m_currentStepInputWaited = 0;
 		for (int i = 0; i < m_listOfInputVirus.Length; i++) {
 			m_listOfInputVirus [i].SetActive (false);
