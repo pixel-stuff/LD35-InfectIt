@@ -1,9 +1,40 @@
 fileFormatVersion: 2
 guid: 9d4162d49074446cf8f5cd66c0d0ff40
-timeCreated: 1461008803
+timeCreated: 1461086024
 licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: ADN_Anim_0
+    21300002: ADN_Anim_1
+    21300004: ADN_Anim_2
+    21300006: ADN_Anim_3
+    21300008: ADN_Anim_4
+    21300010: ADN_Anim_5
+    21300012: ADN_Anim_6
+    21300014: ADN_Anim_7
+    21300016: ADN_Anim_8
+    21300018: ADN_Anim_9
+    21300020: ADN_Anim_10
+    21300022: ADN_Anim_11
+    21300024: ADN_Anim_12
+    21300026: ADN_Anim_13
+    21300028: ADN_Anim_14
+    21300030: ADN_Anim_15
+    21300032: ADN_Anim_16
+    21300034: ADN_Anim_17
+    21300036: ADN_Anim_18
+    21300038: ADN_Anim_19
+    21300040: ADN_Anim_20
+    21300042: ADN_Anim_21
+    21300044: ADN_Anim_22
+    21300046: ADN_Anim_23
+    21300048: ADN_Anim_24
+    21300050: ADN_Anim_25
+    21300052: ADN_Anim_26
+    21300054: ADN_Anim_27
+    21300056: ADN_Anim_28
+    21300058: ADN_Anim_29
+    21300060: ADN_Anim_30
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,30 +57,533 @@ TextureImporter:
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
-    wrapMode: -1
-  nPOTScale: 1
+    wrapMode: 1
+  nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
-  alphaIsTransparency: 0
-  textureType: -1
+  alphaIsTransparency: 1
+  textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: ADN_Anim_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 3066
+        width: 1844
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 498.20737, y: 19.412598}
+        - {x: -496.79263, y: 19.412598}
+        - {x: -496.79263, y: -18.587402}
+        - {x: 498.20737, y: -18.587402}
+    - name: ADN_Anim_1
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 3066
+        width: 1845
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 498.70728, y: 19.912598}
+        - {x: -497.29272, y: 19.912598}
+        - {x: -497.29272, y: -19.087402}
+        - {x: 498.70728, y: -19.087402}
+    - name: ADN_Anim_2
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 2865
+        width: 1844
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 498.20737, y: -17.915894}
+        - {x: 498.20737, y: 19.084106}
+        - {x: -496.79263, y: 19.084106}
+        - {x: -496.79263, y: -18.915894}
+        - {x: 491.20737, y: -18.915894}
+    - name: ADN_Anim_3
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 2865
+        width: 1844
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 498.20728, y: 19.084106}
+        - {x: -496.79272, y: 19.084106}
+        - {x: -496.79272, y: -18.915894}
+        - {x: 498.20728, y: -18.915894}
+    - name: ADN_Anim_4
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 2665
+        width: 1844
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 498.20737, y: 19.794678}
+        - {x: -496.79263, y: 19.794678}
+        - {x: -496.79263, y: -17.205322}
+        - {x: -486.79263, y: -19.205322}
+        - {x: -7.792633, y: -19.205322}
+        - {x: 44.207367, y: -17.205322}
+        - {x: 80.20737, y: -19.205322}
+        - {x: 498.20737, y: -19.205322}
+    - name: ADN_Anim_5
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 2665
+        width: 1845
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -497.29272, y: 19.794678}
+        - {x: -497.29272, y: -16.205322}
+        - {x: -485.29272, y: -19.205322}
+        - {x: 453.70728, y: -19.205322}
+        - {x: 486.70728, y: -16.205322}
+        - {x: 498.70728, y: -14.205322}
+        - {x: 498.70728, y: 19.794678}
+    - name: ADN_Anim_6
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 2465
+        width: 1844
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 326.20737, y: 20.005249}
+        - {x: 307.20737, y: 18.005249}
+        - {x: 261.20737, y: 20.005249}
+        - {x: -496.79263, y: 20.005249}
+        - {x: -496.79263, y: -18.994751}
+        - {x: 423.20737, y: -18.994751}
+        - {x: 498.20737, y: -14.994751}
+        - {x: 498.20737, y: 20.005249}
+    - name: ADN_Anim_7
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 2466
+        width: 1844
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -190.79272, y: 19.04419}
+        - {x: -234.79272, y: 17.04419}
+        - {x: -258.79272, y: 19.04419}
+        - {x: -496.79272, y: 19.04419}
+        - {x: -496.79272, y: -17.95581}
+        - {x: -486.79272, y: -18.95581}
+        - {x: 498.20728, y: -18.95581}
+        - {x: 498.20728, y: 19.04419}
+    - name: ADN_Anim_8
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 2265
+        width: 1845
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -497.29263, y: 20.215698}
+        - {x: -497.29263, y: -13.784302}
+        - {x: -461.29263, y: -18.784302}
+        - {x: 493.70737, y: -18.784302}
+        - {x: 498.70737, y: -14.784302}
+        - {x: 498.70737, y: 20.215698}
+    - name: ADN_Anim_9
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 2266
+        width: 1844
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -496.79272, y: 19.254639}
+        - {x: -496.79272, y: -18.745361}
+        - {x: 408.20728, y: -18.745361}
+        - {x: 498.20728, y: -15.745361}
+        - {x: 498.20728, y: 19.254639}
+    - name: ADN_Anim_10
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 2066
+        width: 1844
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -496.79263, y: 19.46521}
+        - {x: -496.79263, y: -18.53479}
+        - {x: 498.20737, y: -18.53479}
+        - {x: 498.20737, y: 19.46521}
+    - name: ADN_Anim_11
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 2066
+        width: 1844
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -496.79272, y: 19.46521}
+        - {x: -496.79272, y: -17.53479}
+        - {x: -478.79272, y: -18.53479}
+        - {x: 490.20728, y: -18.53479}
+        - {x: 498.20728, y: -16.53479}
+        - {x: 498.20728, y: 19.46521}
+    - name: ADN_Anim_12
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1865
+        width: 1844
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -496.79263, y: 19.63678}
+        - {x: -496.79263, y: -18.36322}
+        - {x: -492.79263, y: -19.36322}
+        - {x: 476.20737, y: -19.36322}
+        - {x: 498.20737, y: -16.36322}
+        - {x: 498.20737, y: 19.63678}
+    - name: ADN_Anim_13
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 1865
+        width: 1844
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -496.79272, y: 19.13678}
+        - {x: -496.79272, y: -15.86322}
+        - {x: -454.79272, y: -18.86322}
+        - {x: 453.20728, y: -18.86322}
+        - {x: 498.20728, y: -17.86322}
+        - {x: 498.20728, y: 19.13678}
+    - name: ADN_Anim_14
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1665
+        width: 1844
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -496.79263, y: 19.847351}
+        - {x: -496.79263, y: -19.152649}
+        - {x: 481.20737, y: -19.152649}
+        - {x: 498.20737, y: -17.152649}
+        - {x: 498.20737, y: 19.847351}
+    - name: ADN_Anim_15
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 1665
+        width: 1846
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -497.29272, y: 19.847351}
+        - {x: -497.29272, y: -17.152649}
+        - {x: -462.29272, y: -19.152649}
+        - {x: 498.70728, y: -19.152649}
+        - {x: 498.70728, y: 19.847351}
+    - name: ADN_Anim_16
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1465
+        width: 1844
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -496.79263, y: 20.057861}
+        - {x: -496.79263, y: -18.942139}
+        - {x: 498.20737, y: -18.942139}
+        - {x: 498.20737, y: 20.057861}
+    - name: ADN_Anim_17
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 1466
+        width: 1844
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -496.79272, y: 19.096802}
+        - {x: -496.79272, y: -18.903198}
+        - {x: 498.20728, y: -18.903198}
+        - {x: 498.20728, y: 18.096802}
+        - {x: 475.20728, y: 19.096802}
+    - name: ADN_Anim_18
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1265
+        width: 1844
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -496.79263, y: 20.268372}
+        - {x: -496.79263, y: -18.731628}
+        - {x: 498.20737, y: -18.731628}
+        - {x: 498.20737, y: 20.268372}
+    - name: ADN_Anim_19
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 1266
+        width: 1844
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -496.79272, y: 19.307312}
+        - {x: -496.79272, y: -18.692688}
+        - {x: 498.20728, y: -18.692688}
+        - {x: 498.20728, y: 18.307312}
+        - {x: 492.20728, y: 19.307312}
+    - name: ADN_Anim_20
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1066
+        width: 1844
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -481.79263, y: 19.517883}
+        - {x: -496.79263, y: 14.517883}
+        - {x: -496.79263, y: -18.482117}
+        - {x: 498.20737, y: -18.482117}
+        - {x: 498.20737, y: 19.517883}
+    - name: ADN_Anim_21
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 1066
+        width: 1845
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -458.29272, y: 19.517883}
+        - {x: -497.29272, y: 17.517883}
+        - {x: -497.29272, y: -18.482117}
+        - {x: 498.70728, y: -18.482117}
+        - {x: 498.70728, y: 19.517883}
+    - name: ADN_Anim_22
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 865
+        width: 1844
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 498.20737, y: 16.189453}
+        - {x: 488.20737, y: 19.189453}
+        - {x: -496.79263, y: 19.189453}
+        - {x: -496.79263, y: -18.810547}
+        - {x: 498.20737, y: -18.810547}
+    - name: ADN_Anim_23
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 865
+        width: 1844
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 498.20728, y: 19.689453}
+        - {x: -496.79272, y: 19.689453}
+        - {x: -496.79272, y: -19.310547}
+        - {x: 498.20728, y: -19.310547}
+    - name: ADN_Anim_24
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 665
+        width: 1845
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 498.70737, y: 19.899994}
+        - {x: -406.29263, y: 19.899994}
+        - {x: -497.29263, y: 14.899994}
+        - {x: -497.29263, y: -19.100006}
+        - {x: 498.70737, y: -19.100006}
+    - name: ADN_Anim_25
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 665
+        width: 1844
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 498.20728, y: 19.899994}
+        - {x: -479.79272, y: 19.899994}
+        - {x: -496.79272, y: 16.899994}
+        - {x: -496.79272, y: -19.100006}
+        - {x: 498.20728, y: -19.100006}
+    - name: ADN_Anim_26
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 465
+        width: 1844
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 498.20737, y: 20.11052}
+        - {x: -467.79263, y: 20.11052}
+        - {x: -496.79263, y: 17.11052}
+        - {x: -496.79263, y: -18.88948}
+        - {x: 498.20737, y: -18.88948}
+    - name: ADN_Anim_27
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 465
+        width: 1845
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -497.29272, y: 20.11052}
+        - {x: -497.29272, y: -17.88948}
+        - {x: -490.29272, y: -18.88948}
+        - {x: 498.70728, y: -18.88948}
+        - {x: 498.70728, y: 20.11052}
+    - name: ADN_Anim_28
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 265
+        width: 1844
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -478.79263, y: 20.321045}
+        - {x: -496.79263, y: 19.321045}
+        - {x: -496.79263, y: -18.678955}
+        - {x: 498.20737, y: -18.678955}
+        - {x: 498.20737, y: 19.321045}
+        - {x: 455.20737, y: 20.321045}
+    - name: ADN_Anim_29
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 265
+        width: 1844
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 498.20728, y: 20.321045}
+        - {x: -496.79272, y: 20.321045}
+        - {x: -496.79272, y: -18.678955}
+        - {x: 498.20728, y: -18.678955}
+    - name: ADN_Anim_30
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 65
+        width: 1844
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 498.20737, y: 19.031578}
+        - {x: -496.79263, y: 19.031578}
+        - {x: -496.79263, y: -18.968422}
+        - {x: 498.20737, y: -18.968422}
     outline: []
   spritePackingTag: 
   userData: 

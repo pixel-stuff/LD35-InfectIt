@@ -8263,6 +8263,7 @@ GameObject:
   - 222: {fileID: 1881301696}
   - 114: {fileID: 1881301695}
   - 114: {fileID: 1881301694}
+  - 95: {fileID: 1881301697}
   m_Layer: 5
   m_Name: Life
   m_TagString: Untagged
@@ -8334,6 +8335,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1881301692}
+--- !u!95 &1881301697
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1881301692}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e6398e7da105646f8bd53d1422a96532, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!4 &1885164804 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400088, guid: 1e9a255424ea8ce459ad29cd3da50e0e, type: 2}
