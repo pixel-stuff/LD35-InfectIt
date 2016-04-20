@@ -103,25 +103,30 @@ public class Cell : MonoBehaviour {
 			this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = true;
 			this.gameObject.GetComponent<BoxCollider2D> ().enabled = false;
             Vector3 dir = transform.position - virusPos;
-            setFusionVectorDir(new Vector3(
+            float angleP = 0.0f;
+            angleP = Mathf.Atan2(dir.y, dir.x);
+            angleP = ((-180.0f / Mathf.PI * angleP)%360.0f) * (Mathf.PI / 180.0f);
+            if (angleP < 0.0f) angleP += 2.0f * Mathf.PI;
+            setFusionVectorDir((virusPos - transform.position).normalized, GetComponent<Rigidbody2D>().rotation);/* Vector3(
                 getRightVectorComponent(transform.position.x, virusPos.x),
                 getRightVectorComponent(transform.position.y, virusPos.y),
-                0.0f));
+                getRightVectorComponent(transform.position.z, virusPos.z)), angleP);*/
         }
 	}
 
-    public void setFusionVectorDir(Vector3 dir) {
-       /* Debug.Log(dir);
+    public void setFusionVectorDir(Vector3 dir, float angleP) {
         if (exterior != null) {
-            exterior.material.SetVector("_DirPenetration", dir);
-        }*/
+            Debug.Log(dir+" "+angleP);
+            exterior.material.SetVector("_DirPenetration", new Vector3(dir.x, dir.y, 0.0f));
+            exterior.material.SetFloat("_AnglePenetration", angleP);
+        }
     }
 
 	public void stopFusion() {
 		m_endFusionPosition = this.transform.position;
 		m_isAfraid = true;
 		m_run = true;
-        setFusionVectorDir(Vector3.zero);
+        setFusionVectorDir(Vector3.zero, -1.0f);
         this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = false;
 		this.gameObject.GetComponent<BoxCollider2D> ().enabled = true;
 	}

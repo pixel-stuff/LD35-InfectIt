@@ -85,6 +85,17 @@
 			#define RAD2DEG (180.0 / 3.14159)
 			#define PI 3.14159
 
+			/**
+			* Rotate UV from angle around center
+			* @author pierre.plans@gmail.com
+			**/
+			float2 rotateUV(in float2 uv, in float2 center, float angle) {
+				float cosO = cos(angle*0.0174533);
+				float sinO = sin(angle*0.0174533);
+				uv = center + mul((uv - center), float2x2(cosO, -sinO, sinO, cosO));
+				return uv;
+			}
+
 			fixed4 frag(v2f i) : SV_Target
 			{
 				fixed4 col = fixed4(0, 0, 0, 1);
@@ -99,11 +110,14 @@
 				#endif
 				// computing mathematical stuff for borders
 				float dist = length(coord-half2(0.0, 0.0));
-				float dt = dot(float2(0.0, 1.0), coord);
-				float cosO = dot(float2(0.0, 1.0), coord) / dist;
+				float2 toc = float2(0.0, 1.0);
+				toc = rotateUV(float2(0.0, 1.0), float2(0.0, 0.0), _AnglePenetration);
+				float dt = dot(toc, coord);
+				float cosO = dot(toc, coord) / dist;
 				float angle = atan2(coord.y, coord.x);
-				angle = fmod(-180.0 / PI * angle, 360.0)*DEG2RAD;
+				angle = fmod(-angle, PI);// fmod(-180.0 / PI * angle, 360.0)*DEG2RAD;
 				if (angle < 0.0) angle += 2.0 * PI;
+				if (angle > 2.0*PI) angle -= 2.0 * PI;
 				float sinAngle = sin(angle+PI/2.0);
 
 				// penetration
@@ -115,12 +129,15 @@
 				float _borderOffset = sin(sinAngle*_BorderFreq + _Time.y*_BorderSpeed)*_BorderAmp;
 				float alpha = 0.0;
 				//if (_AnglePenetration >= 0.0 && abs(_AnglePenetration*DEG2RAD - angle) < 15.0*DEG2RAD) {
-					// when the angle is _AnglePenetration it is 0 else it becomes 1
-				/*if(abs(_AnglePenetration*DEG2RAD - angle) / ((penetrationAngleEnd - penetrationAngleStart)*0.7)<1.0 && angle < (penetrationAngleEnd - penetrationAngleStart)*0.7) angle += _AnglePenetration-angle;
-				if (abs(_AnglePenetration*DEG2RAD - angle) / ((penetrationAngleEnd - penetrationAngleStart)*0.7) < 1.0 && angle > (360.0*DEG2RAD - (penetrationAngleEnd - penetrationAngleStart)*0.7)) angle += _AnglePenetration + angle;
-					alpha = min(1.0, max(0.0, 1.0 - abs(_AnglePenetration*DEG2RAD - angle) / ((penetrationAngleEnd - penetrationAngleStart)*0.7)));*/
-				alpha = (max(0.0, dot(normalize(coord), normalize(_DirPenetration))) - 0.01)/2.5; // 0.99
-					_borderOffset = lerp(_borderOffset, /*(angle<25.0*DEG2RAD || angle>185.0*DEG2RAD)?alpha*0.2:*/alpha, alpha);
+				// when the angle is _AnglePenetration it is 0 else it becomes 1
+				//if(abs(_AnglePenetration*DEG2RAD - angle) / ((penetrationAngleEnd - penetrationAngleStart)*0.7)<1.0 && angle < (penetrationAngleEnd - penetrationAngleStart)*0.7) angle += _AnglePenetration-angle;
+				//if (abs(_AnglePenetration*DEG2RAD - angle) / ((penetrationAngleEnd - penetrationAngleStart)*0.7) < 1.0 && angle > (360.0*DEG2RAD - (penetrationAngleEnd - penetrationAngleStart)*0.7)) angle += _AnglePenetration + angle;
+				//if(_AnglePenetration*DEG2RAD - angle)
+					//alpha = min(1.0, max(0.0, 1.0 - abs(_AnglePenetration*DEG2RAD - angle) / ((penetrationAngleEnd - penetrationAngleStart)*0.7)));
+				float3 dirP = float3(0.0, 0.0, 0.0);
+				dirP.xy = rotateUV(_DirPenetration.xy, float2(0.0f, 0.0f), _AnglePenetration);
+				alpha = (max(0.0, dot(normalize(coord), normalize(dirP))) - 0.01)/2.5; // 0.99
+				_borderOffset = lerp(_borderOffset, /*(angle<25.0*DEG2RAD || angle>185.0*DEG2RAD)?alpha*0.2:*/alpha, alpha);
 					//_borderOffset -= (sin(sinAngle*_BorderFreq*4.0 + _Time.y*_BorderSpeed) + PI*0.5)*_BorderAmp*1.6;
 				//}
 
@@ -149,7 +166,13 @@
 				/*col.rgb = (angle+3.14/2.0);
 				col.r = abs(penetrationAngleStart-angle)<15.0*DEG2RAD ? 1.0 : 0.0;
 				col.g = col.b = 0.0;*/
-				UNITY_APPLY_FOG(i.fogCoord, col);
+				/*if (angle-2.0*PI<(_AnglePenetration-15.0*DEG2RAD)) {
+					//_AnglePenetration
+					angle -= 2.0*PI;
+				}
+				float t = _AnglePenetration*DEG2RAD - angle;
+				col.rgb = _AnglePenetration<30.0 && angle>330.0*DEG2RAD? angle-330.0*DEG2RAD :abs(t);
+				UNITY_APPLY_FOG(i.fogCoord, col);*/
 				return col;
 			}
 			ENDCG
