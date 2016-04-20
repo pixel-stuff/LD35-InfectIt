@@ -55,7 +55,7 @@ public class InputManager : MonoBehaviour {
 		}
 
 		//jmorel
-		if(Input.GetKey(KeyCode.UpArrow) || (Mathf.Abs(Input.acceleration.x) > 0.5f) || Input.GetKey ("z") || Input.GetKey ("w")){
+		if(Input.GetKey(KeyCode.UpArrow)  || Input.GetKey ("z") || Input.GetKey ("w") || (Mathf.Abs(Input.acceleration.y) > 0.1f)){
 			PlayerManager.UP();
 		}
 
@@ -64,7 +64,7 @@ public class InputManager : MonoBehaviour {
 			PlayerManager.UpFight ();
 		}
 		//morel
-		if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey ("q") || Input.GetKey ("a") || (Mathf.Abs(Input.acceleration.y) < -0.5f)){
+		if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey ("q") || Input.GetKey ("a") || (Mathf.Abs(Input.acceleration.x) < -0.1f)){
 			PlayerManager.LEFT();
 		}
 
@@ -74,7 +74,7 @@ public class InputManager : MonoBehaviour {
 		}
 
 		//jmorel
-		if(Input.GetKey(KeyCode.DownArrow) || (Mathf.Abs(Input.acceleration.x) < -0.5f) || Input.GetKey ("s")){
+		if(Input.GetKey(KeyCode.DownArrow)  || Input.GetKey ("s") || (Mathf.Abs(Input.acceleration.y) < -0.1f)){
 
 			PlayerManager.DOWN ();
 		}
@@ -84,7 +84,7 @@ public class InputManager : MonoBehaviour {
 			PlayerManager.DownFight ();
 		}
 
-		if(Input.GetKey(KeyCode.RightArrow) || Input.GetKey ("d") || (Mathf.Abs(Input.acceleration.y) > 0.5f)){
+		if(Input.GetKey(KeyCode.RightArrow) || Input.GetKey ("d") || (Mathf.Abs(Input.acceleration.x) > 0.1f)){
 			PlayerManager.RIGHT();
 		}
 		if (Input.GetKeyDown ("d") || Input.GetKeyDown ("right")) {
