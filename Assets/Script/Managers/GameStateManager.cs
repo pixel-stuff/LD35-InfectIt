@@ -15,6 +15,8 @@ public class GameStateManager : MonoBehaviour {
 	#region Singleton
 	public static GameStateManager m_instance;
 	void Awake(){
+		Application.targetFrameRate = 60;
+
 		if(m_instance == null){
 			//If I am the first instance, make me the Singleton
 			m_gameState = GameState.Playing;
