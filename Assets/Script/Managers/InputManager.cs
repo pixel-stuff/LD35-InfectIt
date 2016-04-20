@@ -54,28 +54,37 @@ public class InputManager : MonoBehaviour {
 			GameStateManager.m_instance.setGameState(GameState.Pause);
 		}
 
-		if(Input.GetKey(KeyCode.UpArrow)){
+		//jmorel
+		if(Input.GetKey(KeyCode.UpArrow) || (Mathf.Abs(Input.acceleration.x) > 0.5f) || Input.GetKey ("z") || Input.GetKey ("w")){
 			PlayerManager.UP();
 		}
+
+
 		if (Input.GetKeyDown ("z") || Input.GetKeyDown ("w") || Input.GetKeyDown (KeyCode.UpArrow)) {
 			PlayerManager.UpFight ();
 		}
-		
-		if(Input.GetKey(KeyCode.LeftArrow)){
+		//morel
+		if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey ("q") || Input.GetKey ("a") || (Mathf.Abs(Input.acceleration.y) < -0.5f)){
 			PlayerManager.LEFT();
 		}
+
+
 		if (Input.GetKeyDown ("q") || Input.GetKeyDown ("a") || Input.GetKeyDown ("left")) {
 			PlayerManager.LeftFight ();
 		}
-		
-		if(Input.GetKey(KeyCode.DownArrow)){
+
+		//jmorel
+		if(Input.GetKey(KeyCode.DownArrow) || (Mathf.Abs(Input.acceleration.x) < -0.5f) || Input.GetKey ("s")){
+
 			PlayerManager.DOWN ();
 		}
+
+
 		if (Input.GetKeyDown ("s") || Input.GetKeyDown ("down")) {
 			PlayerManager.DownFight ();
 		}
 
-		if(Input.GetKey(KeyCode.RightArrow)){
+		if(Input.GetKey(KeyCode.RightArrow) || Input.GetKey ("d") || (Mathf.Abs(Input.acceleration.y) > 0.5f)){
 			PlayerManager.RIGHT();
 		}
 		if (Input.GetKeyDown ("d") || Input.GetKeyDown ("right")) {
