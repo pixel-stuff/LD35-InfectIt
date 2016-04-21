@@ -14,18 +14,22 @@ public class indicationInput : MonoBehaviour {
 	}
 
 	public void TouchUp(){
+		Debug.Log ("Toto");
 		PlayerManager.UpFight ();
 	}
 
 	public void TouchDown(){
+		Debug.Log ("Toto");
 		PlayerManager.DownFight ();
 	}
 
 	public void TouchLeft(){
+		Debug.Log ("Toto");
 		PlayerManager.LeftFight ();
 	}
 
 	public void TouchRight(){
+		Debug.Log ("Toto");
 		PlayerManager.RightFight ();
 	}
 }
