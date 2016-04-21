@@ -123,12 +123,18 @@ public class Cell : MonoBehaviour {
     }
 
 	public void stopFusion() {
+		
 		m_endFusionPosition = this.transform.position;
 		m_isAfraid = true;
 		m_run = true;
         setFusionVectorDir(Vector3.zero, -1.0f);
         this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = false;
 		this.gameObject.GetComponent<BoxCollider2D> ().enabled = true;
+
+		GameObject[] whiteCell = GameObject.FindGameObjectsWithTag("WhiteCell");
+		for (int i = 0; i < whiteCell.Length; i++) {
+			whiteCell [i].GetComponent<whiteCell> ().alerte();
+		}
 	}
 
 	public void consume() {

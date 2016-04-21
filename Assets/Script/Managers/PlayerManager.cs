@@ -163,6 +163,11 @@ public class PlayerManager : MonoBehaviour {
 			Debug.Log ("freezze  "+ freeze);
 			indicators [i].GetComponentInChildren<SpriteRenderer>().enabled = !freeze;
 		}
+
+		GameObject[] whiteCell = GameObject.FindGameObjectsWithTag("WhiteCell");
+		for (int i = 0; i < whiteCell.Length; i++) {
+			whiteCell [i].GetComponent<Rigidbody2D> ().isKinematic = freeze;
+		}
 	}
 
 	#region Intéraction

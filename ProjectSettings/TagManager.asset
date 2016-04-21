@@ -25,6 +25,7 @@ TagManager:
   - TreeManager
   - Beaver
   - IndicatorRenderer
+  - WhiteCell
   layers:
   - Default
   - TransparentFX
