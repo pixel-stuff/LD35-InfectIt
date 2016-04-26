@@ -40,6 +40,16 @@ public class FightManager : MonoBehaviour {
 	public VirusFightManager m_virus;
 	[Space(10)]
 	public GameObject m_bubbleVirus;
+	public RectTransform m_rectTransformBubbleVirus;
+	private float[] m_bubbleVirusSize = new float[7]{
+		5f,
+		80f,
+		155f,
+		230f,
+		305f,
+		380f,
+		455f
+	};
 	public GameObject[] m_listOfInputVirus;
 	[Space(10)]
 	public GameObject m_bubbleCell;
@@ -58,7 +68,7 @@ public class FightManager : MonoBehaviour {
 	//private Animation m_CellAnimation;
 
 	private bool m_isInit = false;
-	private int m_numberOfStep = 4;
+	private int m_numberOfStep = 3;
 	private List<int> m_listOfIDInputWaited = new List<int> ();
 	private float m_timeBetweenBeat = 0.60f;
 	private float m_percentErrorAceptable = 40.0f;
@@ -66,7 +76,10 @@ public class FightManager : MonoBehaviour {
 
 	private int m_currentStepInputWaited = 0;
 
+	#region Augmentation Difficulté
+	private int m_numberOfFightDone = 0;
 
+	#endregion
 
 	public void InitFight(Cell cell){
 		m_CroixExplication.SetActive (true);
@@ -77,8 +90,26 @@ public class FightManager : MonoBehaviour {
 		for (int i = 0; i < m_listOfInputVirus.Length; i++) {
 			m_listOfInputVirus [i].SetActive (false);
 		}
-
+			
 		TimeManager.m_instance.ChangeState (TimeState.fight);
+
+		switch(m_numberOfFightDone){
+		case 0:
+			m_numberOfStep = 3;
+			break;
+		case 1:
+			m_numberOfStep = 4;
+			break;
+		case 2:
+			m_numberOfStep = 5;
+			break;
+		case 3:
+		case 4:
+		case 5:
+			m_numberOfStep = 6;
+			break;
+			
+		}
 
 		m_listOfIDInputWaited.Clear();
 		m_currentStepInputWaited = 0;
@@ -99,6 +130,7 @@ public class FightManager : MonoBehaviour {
 		m_lastBeatInvoke = Time.time;
 		Invoke("StartCellStatement", 1.5f);
 		//m_CellAnimation.Play ();
+		m_numberOfFightDone++;
 		m_isInit = true;
 	}
 
@@ -209,6 +241,8 @@ public class FightManager : MonoBehaviour {
 			m_bubbleCell.SetActive (true);
 			Invoke ("DisableCellBubble",0.3f);
 			m_InputCell.SetActive (true);
+			Vector2 vect = new Vector2 (m_bubbleVirusSize[m_currentStepInputWaited],118f);
+			m_rectTransformBubbleVirus.sizeDelta = vect;
 			m_cellStatement++;
 		} else {
 			m_cellStatementActive = false;
@@ -339,6 +373,8 @@ public class FightManager : MonoBehaviour {
 
 	public void SuccessInput(){
 		m_CroixExplication.GetComponent<Image> ().color = Color.white;
+		Vector2 vect = new Vector2 (m_bubbleVirusSize[m_currentStepInputWaited],118f);
+		m_rectTransformBubbleVirus.sizeDelta = vect;
 		Invoke ("resetInputCroix", 0.3f);
 		if (m_currentStepInputWaited < m_listOfIDInputWaited.Count-1) {
 			m_listOfInputVirus [m_currentStepInputWaited].GetComponent<Image> ().sprite = m_listOfInput [m_listOfIDInputWaited [m_currentStepInputWaited]].m_sprite;

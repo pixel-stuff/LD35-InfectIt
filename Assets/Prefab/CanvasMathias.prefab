@@ -561,7 +561,11 @@ MonoBehaviour:
     m_soundByVirus: {fileID: 8300000, guid: c54fb7ca14d364423ac699463c60ce2e, type: 3}
   m_virus: {fileID: 11478906}
   m_bubbleVirus: {fileID: 0}
+  m_SizedBubbleVirus: {fileID: 0}
   m_listOfInputVirus:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
